@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             onboardingVC.makeRootViewController()
             return
         }
+        let featuresVC = FeaturesViewController()
+        featuresVC.makeRootViewController()
     }
 
 

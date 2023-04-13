@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650231B129E7F45600C13139 /* listExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231B029E7F45600C13139 /* listExpense.json */; };
+		650231B329E7F62D00C13139 /* FeatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231B229E7F62D00C13139 /* FeatureModel.swift */; };
+		650231B929E80E3300C13139 /* FeatureCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231B829E80E3300C13139 /* FeatureCardView.swift */; };
+		650231BB29E80E3F00C13139 /* FeatureCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650231BA29E80E3F00C13139 /* FeatureCardView.xib */; };
+		650231C229E814F900C13139 /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231C029E814F900C13139 /* FeaturesViewController.swift */; };
+		650231C329E814F900C13139 /* FeaturesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650231C129E814F900C13139 /* FeaturesViewController.xib */; };
+		650231C529E8171C00C13139 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231C429E8171C00C13139 /* UIViewExtension.swift */; };
+		650231C729E834F300C13139 /* splitExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231C629E834F200C13139 /* splitExpense.json */; };
+		650231C929E835E700C13139 /* analyzeExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231C829E835E600C13139 /* analyzeExpense.json */; };
 		6557310229E4581D008BEA22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557310129E4581D008BEA22 /* AppDelegate.swift */; };
 		6557310C29E4581D008BEA22 /* Spendora.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6557310A29E4581D008BEA22 /* Spendora.xcdatamodeld */; };
 		6557310E29E45822008BEA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6557310D29E45822008BEA22 /* Assets.xcassets */; };
@@ -26,6 +35,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		650231B029E7F45600C13139 /* listExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listExpense.json; sourceTree = "<group>"; };
+		650231B229E7F62D00C13139 /* FeatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureModel.swift; sourceTree = "<group>"; };
+		650231B829E80E3300C13139 /* FeatureCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCardView.swift; sourceTree = "<group>"; };
+		650231BA29E80E3F00C13139 /* FeatureCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureCardView.xib; sourceTree = "<group>"; };
+		650231C029E814F900C13139 /* FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
+		650231C129E814F900C13139 /* FeaturesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturesViewController.xib; sourceTree = "<group>"; };
+		650231C429E8171C00C13139 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		650231C629E834F200C13139 /* splitExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splitExpense.json; sourceTree = "<group>"; };
+		650231C829E835E600C13139 /* analyzeExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = analyzeExpense.json; sourceTree = "<group>"; };
 		655730FE29E4581D008BEA22 /* Spendora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6557310129E4581D008BEA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6557310B29E4581D008BEA22 /* Spendora.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spendora.xcdatamodel; sourceTree = "<group>"; };
@@ -99,6 +117,11 @@
 				6557312829E49133008BEA22 /* Module.swift */,
 				6557312A29E49673008BEA22 /* TncPrivacyViewController.swift */,
 				6557312B29E49673008BEA22 /* TncPrivacyViewController.xib */,
+				650231B229E7F62D00C13139 /* FeatureModel.swift */,
+				650231B829E80E3300C13139 /* FeatureCardView.swift */,
+				650231BA29E80E3F00C13139 /* FeatureCardView.xib */,
+				650231C029E814F900C13139 /* FeaturesViewController.swift */,
+				650231C129E814F900C13139 /* FeaturesViewController.xib */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -115,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				6557312429E460D9008BEA22 /* finance.json */,
+				650231B029E7F45600C13139 /* listExpense.json */,
+				650231C629E834F200C13139 /* splitExpense.json */,
+				650231C829E835E600C13139 /* analyzeExpense.json */,
 			);
 			path = AnimationAssets;
 			sourceTree = "<group>";
@@ -124,6 +150,7 @@
 			children = (
 				6562EF9829E7DAF500D6E1D5 /* UIViewControllerExtension.swift */,
 				6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */,
+				650231C429E8171C00C13139 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,10 +219,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650231C929E835E700C13139 /* analyzeExpense.json in Resources */,
 				6557312729E47320008BEA22 /* Localizable.strings in Resources */,
+				650231C329E814F900C13139 /* FeaturesViewController.xib in Resources */,
 				6557312D29E49674008BEA22 /* TncPrivacyViewController.xib in Resources */,
+				650231C729E834F300C13139 /* splitExpense.json in Resources */,
+				650231B129E7F45600C13139 /* listExpense.json in Resources */,
 				6557311129E45822008BEA22 /* LaunchScreen.storyboard in Resources */,
 				6557312529E460D9008BEA22 /* finance.json in Resources */,
+				650231BB29E80E3F00C13139 /* FeatureCardView.xib in Resources */,
 				6557310E29E45822008BEA22 /* Assets.xcassets in Resources */,
 				6557311C29E45C34008BEA22 /* OnboardingViewController.xib in Resources */,
 			);
@@ -208,7 +240,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650231C529E8171C00C13139 /* UIViewExtension.swift in Sources */,
 				6557310C29E4581D008BEA22 /* Spendora.xcdatamodeld in Sources */,
+				650231B929E80E3300C13139 /* FeatureCardView.swift in Sources */,
 				6557312C29E49674008BEA22 /* TncPrivacyViewController.swift in Sources */,
 				6557311B29E45C34008BEA22 /* OnboardingViewController.swift in Sources */,
 				6557310229E4581D008BEA22 /* AppDelegate.swift in Sources */,
@@ -216,7 +250,9 @@
 				6562EF9B29E7E12800D6E1D5 /* StringExtension.swift in Sources */,
 				6562EF9629E7D96C00D6E1D5 /* Constants.swift in Sources */,
 				6557312929E49133008BEA22 /* Module.swift in Sources */,
+				650231C229E814F900C13139 /* FeaturesViewController.swift in Sources */,
 				6557312229E45D81008BEA22 /* LottieView.swift in Sources */,
+				650231B329E7F62D00C13139 /* FeatureModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

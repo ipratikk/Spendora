@@ -25,14 +25,27 @@ final class Module {
         enum Alert {
             static let message = NSLocalizedString("onboarding.alert.message", comment: "")
         }
+
+        enum Features {
+            static let listExpenseTitle = NSLocalizedString("features.list.expenses.title", comment: "")
+            static let listExpenseBody = NSLocalizedString("features.list.expenses.body", comment: "")
+            static let splitExpenseTitle = NSLocalizedString("features.split.expenses.title", comment: "")
+            static let splitExpenseBody = NSLocalizedString("features.split.expenses.body", comment: "")
+            static let analyzeExpenseTitle = NSLocalizedString("features.analyze.expenses.title", comment: "")
+            static let analyzeExpenseBody = NSLocalizedString("features.analyze.expenses.body", comment: "")
+        }
     }
 
     enum Animations {
         static let finance = LottieAnimation.named("finance")
+        static let listExpense = LottieAnimation.named("listExpense")
+        static let splitExpense = LottieAnimation.named("splitExpense")
+        static let analyzeExpense = LottieAnimation.named("analyzeExpense")
     }
 
     enum Images {
         static let unchecked = UIImage(systemName: "checkmark.circle")?.withTintColor(.gray, renderingMode: .alwaysOriginal)
         static let checked = UIImage(systemName: "checkmark.circle.fill")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
+        static let rightArrow = UIImage(systemName: "chevron.right")
     }
 }

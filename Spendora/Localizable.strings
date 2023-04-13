@@ -54,3 +54,10 @@ If you have any questions about these Terms, please contact us at support@spendo
 "onboarding.tnc.terms.email" = "support@spendora.com";
 "onboarding.tnc.privacyPolicy" = "";
 "onboarding.alert.message" = "Please accept the Terms & Conditions and Privacy Policy before proceeding";
+
+"features.list.expenses.title" = "List all your expenses";
+"features.list.expenses.body" = "Our app allows you to easily list and categorize all your expenses. Simply input your expenses and our app will do the rest. You can categorize your expenses by type (e.g. food, transportation, entertainment, etc.) and easily filter and view them based on date or type.";
+"features.split.expenses.title" = "Split expenses with friends";
+"features.split.expenses.body" = "Have you ever gone out with friends and had to split the bill? Our app takes care of that for you! Simply input your expenses and the people you were with, and our app will automatically split the expenses between you and your friends. You can easily see who owes whom and how much. No more complicated calculations or awkward moments!";
+"features.analyze.expenses.title" = "Analyze your spend";
+"features.analyze.expenses.body" = "Our app helps you to better understand your spending habits by providing detailed analytics of your expenses. You can view your expenses by type or date range, and see your spending trends over time. This feature can help you identify areas where you can save money and make more informed financial decisions.";
