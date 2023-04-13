@@ -56,6 +56,12 @@ class OnboardingViewController: UIViewController {
     func setOnboardingCompleted() {
         let defaults = UserDefaults.standard
         defaults.setValue(true, forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
+        transitionToFeatures()
+    }
+
+    func transitionToFeatures() {
+        let featureVC = FeaturesViewController()
+        navigationController?.pushViewController(featureVC, animated: true)
     }
 
     private func setupCheckBox() {
