@@ -2,19 +2,19 @@
 //  FeaturesViewController.swift
 //  Spendora
 //
-//  Created by Goel, Pratik | RIEPL on 13/04/23.
+//  Created by Pratik Goel on 13/04/23.
 //
 
 import UIKit
 
-class FeaturesViewController: UIViewController {
+public class FeaturesViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var continueBtn: UIButton!
 
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
@@ -63,7 +63,7 @@ class FeaturesViewController: UIViewController {
 }
 
 extension FeaturesViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffset = Float(scrollView.contentOffset.x)
         let width = Float(scrollView.frame.width)
         pageControl.currentPage = Int(floorf(contentOffset / width))

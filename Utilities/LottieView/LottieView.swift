@@ -7,9 +7,9 @@
 import UIKit
 import Lottie
 
-class LottieView: LottieAnimationView {
+public class LottieView: LottieAnimationView {
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
 

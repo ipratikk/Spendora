@@ -6,6 +6,18 @@
 //
 
 import UIKit
+import Utilities
+
+
+protocol Presentation {
+    typealias Output = (
+
+    )
+
+    typealias Input = (
+        
+    )
+}
 
 class OnboardingViewController: UIViewController {
 
@@ -60,7 +72,7 @@ class OnboardingViewController: UIViewController {
     }
 
     func transitionToFeatures() {
-        let featureVC = FeaturesViewController()
+        let featureVC = FeaturesViewController.initFromNib()
         navigationController?.pushViewController(featureVC, animated: true)
     }
 

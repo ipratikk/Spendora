@@ -8,31 +8,59 @@
 
 /* Begin PBXBuildFile section */
 		650231B129E7F45600C13139 /* listExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231B029E7F45600C13139 /* listExpense.json */; };
-		650231B329E7F62D00C13139 /* FeatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231B229E7F62D00C13139 /* FeatureModel.swift */; };
-		650231B929E80E3300C13139 /* FeatureCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231B829E80E3300C13139 /* FeatureCardView.swift */; };
-		650231BB29E80E3F00C13139 /* FeatureCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650231BA29E80E3F00C13139 /* FeatureCardView.xib */; };
-		650231C229E814F900C13139 /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231C029E814F900C13139 /* FeaturesViewController.swift */; };
-		650231C329E814F900C13139 /* FeaturesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650231C129E814F900C13139 /* FeaturesViewController.xib */; };
-		650231C529E8171C00C13139 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231C429E8171C00C13139 /* UIViewExtension.swift */; };
 		650231C729E834F300C13139 /* splitExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231C629E834F200C13139 /* splitExpense.json */; };
 		650231C929E835E700C13139 /* analyzeExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231C829E835E600C13139 /* analyzeExpense.json */; };
+		65321D2629E9950300BA3E93 /* SpendoraAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */; };
+		65321D2F29E995B100BA3E93 /* Onboarding.h in Headers */ = {isa = PBXBuildFile; fileRef = 65321D2E29E995B100BA3E93 /* Onboarding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65321D4329E9965D00BA3E93 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 65321D4229E9965D00BA3E93 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65321D5229E9982300BA3E93 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562EF9829E7DAF500D6E1D5 /* UIViewControllerExtension.swift */; };
+		65321D5329E9986E00BA3E93 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231C429E8171C00C13139 /* UIViewExtension.swift */; };
+		65321D5529E998E500BA3E93 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */; };
+		65321D5829E9992800BA3E93 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D5729E9992800BA3E93 /* LottieView.swift */; };
+		65321D5B29E9999F00BA3E93 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 65321D5A29E9999F00BA3E93 /* Lottie */; };
+		65321D5C29E999FE00BA3E93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562EF9529E7D96C00D6E1D5 /* Constants.swift */; };
+		65321D6829E99AD100BA3E93 /* FeatureCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231B829E80E3300C13139 /* FeatureCardView.swift */; };
+		65321D6929E99AD100BA3E93 /* FeatureCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650231BA29E80E3F00C13139 /* FeatureCardView.xib */; };
+		65321D6A29E99AD100BA3E93 /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231C029E814F900C13139 /* FeaturesViewController.swift */; };
+		65321D6B29E99AD100BA3E93 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6557311A29E45C34008BEA22 /* OnboardingViewController.xib */; };
+		65321D6C29E99AD100BA3E93 /* TncPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557312A29E49673008BEA22 /* TncPrivacyViewController.swift */; };
+		65321D6D29E99AD100BA3E93 /* FeaturesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650231C129E814F900C13139 /* FeaturesViewController.xib */; };
+		65321D6E29E99AD100BA3E93 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557312829E49133008BEA22 /* Module.swift */; };
+		65321D6F29E99AD100BA3E93 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557311929E45C34008BEA22 /* OnboardingViewController.swift */; };
+		65321D7029E99AD100BA3E93 /* TncPrivacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6557312B29E49673008BEA22 /* TncPrivacyViewController.xib */; };
+		65321D7129E99AD100BA3E93 /* FeatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231B229E7F62D00C13139 /* FeatureModel.swift */; };
+		65321D7329E99BAE00BA3E93 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D7229E99BAE00BA3E93 /* UIViewControllerExtension.swift */; };
+		65321D7429E99CB000BA3E93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
+		65321D7529E99CB100BA3E93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
+		65321D7D29E99EAD00BA3E93 /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D7B29E99E6200BA3E93 /* OnboardingBuilder.swift */; };
+		65321D7F29E99F9700BA3E93 /* FeaturesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D7E29E99F9700BA3E93 /* FeaturesBuilder.swift */; };
+		65321D8129E9A02000BA3E93 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D8029E9A02000BA3E93 /* OnboardingPresenter.swift */; };
+		65321D8329E9A02A00BA3E93 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D8229E9A02A00BA3E93 /* OnboardingRouter.swift */; };
 		6557310229E4581D008BEA22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557310129E4581D008BEA22 /* AppDelegate.swift */; };
 		6557310C29E4581D008BEA22 /* Spendora.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6557310A29E4581D008BEA22 /* Spendora.xcdatamodeld */; };
 		6557310E29E45822008BEA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6557310D29E45822008BEA22 /* Assets.xcassets */; };
 		6557311129E45822008BEA22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6557310F29E45822008BEA22 /* LaunchScreen.storyboard */; };
-		6557311B29E45C34008BEA22 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557311929E45C34008BEA22 /* OnboardingViewController.swift */; };
-		6557311C29E45C34008BEA22 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6557311A29E45C34008BEA22 /* OnboardingViewController.xib */; };
 		6557311F29E45D53008BEA22 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6557311E29E45D53008BEA22 /* Lottie */; };
-		6557312229E45D81008BEA22 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557312129E45D81008BEA22 /* LottieView.swift */; };
 		6557312529E460D9008BEA22 /* finance.json in Resources */ = {isa = PBXBuildFile; fileRef = 6557312429E460D9008BEA22 /* finance.json */; };
 		6557312729E47320008BEA22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
-		6557312929E49133008BEA22 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557312829E49133008BEA22 /* Module.swift */; };
-		6557312C29E49674008BEA22 /* TncPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557312A29E49673008BEA22 /* TncPrivacyViewController.swift */; };
-		6557312D29E49674008BEA22 /* TncPrivacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6557312B29E49673008BEA22 /* TncPrivacyViewController.xib */; };
-		6562EF9629E7D96C00D6E1D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562EF9529E7D96C00D6E1D5 /* Constants.swift */; };
-		6562EF9929E7DAF500D6E1D5 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562EF9829E7DAF500D6E1D5 /* UIViewControllerExtension.swift */; };
-		6562EF9B29E7E12800D6E1D5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65321D3929E995FC00BA3E93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655730F629E4581D008BEA22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65321D2B29E995B000BA3E93;
+			remoteInfo = Onboarding;
+		};
+		65321D4A29E9969900BA3E93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655730F629E4581D008BEA22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65321D3F29E9965D00BA3E93;
+			remoteInfo = Utilities;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		650231B029E7F45600C13139 /* listExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listExpense.json; sourceTree = "<group>"; };
@@ -44,6 +72,17 @@
 		650231C429E8171C00C13139 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		650231C629E834F200C13139 /* splitExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splitExpense.json; sourceTree = "<group>"; };
 		650231C829E835E600C13139 /* analyzeExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = analyzeExpense.json; sourceTree = "<group>"; };
+		65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendoraAssembler.swift; sourceTree = "<group>"; };
+		65321D2C29E995B000BA3E93 /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65321D2E29E995B100BA3E93 /* Onboarding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Onboarding.h; sourceTree = "<group>"; };
+		65321D4029E9965D00BA3E93 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65321D4229E9965D00BA3E93 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		65321D5729E9992800BA3E93 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		65321D7229E99BAE00BA3E93 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		65321D7B29E99E6200BA3E93 /* OnboardingBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
+		65321D7E29E99F9700BA3E93 /* FeaturesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesBuilder.swift; sourceTree = "<group>"; };
+		65321D8029E9A02000BA3E93 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		65321D8229E9A02A00BA3E93 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 		655730FE29E4581D008BEA22 /* Spendora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6557310129E4581D008BEA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6557310B29E4581D008BEA22 /* Spendora.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spendora.xcdatamodel; sourceTree = "<group>"; };
@@ -52,7 +91,6 @@
 		6557311229E45822008BEA22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6557311929E45C34008BEA22 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		6557311A29E45C34008BEA22 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
-		6557312129E45D81008BEA22 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		6557312429E460D9008BEA22 /* finance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = finance.json; sourceTree = "<group>"; };
 		6557312629E47320008BEA22 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		6557312829E49133008BEA22 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
@@ -64,6 +102,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		65321D2929E995B000BA3E93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65321D3D29E9965D00BA3E93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65321D5B29E9999F00BA3E93 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		655730FB29E4581D008BEA22 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,11 +128,112 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65321D2429E994D800BA3E93 /* AppAssembler */ = {
+			isa = PBXGroup;
+			children = (
+				65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */,
+			);
+			path = AppAssembler;
+			sourceTree = "<group>";
+		};
+		65321D2D29E995B100BA3E93 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				65321D7A29E99DA700BA3E93 /* TncPrivacy */,
+				65321D7629E99D3200BA3E93 /* Onboarding */,
+				65321D7729E99D3900BA3E93 /* Features */,
+				6557312829E49133008BEA22 /* Module.swift */,
+				65321D2E29E995B100BA3E93 /* Onboarding.h */,
+			);
+			name = Onboarding;
+			path = ../Onboarding;
+			sourceTree = "<group>";
+		};
+		65321D4129E9965D00BA3E93 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				65321D5629E9992800BA3E93 /* LottieView */,
+				6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */,
+				650231C429E8171C00C13139 /* UIViewExtension.swift */,
+				6562EF9529E7D96C00D6E1D5 /* Constants.swift */,
+				65321D4229E9965D00BA3E93 /* Utilities.h */,
+				65321D7229E99BAE00BA3E93 /* UIViewControllerExtension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		65321D4F29E9981500BA3E93 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6562EF9829E7DAF500D6E1D5 /* UIViewControllerExtension.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		65321D5629E9992800BA3E93 /* LottieView */ = {
+			isa = PBXGroup;
+			children = (
+				65321D5729E9992800BA3E93 /* LottieView.swift */,
+			);
+			path = LottieView;
+			sourceTree = "<group>";
+		};
+		65321D5929E9999F00BA3E93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65321D7629E99D3200BA3E93 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				6557311929E45C34008BEA22 /* OnboardingViewController.swift */,
+				6557311A29E45C34008BEA22 /* OnboardingViewController.xib */,
+				65321D7B29E99E6200BA3E93 /* OnboardingBuilder.swift */,
+				65321D8029E9A02000BA3E93 /* OnboardingPresenter.swift */,
+				65321D8229E9A02A00BA3E93 /* OnboardingRouter.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		65321D7729E99D3900BA3E93 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				65321D7829E99D7100BA3E93 /* Views */,
+				650231B229E7F62D00C13139 /* FeatureModel.swift */,
+				650231C029E814F900C13139 /* FeaturesViewController.swift */,
+				650231C129E814F900C13139 /* FeaturesViewController.xib */,
+				65321D7E29E99F9700BA3E93 /* FeaturesBuilder.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		65321D7829E99D7100BA3E93 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				650231B829E80E3300C13139 /* FeatureCardView.swift */,
+				650231BA29E80E3F00C13139 /* FeatureCardView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		65321D7A29E99DA700BA3E93 /* TncPrivacy */ = {
+			isa = PBXGroup;
+			children = (
+				6557312A29E49673008BEA22 /* TncPrivacyViewController.swift */,
+				6557312B29E49673008BEA22 /* TncPrivacyViewController.xib */,
+			);
+			path = TncPrivacy;
+			sourceTree = "<group>";
+		};
 		655730F529E4581D008BEA22 = {
 			isa = PBXGroup;
 			children = (
 				6557310029E4581D008BEA22 /* Spendora */,
+				65321D4129E9965D00BA3E93 /* Utilities */,
 				655730FF29E4581D008BEA22 /* Products */,
+				65321D5929E9999F00BA3E93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				655730FE29E4581D008BEA22 /* Spendora.app */,
+				65321D2C29E995B000BA3E93 /* Onboarding.framework */,
+				65321D4029E9965D00BA3E93 /* Utilities.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,44 +250,18 @@
 		6557310029E4581D008BEA22 /* Spendora */ = {
 			isa = PBXGroup;
 			children = (
-				6562EF9729E7DADF00D6E1D5 /* Extensions */,
+				65321D4F29E9981500BA3E93 /* Shared */,
+				65321D2D29E995B100BA3E93 /* Onboarding */,
+				65321D2429E994D800BA3E93 /* AppAssembler */,
 				6557312329E460C9008BEA22 /* AnimationAssets */,
-				6557312029E45D60008BEA22 /* LottieView */,
-				6557311829E45A6A008BEA22 /* Onboarding */,
 				6557310129E4581D008BEA22 /* AppDelegate.swift */,
 				6557310D29E45822008BEA22 /* Assets.xcassets */,
 				6557310F29E45822008BEA22 /* LaunchScreen.storyboard */,
 				6557311229E45822008BEA22 /* Info.plist */,
 				6557310A29E4581D008BEA22 /* Spendora.xcdatamodeld */,
 				6557312629E47320008BEA22 /* Localizable.strings */,
-				6562EF9529E7D96C00D6E1D5 /* Constants.swift */,
 			);
 			path = Spendora;
-			sourceTree = "<group>";
-		};
-		6557311829E45A6A008BEA22 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				6557311929E45C34008BEA22 /* OnboardingViewController.swift */,
-				6557311A29E45C34008BEA22 /* OnboardingViewController.xib */,
-				6557312829E49133008BEA22 /* Module.swift */,
-				6557312A29E49673008BEA22 /* TncPrivacyViewController.swift */,
-				6557312B29E49673008BEA22 /* TncPrivacyViewController.xib */,
-				650231B229E7F62D00C13139 /* FeatureModel.swift */,
-				650231B829E80E3300C13139 /* FeatureCardView.swift */,
-				650231BA29E80E3F00C13139 /* FeatureCardView.xib */,
-				650231C029E814F900C13139 /* FeaturesViewController.swift */,
-				650231C129E814F900C13139 /* FeaturesViewController.xib */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		6557312029E45D60008BEA22 /* LottieView */ = {
-			isa = PBXGroup;
-			children = (
-				6557312129E45D81008BEA22 /* LottieView.swift */,
-			);
-			path = LottieView;
 			sourceTree = "<group>";
 		};
 		6557312329E460C9008BEA22 /* AnimationAssets */ = {
@@ -145,19 +275,68 @@
 			path = AnimationAssets;
 			sourceTree = "<group>";
 		};
-		6562EF9729E7DADF00D6E1D5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				6562EF9829E7DAF500D6E1D5 /* UIViewControllerExtension.swift */,
-				6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */,
-				650231C429E8171C00C13139 /* UIViewExtension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		65321D2729E995B000BA3E93 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65321D2F29E995B100BA3E93 /* Onboarding.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65321D3B29E9965D00BA3E93 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65321D4329E9965D00BA3E93 /* Utilities.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		65321D2B29E995B000BA3E93 /* Onboarding */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65321D3029E995B100BA3E93 /* Build configuration list for PBXNativeTarget "Onboarding" */;
+			buildPhases = (
+				65321D2729E995B000BA3E93 /* Headers */,
+				65321D2829E995B000BA3E93 /* Sources */,
+				65321D2929E995B000BA3E93 /* Frameworks */,
+				65321D2A29E995B000BA3E93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65321D4B29E9969900BA3E93 /* PBXTargetDependency */,
+			);
+			name = Onboarding;
+			productName = Onboarding;
+			productReference = 65321D2C29E995B000BA3E93 /* Onboarding.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		65321D3F29E9965D00BA3E93 /* Utilities */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65321D4429E9965D00BA3E93 /* Build configuration list for PBXNativeTarget "Utilities" */;
+			buildPhases = (
+				65321D3B29E9965D00BA3E93 /* Headers */,
+				65321D3C29E9965D00BA3E93 /* Sources */,
+				65321D3D29E9965D00BA3E93 /* Frameworks */,
+				65321D3E29E9965D00BA3E93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Utilities;
+			packageProductDependencies = (
+				65321D5A29E9999F00BA3E93 /* Lottie */,
+			);
+			productName = Utilities;
+			productReference = 65321D4029E9965D00BA3E93 /* Utilities.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		655730FD29E4581D008BEA22 /* Spendora */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6557311529E45822008BEA22 /* Build configuration list for PBXNativeTarget "Spendora" */;
@@ -169,6 +348,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				65321D3A29E995FC00BA3E93 /* PBXTargetDependency */,
 			);
 			name = Spendora;
 			packageProductDependencies = (
@@ -188,6 +368,12 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					65321D2B29E995B000BA3E93 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					65321D3F29E9965D00BA3E93 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					655730FD29E4581D008BEA22 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -210,53 +396,104 @@
 			projectRoot = "";
 			targets = (
 				655730FD29E4581D008BEA22 /* Spendora */,
+				65321D2B29E995B000BA3E93 /* Onboarding */,
+				65321D3F29E9965D00BA3E93 /* Utilities */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		65321D2A29E995B000BA3E93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65321D7429E99CB000BA3E93 /* Localizable.strings in Resources */,
+				65321D6929E99AD100BA3E93 /* FeatureCardView.xib in Resources */,
+				65321D6D29E99AD100BA3E93 /* FeaturesViewController.xib in Resources */,
+				65321D6B29E99AD100BA3E93 /* OnboardingViewController.xib in Resources */,
+				65321D7029E99AD100BA3E93 /* TncPrivacyViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65321D3E29E9965D00BA3E93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65321D7529E99CB100BA3E93 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		655730FC29E4581D008BEA22 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				650231C929E835E700C13139 /* analyzeExpense.json in Resources */,
 				6557312729E47320008BEA22 /* Localizable.strings in Resources */,
-				650231C329E814F900C13139 /* FeaturesViewController.xib in Resources */,
-				6557312D29E49674008BEA22 /* TncPrivacyViewController.xib in Resources */,
 				650231C729E834F300C13139 /* splitExpense.json in Resources */,
 				650231B129E7F45600C13139 /* listExpense.json in Resources */,
 				6557311129E45822008BEA22 /* LaunchScreen.storyboard in Resources */,
 				6557312529E460D9008BEA22 /* finance.json in Resources */,
-				650231BB29E80E3F00C13139 /* FeatureCardView.xib in Resources */,
 				6557310E29E45822008BEA22 /* Assets.xcassets in Resources */,
-				6557311C29E45C34008BEA22 /* OnboardingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		65321D2829E995B000BA3E93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65321D6829E99AD100BA3E93 /* FeatureCardView.swift in Sources */,
+				65321D6E29E99AD100BA3E93 /* Module.swift in Sources */,
+				65321D6F29E99AD100BA3E93 /* OnboardingViewController.swift in Sources */,
+				65321D8129E9A02000BA3E93 /* OnboardingPresenter.swift in Sources */,
+				65321D7D29E99EAD00BA3E93 /* OnboardingBuilder.swift in Sources */,
+				65321D8329E9A02A00BA3E93 /* OnboardingRouter.swift in Sources */,
+				65321D6C29E99AD100BA3E93 /* TncPrivacyViewController.swift in Sources */,
+				65321D7129E99AD100BA3E93 /* FeatureModel.swift in Sources */,
+				65321D7F29E99F9700BA3E93 /* FeaturesBuilder.swift in Sources */,
+				65321D6A29E99AD100BA3E93 /* FeaturesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65321D3C29E9965D00BA3E93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65321D5329E9986E00BA3E93 /* UIViewExtension.swift in Sources */,
+				65321D5529E998E500BA3E93 /* StringExtension.swift in Sources */,
+				65321D7329E99BAE00BA3E93 /* UIViewControllerExtension.swift in Sources */,
+				65321D5829E9992800BA3E93 /* LottieView.swift in Sources */,
+				65321D5C29E999FE00BA3E93 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		655730FA29E4581D008BEA22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				650231C529E8171C00C13139 /* UIViewExtension.swift in Sources */,
 				6557310C29E4581D008BEA22 /* Spendora.xcdatamodeld in Sources */,
-				650231B929E80E3300C13139 /* FeatureCardView.swift in Sources */,
-				6557312C29E49674008BEA22 /* TncPrivacyViewController.swift in Sources */,
-				6557311B29E45C34008BEA22 /* OnboardingViewController.swift in Sources */,
 				6557310229E4581D008BEA22 /* AppDelegate.swift in Sources */,
-				6562EF9929E7DAF500D6E1D5 /* UIViewControllerExtension.swift in Sources */,
-				6562EF9B29E7E12800D6E1D5 /* StringExtension.swift in Sources */,
-				6562EF9629E7D96C00D6E1D5 /* Constants.swift in Sources */,
-				6557312929E49133008BEA22 /* Module.swift in Sources */,
-				650231C229E814F900C13139 /* FeaturesViewController.swift in Sources */,
-				6557312229E45D81008BEA22 /* LottieView.swift in Sources */,
-				650231B329E7F62D00C13139 /* FeatureModel.swift in Sources */,
+				65321D5229E9982300BA3E93 /* UIViewControllerExtension.swift in Sources */,
+				65321D2629E9950300BA3E93 /* SpendoraAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65321D3A29E995FC00BA3E93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65321D2B29E995B000BA3E93 /* Onboarding */;
+			targetProxy = 65321D3929E995FC00BA3E93 /* PBXContainerItemProxy */;
+		};
+		65321D4B29E9969900BA3E93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65321D3F29E9965D00BA3E93 /* Utilities */;
+			targetProxy = 65321D4A29E9969900BA3E93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6557310F29E45822008BEA22 /* LaunchScreen.storyboard */ = {
@@ -270,6 +507,150 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		65321D3129E995B100BA3E93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59SR2WBZJT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Onboarding;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		65321D3229E995B100BA3E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59SR2WBZJT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Onboarding;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		65321D4529E9965D00BA3E93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59SR2WBZJT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Utilities;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		65321D4629E9965D00BA3E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59SR2WBZJT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Utilities;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		6557311329E45822008BEA22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -441,6 +822,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		65321D3029E995B100BA3E93 /* Build configuration list for PBXNativeTarget "Onboarding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65321D3129E995B100BA3E93 /* Debug */,
+				65321D3229E995B100BA3E93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65321D4429E9965D00BA3E93 /* Build configuration list for PBXNativeTarget "Utilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65321D4529E9965D00BA3E93 /* Debug */,
+				65321D4629E9965D00BA3E93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		655730F929E4581D008BEA22 /* Build configuration list for PBXProject "Spendora" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -473,6 +872,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		65321D5A29E9999F00BA3E93 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6557311D29E45D53008BEA22 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
 		6557311E29E45D53008BEA22 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6557311D29E45D53008BEA22 /* XCRemoteSwiftPackageReference "lottie-spm" */;

@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class Constants {
-    enum UserdefaultKeys: String {
+public final class Constants {
+    public enum UserdefaultKeys: String {
         case isOnboarded
     }
 }

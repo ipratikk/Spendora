@@ -2,7 +2,7 @@
 //  UIViewExt.swift
 //  Spendora
 //
-//  Created by Goel, Pratik | RIEPL on 13/04/23.
+//  Created by Pratik Goel on 13/04/23.
 //
 
 import Foundation

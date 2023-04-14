@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreData
+import Onboarding
+import Utilities
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,11 +33,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func startOnboardingFlow() {
         let isOnboarded = defaults.bool(forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
         guard isOnboarded else {
-            let onboardingVC = OnboardingViewController()
+            let onboardingVC = AppAssembler.onboardingModule()
             onboardingVC.makeRootViewController()
             return
         }
-        let featuresVC = FeaturesViewController()
+        let featuresVC = FeaturesViewController.initFromNib()
         featuresVC.makeRootViewController()
     }
 
