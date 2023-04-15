@@ -29,7 +29,7 @@ commands:
       - store_artifacts:
           path: /tmp/simulator-build
 references:
-  container_config:
+  container_config: &container_config
     macos:
       xcode: 14.2.0
     resource_class: medium
@@ -43,13 +43,7 @@ references:
       at: /tmp/workspace
 jobs:
   carthage-CI-workflow-test:
-    macos:
-      xcode: 14.2.0
-    resource_class: large
-    working_directory: /Users/distiller/project
-    shell: /bin/bash --login -o pipefail
-    environment:
-      FL_OUTPUT_DIR: output
+    <<: *container_config
     steps:
       - setup_test_environment
       - run: rm -rf ~/Library/Caches/carthage
@@ -66,13 +60,7 @@ jobs:
       - store_artifacts:
           path: /tmp/carthage-xcodebuild-logs
   build-and-scan-test:
-    macos:
-      xcode: 14.2.0
-    resource_class: large
-    working_directory: /Users/distiller/project
-    shell: /bin/bash --login -o pipefail
-    environment:
-      FL_OUTPUT_DIR: output
+    <<: *container_config
     steps:
       - setup_test_environment
       - run:
