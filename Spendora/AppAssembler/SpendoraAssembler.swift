@@ -12,7 +12,7 @@ import Onboarding
 public final class AppAssembler {
     static func onboardingModule() -> UIViewController {
         return OnboardingBuilder.build(
-            submodules: ( tncPrivacy: TncPrivacyBuilder.build,())
+            submodules: ( tncPrivacy: TncPrivacyBuilder.build, ())
         )
     }
 

@@ -32,7 +32,6 @@ class TncPrivacyViewController: UIViewController {
         tncType = type
     }
 
-
     @IBAction func dismissView(_ sender: Any) {
         dismiss(animated: true)
     }

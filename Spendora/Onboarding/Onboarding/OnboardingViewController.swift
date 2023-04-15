@@ -30,7 +30,6 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var tncLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
 
-
     private var presenter: Presentation!
     var presenterProducer: ((Presentation.Input) -> Presentation)!
 
@@ -125,9 +124,9 @@ class OnboardingViewController: UIViewController {
         let locationOfTouchInLabel = sender.location(in: label)
         let textBoundingBox = layoutManager.usedRect(for: textContainer)
         let textContainerOffset = CGPoint(x: (label.bounds.width - textBoundingBox.width) * 0.5 - textBoundingBox.minX,
-                                          y: (label.bounds.height - textBoundingBox.height) * 0.5 - textBoundingBox.minY);
+                                          y: (label.bounds.height - textBoundingBox.height) * 0.5 - textBoundingBox.minY)
         let locationOfTouchInTextContainer = CGPoint(x: locationOfTouchInLabel.x - textContainerOffset.x,
-                                                     y: locationOfTouchInLabel.y - textContainerOffset.y);
+                                                     y: locationOfTouchInLabel.y - textContainerOffset.y)
         let indexOfCharacter = layoutManager.characterIndex(for: locationOfTouchInTextContainer,
                                                             in: textContainer,
                                                             fractionOfDistanceBetweenInsertionPoints: nil)

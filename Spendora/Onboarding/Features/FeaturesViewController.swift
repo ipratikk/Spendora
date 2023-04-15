@@ -13,7 +13,6 @@ public class FeaturesViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var continueBtn: UIButton!
 
-
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -47,7 +46,6 @@ public class FeaturesViewController: UIViewController {
         continueBtn.setImage(Module.Images.rightArrow, for: .normal)
         continueBtn.tintColor = .white
     }
-
 
     func addFeatureVC(feature: Feature, offset: Int) {
         let featureVC = FeatureCardView.loadFromNib()
