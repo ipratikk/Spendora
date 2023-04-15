@@ -1,27 +1,92 @@
+---
 version: 2.1
-
-jobs:
-  build-and-test:
+commands:
+  setup_test_environment:
+    steps:
+      - checkout
+      - run: git lfs pull
+      - restore_cache:
+          key: 1-gemsfile-{{ checksum "Gemfile.lock" }}
+      - run: bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gemsfile-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - restore_cache:
+          key: 1-spendora-{{ checksum "Cartfile.resolved" }}
+  run_and_save_test_results:
+    steps:
+      - run:
+          name: scan tests
+          command: bundle exec fastlane ios ghc_scan_test
+          no_output_timeout: 30m
+      - store_test_results:
+          path: build/fastlane/scan_output
+      - store_artifacts:
+          path: ~/Library/Logs/DiagnosticReports
+      - store_artifacts:
+          path: OneAppTests/Snapshots/FailReports
+      - store_artifacts:
+          path: /tmp/simulator-build
+references:
+  container_config:
     macos:
-      xcode: "14.2.0"
+      xcode: 14.2.0
+    resource_class: large
+    working_directory: /Users/distiller/project
+    shell: /bin/bash --login -o pipefail
+    environment:
+      FL_OUTPUT_DIR: output
+  workspace_root: /tmp/workspace
+  attach_workspace:
+    attach_workspace:
+      at: /tmp/workspace
+jobs:
+  carthage-CI-workflow-test:
+    macos:
+      xcode: 14.2.0
+    resource_class: large
+    working_directory: /Users/distiller/project
+    shell: /bin/bash --login -o pipefail
     environment:
       FL_OUTPUT_DIR: output
     steps:
-      - checkout
+      - setup_test_environment
+      - run: rm -rf ~/Library/Caches/carthage
+      - run: rm -rf ~/Library/Caches/org.carthage.CarthageKit
+      - run: echo "HOMEBREW_NO_AUTO_UPDATE=1" >> $BASH_ENV
       - run:
-          name: Build and run tests
-          command: fastlane scan
-          environment:
-            SCAN_DEVICE: iPhone 14 (16.2)
-            SCAN_SCHEME: Spendora
-      - store_test_results:
-          path: output/scan
+          name: Carthage workflow
+          command: bundle exec fastlane ios carthage_cache_update
+          no_output_timeout: 30m
+      - save_cache:
+          key: 1-spendora-{{ checksum "Cartfile.resolved" }}
+          paths:
+            - Carthage
       - store_artifacts:
-          path: output
-
-
+          path: /tmp/carthage-xcodebuild-logs
+  build-and-scan-test:
+    macos:
+      xcode: 14.2.0
+    resource_class: large
+    working_directory: /Users/distiller/project
+    shell: /bin/bash --login -o pipefail
+    environment:
+      FL_OUTPUT_DIR: output
+    steps:
+      - setup_test_environment
+      - run:
+          name: Swiftlint
+          command: bundle exec fastlane ios lint
+          no_output_timeout: 5m
+      - run_and_save_test_results
+      - store_artifacts:
+          path: build/fastlane/xcov_output
 workflows:
   version: 2
   build-and-test:
     jobs:
-      - build-and-test
+      - carthage-CI-workflow-test
+      - build-and-scan-test:
+          requires:
+            - carthage-CI-workflow-test

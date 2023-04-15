@@ -106,7 +106,7 @@ platform :ios do
   # Allow `sh` to run from root folder, not fastlane folder
 
    Dir.chdir ".." do
-    sh("./carthage.sh update --use-xcframeworks")
+    sh("carthage update --use-xcframeworks")
    end
 
   end
@@ -114,7 +114,7 @@ platform :ios do
   desc "build dependencies missing a .version file or that where not found in the cache"
   lane :carthage_cache_bootstrap do |options|
     Dir.chdir ".." do
-     sh("./carthage.sh bootstrap --use-xcframeworks")
+     sh("carthage bootstrap --use-xcframeworks")
     end
   end
 
