@@ -1,0 +1,126 @@
+# fastlane/Fastfile
+
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+    setup_circle_ci
+    # get_changelog_from_git
+    get_version_from_date
+    ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "300"
+    ENV["FASTLANE_XCODE_LIST_TIMEOUT"] = "300"
+    ENV["FASTLANE_EXPLICIT_OPEN_SIMULATOR"] = "2"
+  end
+
+  desc "SwiftLint check"
+  lane :lint do |options|
+    swiftlint(
+      mode: :lint,
+      strict: true,
+      executable: "./Pods/SwiftLint/swiftlint",
+      quiet: true,
+      config_file: ".swiftlint.yml",
+      ignore_exit_status: false
+    )
+  end
+
+  desc "ghc scan test"
+  lane :ghc_scan_test do |options|
+    # lint(options)
+    # Must clear derivd data, otherwise fail
+    clear_derived_data(derived_data_path: "build/fastlane/derived_data")
+    # split scan into 2 operations for tricky performance improvement
+    build_for_test()
+    get_simulator_app_file()
+    test_without_build()
+    #generate_test_report()  #Commented out slather as now coverage reporting will be done from xcov in integration with danger.
+  end
+
+  # Currently xcov reporting is done from danger (see dangerfile), however this lane is present for local testing and generating of coverage report.
+  desc "xcov report"
+  lane :xcov_report do |options|
+    xcov(
+      workspace: "Spendora.xcworkspace",
+      scheme: "Spendora",
+      include_targets: "Spendora.app",
+      include_test_targets: false,
+      output_directory: "build/fastlane/xcov_output",
+      ignore_file_path: "fastlane/.xcvignore",
+      derived_data_path: "build/fastlane/derived_data",
+    )
+  end
+
+  desc "build for test"
+  lane :build_for_test do |options|
+    scan(
+      clean: true,
+      build_for_testing: true,
+      code_coverage: true,
+      workspace: "./Spendora.xcworkspace",
+      scheme: 'Spendora',
+      device: 'iPhone 14 (16.2)',
+      derived_data_path: "build/fastlane/derived_data"
+    )
+  end
+
+  desc "test without building"
+  lane :test_without_build do |options|
+    scan(
+      test_without_building: true,
+      skip_build: true,
+      code_coverage: true,
+      prelaunch_simulator: true,
+      workspace: "./Spendora.xcworkspace",
+      scheme: 'Spendora',
+      device: 'iPhone 14 (16.2)',
+      derived_data_path: "build/fastlane/derived_data",
+      buildlog_path: "build/fastlane/scan_build_log",
+      output_directory: "build/fastlane/scan_output"
+    )
+  end
+
+  desc "get app file for simulator"
+  lane :get_simulator_app_file do
+    Dir.chdir("..") do
+      app_file_path = sh("find", 'build/fastlane/derived_data', "-name", "*.app", "-type", "d").strip()
+      sh("mkdir", "-p", "/tmp/simulator-build")
+      sh("cd " + app_file_path + "; zip -r /tmp/simulator-build/Spendora.app.zip *")
+    end
+  end
+
+  desc "generate test coverage report"
+  lane :generate_test_report do |options|
+    slather(
+      output_directory: './artifacts/coverage',
+      scheme: 'Spendora',
+      cobertura_xml: true,
+      proj: 'Spendora.xcodeproj',
+      workspace: 'Spendora.xcworkspace',
+      build_directory: "build/fastlane/derived_data",
+      output_directory: "build/fastlane/slather",
+      ignore: ["Pods/*", "Carthage/*"])
+  end
+
+  desc "build dependencies missing a .version file or that where not found in the cache"
+  lane :carthage_cache_update do |options|
+  # Allow `sh` to run from root folder, not fastlane folder
+
+   Dir.chdir ".." do
+    sh("carthage update --use-xcframeworks")
+   end
+
+  end
+
+  desc "build dependencies missing a .version file or that where not found in the cache"
+  lane :carthage_cache_bootstrap do |options|
+    Dir.chdir ".." do
+     sh("carthage bootstrap --use-xcframeworks")
+    end
+  end
+
+  desc "return current swift version"
+  lane :current_swift_version do |options|
+    swift_version = sh("xcrun swift --version | head -1 | sed 's/.*\((.*)\).*/\1/' | tr -d \"()\" | tr \" \" \"-\"")
+    puts swift_version
+  end
+end

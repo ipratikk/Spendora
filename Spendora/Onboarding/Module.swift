@@ -22,6 +22,8 @@ final class Module {
         static let termsAndConditionsLastUpdated = NSLocalizedString("onboarding.tnc.terms.lastUpdated", comment: "")
         static let termsAndConditionsEmail = NSLocalizedString("onboarding.tnc.terms.email", comment: "")
 
+        static let privacyPolicy = NSLocalizedString("onboarding.tnc.privacyPolicy", comment: "")
+
         enum Alert {
             static let message = NSLocalizedString("onboarding.alert.message", comment: "")
         }

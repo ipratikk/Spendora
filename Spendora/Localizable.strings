@@ -52,7 +52,59 @@ Contact Us
 If you have any questions about these Terms, please contact us at support@spendora.com.";
 "onboarding.tnc.terms.lastUpdated" = "Last updated: April 10, 2023";
 "onboarding.tnc.terms.email" = "support@spendora.com";
-"onboarding.tnc.privacyPolicy" = "";
+
+"onboarding.tnc.privacyPolicy" = "
+Effective Date: April 10, 2023
+
+This Privacy Policy describes the practices of the Spendora mobile application (“App”) in connection with the collection, use, and disclosure of personal information that is obtained through the use of the App. This Privacy Policy applies solely to information collected through the App.
+
+Personal Information We Collect
+We collect the following personal information about you through the App:
+
+Information You Provide. When you register to use the App or otherwise interact with the App, we collect information you provide such as your name, email address, and other contact information.
+
+Usage Information. We collect information about your use of the App, including the features you access, the pages you visit, and the actions you take. We also collect information about the device you are using, such as its model, operating system, and browser type.
+
+Location Information. With your consent, we may collect information about your location through the App.
+
+How We Use Your Personal Information
+We may use the personal information we collect from you for the following purposes:
+
+To provide and improve the App and our services.
+
+To communicate with you about the App and our services.
+
+To personalize your experience with the App.
+
+To analyze and understand how the App is used and to develop new features.
+
+To comply with legal obligations and to protect our legal rights.
+
+How We Share Your Personal Information
+We may share your personal information with the following third parties:
+
+Service Providers. We may share your personal information with third-party service providers who perform services on our behalf, such as hosting the App, analyzing data, and providing customer support.
+
+Business Transfers. If we are involved in a merger, acquisition, financing, or sale of all or a portion of our assets, your personal information may be transferred as part of that transaction.
+
+Legal Requirements. We may disclose your personal information if required to do so by law or in response to a subpoena or court order, or if we believe that disclosure is reasonably necessary to protect our rights, property, or safety, or the rights, property, or safety of others.
+
+Your Choices
+You can control the personal information we collect from you through the App in the following ways:
+
+Location Information. You can choose to allow or deny the collection of location information through the App.
+
+Marketing Communications. You can opt out of receiving marketing communications from us by following the instructions in those communications.
+
+Data Security
+We take reasonable measures to protect your personal information from unauthorized access, use, and disclosure.
+
+Changes to this Privacy Policy
+We may update this Privacy Policy from time to time. If we make material changes to this Privacy Policy, we will notify you by email or by posting a notice in the App prior to the effective date of the changes.
+
+Contact Us
+If you have any questions or concerns about this Privacy Policy, please contact us at support@spendora.com.";
+
 "onboarding.alert.message" = "Please accept the Terms & Conditions and Privacy Policy before proceeding";
 
 "features.list.expenses.title" = "List all your expenses";

@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreData
+import Onboarding
+import Utilities
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let defaults = UserDefaults.standard
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -31,15 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func startOnboardingFlow() {
         let isOnboarded = defaults.bool(forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
         guard isOnboarded else {
-            let onboardingVC = OnboardingViewController()
+            let onboardingVC = AppAssembler.onboardingModule()
             onboardingVC.makeRootViewController()
             return
         }
-        let featuresVC = FeaturesViewController()
+        let featuresVC = FeaturesViewController.initFromNib()
         featuresVC.makeRootViewController()
     }
-
-
 
     // MARK: - Core Data stack
 
@@ -51,11 +50,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          error conditions that could cause the creation of the store to fail.
         */
         let container = NSPersistentCloudKitContainer(name: "Spendora")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
+
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
