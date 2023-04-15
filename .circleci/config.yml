@@ -32,7 +32,7 @@ references:
   container_config:
     macos:
       xcode: 14.2.0
-    resource_class: large
+    resource_class: medium
     working_directory: /Users/distiller/project
     shell: /bin/bash --login -o pipefail
     environment:
