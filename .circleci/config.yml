@@ -9,15 +9,14 @@ jobs:
       - checkout
       - run:
           name: Build and run tests
-          command: fastlane ios ghc_scan_test
+          command: fastlane scan
+          environment:
+            SCAN_DEVICE=iPhone 14 (16.2)
+            SCAN_SCHEME=SpendoraTests
       - store_test_results:
-          path: build/fastlane/scan_output
+          path: output/scan
       - store_artifacts:
-          path: ~/Library/Logs/DiagnosticReports
-      - store_artifacts:
-          path: OneAppTests/Snapshots/FailReports
-      - store_artifacts:
-          path: /tmp/simulator-build
+          path: output
 
 workflows:
   version: 2
