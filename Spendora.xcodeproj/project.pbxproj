@@ -10,6 +10,10 @@
 		650231B129E7F45600C13139 /* listExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231B029E7F45600C13139 /* listExpense.json */; };
 		650231C729E834F300C13139 /* splitExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231C629E834F200C13139 /* splitExpense.json */; };
 		650231C929E835E700C13139 /* analyzeExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231C829E835E600C13139 /* analyzeExpense.json */; };
+		650B9B3929E9DAD200D144A9 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650B9B3629E9DAD200D144A9 /* RxCocoa.xcframework */; };
+		650B9B3A29E9DAD200D144A9 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650B9B3729E9DAD200D144A9 /* RxRelay.xcframework */; };
+		650B9B3B29E9DAD200D144A9 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650B9B3829E9DAD200D144A9 /* RxSwift.xcframework */; };
+		650B9B3E29EA8C2000D144A9 /* TncPrivacyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B9B3C29EA8BEF00D144A9 /* TncPrivacyBuilder.swift */; };
 		65321D2629E9950300BA3E93 /* SpendoraAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */; };
 		65321D2F29E995B100BA3E93 /* Onboarding.h in Headers */ = {isa = PBXBuildFile; fileRef = 65321D2E29E995B100BA3E93 /* Onboarding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65321D4329E9965D00BA3E93 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 65321D4229E9965D00BA3E93 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -40,7 +44,6 @@
 		6557310C29E4581D008BEA22 /* Spendora.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6557310A29E4581D008BEA22 /* Spendora.xcdatamodeld */; };
 		6557310E29E45822008BEA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6557310D29E45822008BEA22 /* Assets.xcassets */; };
 		6557311129E45822008BEA22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6557310F29E45822008BEA22 /* LaunchScreen.storyboard */; };
-		6557311F29E45D53008BEA22 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6557311E29E45D53008BEA22 /* Lottie */; };
 		6557312529E460D9008BEA22 /* finance.json in Resources */ = {isa = PBXBuildFile; fileRef = 6557312429E460D9008BEA22 /* finance.json */; };
 		6557312729E47320008BEA22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,10 @@
 		650231C429E8171C00C13139 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		650231C629E834F200C13139 /* splitExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splitExpense.json; sourceTree = "<group>"; };
 		650231C829E835E600C13139 /* analyzeExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = analyzeExpense.json; sourceTree = "<group>"; };
+		650B9B3629E9DAD200D144A9 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
+		650B9B3729E9DAD200D144A9 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
+		650B9B3829E9DAD200D144A9 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		650B9B3C29EA8BEF00D144A9 /* TncPrivacyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TncPrivacyBuilder.swift; sourceTree = "<group>"; };
 		65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendoraAssembler.swift; sourceTree = "<group>"; };
 		65321D2C29E995B000BA3E93 /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65321D2E29E995B100BA3E93 /* Onboarding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Onboarding.h; sourceTree = "<group>"; };
@@ -114,6 +121,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65321D5B29E9999F00BA3E93 /* Lottie in Frameworks */,
+				650B9B3929E9DAD200D144A9 /* RxCocoa.xcframework in Frameworks */,
+				650B9B3A29E9DAD200D144A9 /* RxRelay.xcframework in Frameworks */,
+				650B9B3B29E9DAD200D144A9 /* RxSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +131,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6557311F29E45D53008BEA22 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,8 +154,7 @@
 				6557312829E49133008BEA22 /* Module.swift */,
 				65321D2E29E995B100BA3E93 /* Onboarding.h */,
 			);
-			name = Onboarding;
-			path = ../Onboarding;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		65321D4129E9965D00BA3E93 /* Utilities */ = {
@@ -159,7 +167,8 @@
 				65321D4229E9965D00BA3E93 /* Utilities.h */,
 				65321D7229E99BAE00BA3E93 /* UIViewControllerExtension.swift */,
 			);
-			path = Utilities;
+			name = Utilities;
+			path = ../Utilities;
 			sourceTree = "<group>";
 		};
 		65321D4F29E9981500BA3E93 /* Shared */ = {
@@ -181,6 +190,9 @@
 		65321D5929E9999F00BA3E93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				650B9B3629E9DAD200D144A9 /* RxCocoa.xcframework */,
+				650B9B3729E9DAD200D144A9 /* RxRelay.xcframework */,
+				650B9B3829E9DAD200D144A9 /* RxSwift.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -223,6 +235,7 @@
 			children = (
 				6557312A29E49673008BEA22 /* TncPrivacyViewController.swift */,
 				6557312B29E49673008BEA22 /* TncPrivacyViewController.xib */,
+				650B9B3C29EA8BEF00D144A9 /* TncPrivacyBuilder.swift */,
 			);
 			path = TncPrivacy;
 			sourceTree = "<group>";
@@ -231,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				6557310029E4581D008BEA22 /* Spendora */,
-				65321D4129E9965D00BA3E93 /* Utilities */,
 				655730FF29E4581D008BEA22 /* Products */,
 				65321D5929E9999F00BA3E93 /* Frameworks */,
 			);
@@ -250,8 +262,9 @@
 		6557310029E4581D008BEA22 /* Spendora */ = {
 			isa = PBXGroup;
 			children = (
-				65321D4F29E9981500BA3E93 /* Shared */,
+				65321D4129E9965D00BA3E93 /* Utilities */,
 				65321D2D29E995B100BA3E93 /* Onboarding */,
+				65321D4F29E9981500BA3E93 /* Shared */,
 				65321D2429E994D800BA3E93 /* AppAssembler */,
 				6557312329E460C9008BEA22 /* AnimationAssets */,
 				6557310129E4581D008BEA22 /* AppDelegate.swift */,
@@ -352,7 +365,6 @@
 			);
 			name = Spendora;
 			packageProductDependencies = (
-				6557311E29E45D53008BEA22 /* Lottie */,
 			);
 			productName = Spendora;
 			productReference = 655730FE29E4581D008BEA22 /* Spendora.app */;
@@ -447,6 +459,7 @@
 				65321D6829E99AD100BA3E93 /* FeatureCardView.swift in Sources */,
 				65321D6E29E99AD100BA3E93 /* Module.swift in Sources */,
 				65321D6F29E99AD100BA3E93 /* OnboardingViewController.swift in Sources */,
+				650B9B3E29EA8C2000D144A9 /* TncPrivacyBuilder.swift in Sources */,
 				65321D8129E9A02000BA3E93 /* OnboardingPresenter.swift in Sources */,
 				65321D7D29E99EAD00BA3E93 /* OnboardingBuilder.swift in Sources */,
 				65321D8329E9A02A00BA3E93 /* OnboardingRouter.swift in Sources */,
@@ -873,11 +886,6 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		65321D5A29E9999F00BA3E93 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6557311D29E45D53008BEA22 /* XCRemoteSwiftPackageReference "lottie-spm" */;
-			productName = Lottie;
-		};
-		6557311E29E45D53008BEA22 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6557311D29E45D53008BEA22 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
