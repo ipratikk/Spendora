@@ -12,8 +12,19 @@ import Onboarding
 public final class AppAssembler {
     static func onboardingModule() -> UIViewController {
         return OnboardingBuilder.build(
-            submodules: ( tncPrivacy: TncPrivacyBuilder.build, ())
+            submodules: (
+                tncPrivacy: TncPrivacyBuilder.build,
+                features: featuresModule()
+            )
         )
+    }
+
+    static func featuresModule() -> UIViewController {
+        return FeaturesBuilder.build(
+            submodules: (
+                forRouter: (tncPrivacy: TncPrivacyBuilder.build, ()),
+                forPresenter: (feature: FeatureCardBuilder.build, ())
+            ))
     }
 
     static func tncPrivacyModule() -> UIViewController {

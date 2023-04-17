@@ -10,15 +10,15 @@ import RxSwift
 import RxCocoa
 import Utilities
 
-final class Presenter: Presentation {
+final class OnboardingPresenter: OnboardingPresentation {
     private let disposeBag = DisposeBag()
-    init(input: Input, router: Router) {
+    init(input: Input, router: OnboardingRouter) {
         process(input, with: router)
     }
 }
 
-private extension Presenter {
-    func process(_ input: Input, with router: Router) {
+private extension OnboardingPresenter {
+    func process(_ input: Input, with router: OnboardingRouter) {
         input.tapTncLabel.drive(onNext: { link in
             switch link {
                 case "terms":
@@ -37,7 +37,7 @@ private extension Presenter {
                 if value {
                     let defaults = UserDefaults.standard
                     defaults.setValue(true, forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
-                    router.routeToTnc(type: .tnc)
+                    router.routeToFeatures()
                 } else {
                     router.showAlert()
                 }

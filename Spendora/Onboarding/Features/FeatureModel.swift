@@ -8,7 +8,7 @@
 import Foundation
 import Lottie
 
-struct FeatureModel {
+public struct FeatureModel {
     let title: String
     let body: String
     let animation: LottieAnimation?

@@ -49,6 +49,10 @@
 		6557311129E45822008BEA22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6557310F29E45822008BEA22 /* LaunchScreen.storyboard */; };
 		6557312529E460D9008BEA22 /* finance.json in Resources */ = {isa = PBXBuildFile; fileRef = 6557312429E460D9008BEA22 /* finance.json */; };
 		6557312729E47320008BEA22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
+		655974E629EC410700C5DE75 /* FeaturesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655974E529EC410700C5DE75 /* FeaturesPresenter.swift */; };
+		655974E829EC411400C5DE75 /* FeaturesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655974E729EC411400C5DE75 /* FeaturesRouter.swift */; };
+		655A933629ED8BF7007A201C /* FeatureCardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655A933529ED8BF6007A201C /* FeatureCardBuilder.swift */; };
+		655A933929EDA28B007A201C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655A933729ED9935007A201C /* MainCoordinator.swift */; };
 		6DDCBE3C1371E10BC486899F /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF295A80A0870D2939AE592A /* Pods_Utilities.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +124,10 @@
 		6557312829E49133008BEA22 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		6557312A29E49673008BEA22 /* TncPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TncPrivacyViewController.swift; sourceTree = "<group>"; };
 		6557312B29E49673008BEA22 /* TncPrivacyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TncPrivacyViewController.xib; sourceTree = "<group>"; };
+		655974E529EC410700C5DE75 /* FeaturesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesPresenter.swift; sourceTree = "<group>"; };
+		655974E729EC411400C5DE75 /* FeaturesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesRouter.swift; sourceTree = "<group>"; };
+		655A933529ED8BF6007A201C /* FeatureCardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCardBuilder.swift; sourceTree = "<group>"; };
+		655A933729ED9935007A201C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		6562EF9529E7D96C00D6E1D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6562EF9829E7DAF500D6E1D5 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -181,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */,
+				655A933729ED9935007A201C /* MainCoordinator.swift */,
 			);
 			path = AppAssembler;
 			sourceTree = "<group>";
@@ -260,6 +269,8 @@
 				650231C029E814F900C13139 /* FeaturesViewController.swift */,
 				650231C129E814F900C13139 /* FeaturesViewController.xib */,
 				65321D7E29E99F9700BA3E93 /* FeaturesBuilder.swift */,
+				655974E529EC410700C5DE75 /* FeaturesPresenter.swift */,
+				655974E729EC411400C5DE75 /* FeaturesRouter.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -269,6 +280,7 @@
 			children = (
 				650231B829E80E3300C13139 /* FeatureCardView.swift */,
 				650231BA29E80E3F00C13139 /* FeatureCardView.xib */,
+				655A933529ED8BF6007A201C /* FeatureCardBuilder.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -643,6 +655,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65321D6829E99AD100BA3E93 /* FeatureCardView.swift in Sources */,
+				655974E829EC411400C5DE75 /* FeaturesRouter.swift in Sources */,
+				655A933629ED8BF7007A201C /* FeatureCardBuilder.swift in Sources */,
+				655974E629EC410700C5DE75 /* FeaturesPresenter.swift in Sources */,
 				65321D6E29E99AD100BA3E93 /* Module.swift in Sources */,
 				65321D6F29E99AD100BA3E93 /* OnboardingViewController.swift in Sources */,
 				650B9B3E29EA8C2000D144A9 /* TncPrivacyBuilder.swift in Sources */,
@@ -675,6 +690,7 @@
 				6557310C29E4581D008BEA22 /* Spendora.xcdatamodeld in Sources */,
 				6557310229E4581D008BEA22 /* AppDelegate.swift in Sources */,
 				65321D5229E9982300BA3E93 /* UIViewControllerExtension.swift in Sources */,
+				655A933929EDA28B007A201C /* MainCoordinator.swift in Sources */,
 				65321D2629E9950300BA3E93 /* SpendoraAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

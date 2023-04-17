@@ -10,14 +10,14 @@ import Utilities
 import RxSwift
 import RxCocoa
 
-protocol Presentation {
+protocol OnboardingPresentation {
     typealias Input = (
         tapTncLabel: Driver<String>,
         isCheckboxSelected: Driver<Bool>,
         clickStartBtn: Driver<Void>
     )
 
-    typealias Producer = (Input) -> Presentation
+    typealias Producer = (Input) -> OnboardingPresentation
 }
 
 class OnboardingViewController: UIViewController {
@@ -30,8 +30,8 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var tncLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
 
-    private var presenter: Presentation!
-    var presenterProducer: ((Presentation.Input) -> Presentation)!
+    private var presenter: OnboardingPresentation!
+    var presenterProducer: ((OnboardingPresentation.Input) -> OnboardingPresentation)!
 
     private let tapTncLabelRelay = PublishSubject<String>()
     private lazy var tapTncLabelDriver = tapTncLabelRelay.asDriver(onErrorDriveWith: Driver.empty())
@@ -73,11 +73,8 @@ class OnboardingViewController: UIViewController {
         startBtn.setTitleColor(.white, for: .normal)
         startBtn.setTitle(Module.Strings.getStarted, for: .normal)
         startBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
-        startBtn.addTarget(self, action: #selector(startBtnClicked), for: .touchUpInside)
-    }
-
-    @objc func startBtnClicked() {
-        clickStartBtnRelay.onNext(())
+        startBtn.rx.tap.bind(to: clickStartBtnRelay)
+            .disposed(by: disposeBag)
     }
 
     private func setupCheckBox() {

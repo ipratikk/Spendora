@@ -8,8 +8,11 @@
 import Foundation
 import UIKit
 
-public final class Router {
-    public typealias Submodules = (tncPrivacy: (TncType) -> UIViewController, ())
+public final class OnboardingRouter {
+    public typealias Submodules = (
+        tncPrivacy: (TncType) -> UIViewController,
+        features: UIViewController
+    )
 
     private unowned let view: UIViewController
     private let submodules: Submodules
@@ -20,10 +23,16 @@ public final class Router {
     }
 }
 
-extension Router {
+extension OnboardingRouter {
     func routeToTnc(type: TncType) {
         let tncPrivacy = submodules.tncPrivacy(type)
         view.present(tncPrivacy, animated: true)
+    }
+
+    func routeToFeatures(){
+        let features = submodules.features
+        view.navigationController?.pushViewController(features, animated: true)
+        view.navigationController?.isNavigationBarHidden = true
     }
 
     func showAlert() {
