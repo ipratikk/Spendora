@@ -10,12 +10,12 @@ import UIKit
 import Utilities
 
 public class OnboardingBuilder {
-    public static func build(submodules: Router.Submodules) -> UIViewController {
+    public static func build(submodules: OnboardingRouter.Submodules) -> UIViewController {
 
         let view = OnboardingViewController.initFromNib()
-        let router = Router(view: view, submodules: submodules)
+        let router = OnboardingRouter(view: view, submodules: submodules)
         view.presenterProducer = {
-            Presenter(input: $0, router: router)
+            OnboardingPresenter(input: $0, router: router)
         }
         return view
     }

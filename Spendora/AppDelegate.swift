@@ -30,13 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func startOnboardingFlow() {
+        defaults.set(false, forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
         let isOnboarded = defaults.bool(forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
         guard isOnboarded else {
             let onboardingVC = AppAssembler.onboardingModule()
             onboardingVC.makeRootViewController()
             return
         }
-        let featuresVC = FeaturesViewController.initFromNib()
+        let featuresVC = AppAssembler.featuresModule()
         featuresVC.makeRootViewController()
     }
 

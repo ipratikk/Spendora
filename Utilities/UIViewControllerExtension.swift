@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+public enum PushType {
+    case push
+    case present
+}
+
+
 public extension UIViewController {
     class func instantiate<T: UIViewController>(from storyboard: UIStoryboard, identifier: String) -> T {
         return storyboard.instantiateViewController(withIdentifier: identifier) as! T
@@ -32,5 +38,18 @@ public extension UIViewController {
     class func initFromNib() -> Self {
         let className = String(describing: self)
         return initFromNib(name: className)
+    }
+}
+
+public extension UIViewController {
+    func show(_ viewController: UIViewController, type: PushType, animated: Bool) {
+        switch type {
+            case .push:
+                if let navigationController = navigationController {
+                    navigationController.pushViewController(viewController, animated: animated)
+                }
+            case .present:
+                present(viewController, animated: animated, completion: nil)
+        }
     }
 }
