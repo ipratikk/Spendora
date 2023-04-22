@@ -12,13 +12,13 @@ import RxCocoa
 protocol FeaturesPresentation {
     typealias Input = (
         currentPage: Driver<Int>,
-        didTapContinue: Driver<Void>
+        didTapSignup: Driver<Void>,
+        didTapSignin: Driver<Void>
     )
 
     typealias Output = (
         features: Driver<[Feature]>,
-        currentPage: Driver<Int>,
-        isLastPage: Driver<Bool>
+        currentPage: Driver<Int>
     )
 
     typealias Subviews = (
@@ -37,7 +37,8 @@ public class FeaturesViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var continueBtn: UIButton!
+    @IBOutlet weak var signupBtn: UIButton!
+    @IBOutlet weak var signinBtn: UIButton!
 
     private var presenter: FeaturesPresentation!
     var presenterProducer: ((FeaturesPresentation.Input) -> FeaturesPresentation)!
@@ -46,8 +47,11 @@ public class FeaturesViewController: UIViewController {
     private let currentPageRelay = PublishSubject<Int>()
     private lazy var currentPageDriver = currentPageRelay.asDriver(onErrorJustReturn: 0).startWith(0)
 
-    private let tapContinueRelay = PublishSubject<Void>()
-    private lazy var tapContinueDriver = tapContinueRelay.asDriver(onErrorJustReturn: ())
+    private let tapSignupRelay = PublishSubject<Void>()
+    private lazy var tapSignupDriver = tapSignupRelay.asDriver(onErrorJustReturn: ())
+
+    private let tapSigninRelay = PublishSubject<Void>()
+    private lazy var tapSigninDriver = tapSigninRelay.asDriver(onErrorJustReturn: ())
 
     private let disposeBag = DisposeBag()
 
@@ -60,7 +64,8 @@ public class FeaturesViewController: UIViewController {
     func setupUI() {
         setupPageControl()
         setupScrollView()
-        setupContinueBtn()
+        setupSignupBtn()
+        setupSigninBtn()
     }
 
     func setupBindings() {
@@ -68,12 +73,15 @@ public class FeaturesViewController: UIViewController {
         // Input Bindings
         let input = (
             currentPage: currentPageDriver,
-            didTapContinue: tapContinueDriver
+            didTapSignup: tapSignupDriver,
+            didTapSignin: tapSigninDriver
         )
         presenter = presenterProducer(input)
 
         // Button Bindings
-        continueBtn.rx.tap.bind(to: tapContinueRelay)
+        signupBtn.rx.tap.bind(to: tapSignupRelay)
+            .disposed(by: disposeBag)
+        signinBtn.rx.tap.bind(to: tapSigninRelay)
             .disposed(by: disposeBag)
 
         // Output Bindings
@@ -91,15 +99,6 @@ public class FeaturesViewController: UIViewController {
                 sself.pageControl.currentPage = currPage
                 let offsetX = CGFloat(currPage) * sself.scrollView.bounds.width
                 sself.scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
-            })
-            .disposed(by: disposeBag)
-
-
-        presenter.output.isLastPage
-            .drive(onNext: { [weak self] isLast in
-                guard let sself = self else { return }
-                sself.pageControl.isHidden = isLast
-                sself.continueBtn.isHidden = !isLast
             })
             .disposed(by: disposeBag)
 
@@ -124,12 +123,16 @@ public class FeaturesViewController: UIViewController {
         scrollView.contentInsetAdjustmentBehavior = .never
     }
 
-    func setupContinueBtn() {
-        continueBtn.isHidden = true
-        continueBtn.layer.cornerRadius = continueBtn.frame.width / 2
-        continueBtn.backgroundColor = .black
-        continueBtn.setImage(Module.Images.rightArrow, for: .normal)
-        continueBtn.tintColor = .white
+    func setupSignupBtn() {
+        signupBtn.layer.cornerRadius = 25
+        signupBtn.backgroundColor = .black
+        signupBtn.tintColor = .white
+        signupBtn.setTitle(Module.Strings.signupBtn, for: .normal)
+    }
+
+    func setupSigninBtn() {
+        signinBtn.tintColor = .black
+        signinBtn.setTitle(Module.Strings.signinBtn, for: .normal)
     }
 }
 

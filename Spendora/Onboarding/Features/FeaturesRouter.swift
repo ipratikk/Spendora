@@ -7,9 +7,14 @@
 
 import Foundation
 import UIKit
+import Authentication
+import Utilities
 
 public final class FeaturesRouter {
-    public typealias Submodules = (tncPrivacy: (TncType) -> UIViewController, ())
+    public typealias Submodules = (
+        singup: UIViewController,
+        signin: UIViewController
+    )
 
     private unowned let view: UIViewController
     private let submodules: Submodules
@@ -21,8 +26,9 @@ public final class FeaturesRouter {
 }
 
 extension FeaturesRouter {
-    func routeToTnc(type: TncType) {
-        let tncPrivacy = submodules.tncPrivacy(type)
-        view.present(tncPrivacy, animated: true)
+    func routeToAuthentication() {
+        let authVC = submodules.singup
+//        view.navigationController?.pushViewController(authVC, animated: true)
+        view.present(authVC, animated: true)
     }
 }

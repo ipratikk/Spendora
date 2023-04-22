@@ -36,12 +36,9 @@ private extension FeaturesPresenter {
 
         let currentPage = input.currentPage.asDriver(onErrorJustReturn: 0)
             .distinctUntilChanged()
-        let isLastPage = input.currentPage
-            .map { $0 == features.count - 1}
         return (
             features: featureDriver,
-            currentPage: currentPage,
-            isLastPage: isLastPage
+            currentPage: currentPage
         )
     }
 
@@ -59,9 +56,14 @@ private extension FeaturesPresenter {
     }
 
     private func process(_ input: Input, with router: FeaturesRouter) {
-        input.didTapContinue
+        input.didTapSignup
             .drive(onNext: {
-                router.routeToTnc(type: .tnc)
+                router.routeToAuthentication()
+            })
+            .disposed(by: disposeBag)
+        input.didTapSignin
+            .drive(onNext: {
+                router.routeToAuthentication()
             })
             .disposed(by: disposeBag)
     }
