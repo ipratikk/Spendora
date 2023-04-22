@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func startOnboardingFlow() {
-        defaults.set(false, forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
+//        defaults.set(false, forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
         let isOnboarded = defaults.bool(forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
         guard isOnboarded else {
             let onboardingVC = AppAssembler.onboardingModule()

@@ -24,6 +24,9 @@ final class Module {
 
         static let privacyPolicy = NSLocalizedString("onboarding.tnc.privacyPolicy", comment: "")
 
+        static let signupBtn = NSLocalizedString("features.signup.button", comment: "")
+        static let signinBtn = NSLocalizedString("features.signin.button", comment: "")
+
         enum Alert {
             static let message = NSLocalizedString("onboarding.alert.message", comment: "")
         }
