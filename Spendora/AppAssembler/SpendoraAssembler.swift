@@ -39,6 +39,6 @@ public final class AppAssembler {
     }
 
     static func signupModule() -> UIViewController {
-        return SignupBuilder.build()
+        return AuthBuilder.build()
     }
 }

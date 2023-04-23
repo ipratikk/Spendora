@@ -1,5 +1,5 @@
 //
-//  SignupRouter.swift
+//  AuthRouter.swift
 //  Spendora
 //
 //  Created by Goel, Pratik | RIEPL on 17/04/23.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Utilities
 
-public final class SignupRouter {
+public final class AuthRouter {
 //    public typealias Submodules = (tncPrivacy: (TncType) -> UIViewController, ())
 
     private unowned let view: UIViewController
@@ -26,9 +26,9 @@ public final class SignupRouter {
     }
 }
 
-extension SignupRouter {
+extension AuthRouter {
     func routeToAuthentication() {
-        let authVC = SignupViewController.initFromNib()
+        let authVC = AuthViewController.initFromNib()
             //        view.navigationController?.pushViewController(authVC, animated: true)
         view.present(authVC, animated: true)
     }
