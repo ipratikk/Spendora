@@ -1,5 +1,5 @@
 //
-//  SignupViewController.swift
+//  AuthViewController.swift
 //  Authentication
 //
 //  Created by Goel, Pratik | RIEPL on 17/04/23.
@@ -10,54 +10,54 @@ import Utilities
 import RxSwift
 import RxCocoa
 
-protocol SignupPresentation {
+protocol AuthPresentation {
     typealias Output = (
         countryCode: Driver<String>,
-        isSignupNumberEnabled: Driver<Bool>
+        isAuthNumberEnabled: Driver<Bool>
     )
 
     typealias Input = (
-        signupNumberTapped: Driver<Void>,
+        authNumberTapped: Driver<Void>,
         phoneNumberText: Driver<String>,
-        signupGoogleTapped: Driver<Void>,
-        signupAppleTapped: Driver<Void>,
+        authGoogleTapped: Driver<Void>,
+        authAppleTapped: Driver<Void>,
         countryCodeButtonTapped: Driver<Void>
     )
 
-    typealias producer = (Input) -> SignupPresentation
+    typealias producer = (Input) -> AuthPresentation
 
     var output: Output { get }
     var input: Input { get }
 }
 
 
-public class SignupViewController: UIViewController, UITextFieldDelegate {
+public class AuthViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var signupImage: UIImageView!
-    @IBOutlet weak var signupTitle: UILabel!
-    @IBOutlet weak var signupSubtitle: UILabel!
+    @IBOutlet weak var authImage: UIImageView!
+    @IBOutlet weak var authTitle: UILabel!
+    @IBOutlet weak var authSubtitle: UILabel!
     @IBOutlet weak var countryCodeBtn: UIButton!
     @IBOutlet weak var phoneNumber: UITextField!
-    @IBOutlet weak var signupNumber: UIButton!
-    @IBOutlet weak var signupOtherTitle: UILabel!
-    @IBOutlet weak var signupGoogle: CustomButton!
-    @IBOutlet weak var signupApple: CustomButton!
+    @IBOutlet weak var authNumber: UIButton!
+    @IBOutlet weak var authOtherTitle: UILabel!
+    @IBOutlet weak var authGoogle: CustomButton!
+    @IBOutlet weak var authApple: CustomButton!
 
     @IBOutlet weak var phoneNumberStack: UIStackView!
 
 
-    private var presenter: SignupPresentation!
-    var presenterProducer: ((SignupPresentation.Input) -> SignupPresentation)!
+    private var presenter: AuthPresentation!
+    var presenterProducer: ((AuthPresentation.Input) -> AuthPresentation)!
 
 
-    private let signupNumberTapRelay = PublishSubject<Void>()
-    private lazy var signupNumberTapDriver = signupNumberTapRelay.asDriver(onErrorJustReturn: ())
+    private let authNumberTapRelay = PublishSubject<Void>()
+    private lazy var authNumberTapDriver = authNumberTapRelay.asDriver(onErrorJustReturn: ())
 
-    private let signupGoogleTapRelay = PublishSubject<Void>()
-    private lazy var signupGoogleTapDriver = signupGoogleTapRelay.asDriver(onErrorJustReturn: ())
+    private let authGoogleTapRelay = PublishSubject<Void>()
+    private lazy var authGoogleTapDriver = authGoogleTapRelay.asDriver(onErrorJustReturn: ())
 
-    private let signupAppleTapRelay = PublishSubject<Void>()
-    private lazy var signupAppleTapDriver = signupAppleTapRelay.asDriver(onErrorJustReturn: ())
+    private let authAppleTapRelay = PublishSubject<Void>()
+    private lazy var authAppleTapDriver = authAppleTapRelay.asDriver(onErrorJustReturn: ())
 
     private let countryCodeBtnTapRelay = PublishSubject<Void>()
     private lazy var countryCodeBtnTapDriver = countryCodeBtnTapRelay.asDriver(onErrorJustReturn: ())
@@ -75,17 +75,17 @@ public class SignupViewController: UIViewController, UITextFieldDelegate {
     }
 
     func setupUI() {
-        signupImage.image = UIImage(named: "signupVector")
-        signupTitle.text = "Sign up to Spendora"
-        signupSubtitle.text = "add, manage and analyze your spendings"
+        authImage.image = UIImage(named: "signupVector")
+        authTitle.text = "Sign up to Spendora"
+        authSubtitle.text = "add, manage and analyze your spendings"
         setupCountryCodeBtn()
         phoneNumber.delegate = self
         phoneNumber.placeholder = "Enter phone number"
         phoneNumberStack.layer.cornerRadius = phoneNumberStack.frame.height / 2
         phoneNumberStack.layer.borderColor = UIColor.lightGray.cgColor
         phoneNumberStack.layer.borderWidth = 0.5
-        setupSignupButton()
-        setupSignupOtherBtn()
+        setupAuthButton()
+        setupAuthOtherBtn()
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
@@ -97,10 +97,10 @@ public class SignupViewController: UIViewController, UITextFieldDelegate {
 
     func setupBindings() {
         presenter = presenterProducer((
-            signupNumberTapped: signupNumberTapDriver,
+            authNumberTapped: authNumberTapDriver,
             phoneNumberText: phoneNumberTextDriver,
-            signupGoogleTapped: signupGoogleTapDriver,
-            signupAppleTapped: signupAppleTapDriver,
+            authGoogleTapped: authGoogleTapDriver,
+            authAppleTapped: authAppleTapDriver,
             countryCodeButtonTapped: countryCodeBtnTapDriver
         ))
 
@@ -120,11 +120,11 @@ public class SignupViewController: UIViewController, UITextFieldDelegate {
             })
             .disposed(by: disposeBag)
 
-        presenter.output.isSignupNumberEnabled
+        presenter.output.isAuthNumberEnabled
             .drive(onNext:{ [weak self] isEnabled in
                 guard let sself = self else { return }
-                sself.signupNumber.isEnabled = isEnabled
-                sself.signupNumber.backgroundColor = isEnabled ? UIColor(hex: "#7C15FF") : UIColor(hex: "#7C15FF", alpha: 0.6)
+                sself.authNumber.isEnabled = isEnabled
+                sself.authNumber.backgroundColor = isEnabled ? UIColor(hex: "#7C15FF") : UIColor(hex: "#7C15FF", alpha: 0.6)
             })
             .disposed(by: disposeBag)
     }
@@ -142,20 +142,20 @@ public class SignupViewController: UIViewController, UITextFieldDelegate {
         present(navController, animated: true)
     }
 
-    func setupSignupButton() {
-        signupNumber.layer.cornerRadius = signupNumber.frame.height / 2
-        signupNumber.tintColor = .white
-        signupNumber.setTitle("Sign up with phone", for: .normal)
-        signupNumber.addDefaultShadow()
+    func setupAuthButton() {
+        authNumber.layer.cornerRadius = authNumber.frame.height / 2
+        authNumber.tintColor = .white
+        authNumber.setTitle("Sign up with phone", for: .normal)
+        authNumber.addDefaultShadow()
     }
 
-    func setupSignupOtherBtn() {
-        signupGoogle.setup(with: .google)
-        signupApple.setup(with: .apple)
+    func setupAuthOtherBtn() {
+        authGoogle.setup(with: .google)
+        authApple.setup(with: .apple)
     }
 }
 
-extension SignupViewController {
+extension AuthViewController {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.count + string.count - range.length

@@ -17,12 +17,13 @@
 		650B9B3B29E9DAD200D144A9 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650B9B3829E9DAD200D144A9 /* RxSwift.xcframework */; };
 		650B9B3E29EA8C2000D144A9 /* TncPrivacyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B9B3C29EA8BEF00D144A9 /* TncPrivacyBuilder.swift */; };
 		650B9B4729EAA8FF00D144A9 /* SpendoraTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B9B4629EAA8FF00D144A9 /* SpendoraTest.swift */; };
+		650D735729F533F8004B0E26 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650D735629F533F8004B0E26 /* LocationManager.swift */; };
 		6525F7A229EDC1C2000768AC /* Authentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 6525F7A129EDC1C2000768AC /* Authentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6525F7AA29EDC6F4000768AC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7A829EDC6F4000768AC /* SignupViewController.swift */; };
-		6525F7AB29EDC6F4000768AC /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6525F7A929EDC6F4000768AC /* SignupViewController.xib */; };
-		6525F7AD29EDC70C000768AC /* SignupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7AC29EDC70C000768AC /* SignupBuilder.swift */; };
-		6525F7AF29EDC71B000768AC /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7AE29EDC71B000768AC /* SignupPresenter.swift */; };
-		6525F7B229EDC729000768AC /* SignupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7B029EDC725000768AC /* SignupRouter.swift */; };
+		6525F7AA29EDC6F4000768AC /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7A829EDC6F4000768AC /* AuthViewController.swift */; };
+		6525F7AB29EDC6F4000768AC /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6525F7A929EDC6F4000768AC /* AuthViewController.xib */; };
+		6525F7AD29EDC70C000768AC /* AuthBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7AC29EDC70C000768AC /* AuthBuilder.swift */; };
+		6525F7AF29EDC71B000768AC /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7AE29EDC71B000768AC /* AuthPresenter.swift */; };
+		6525F7B229EDC729000768AC /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7B029EDC725000768AC /* AuthRouter.swift */; };
 		6525F7BB29EDEE9B000768AC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7BA29EDEE9B000768AC /* UIColorExtension.swift */; };
 		65321D2629E9950300BA3E93 /* SpendoraAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */; };
 		65321D2F29E995B100BA3E93 /* Onboarding.h in Headers */ = {isa = PBXBuildFile; fileRef = 65321D2E29E995B100BA3E93 /* Onboarding.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -128,13 +129,14 @@
 		650B9B3C29EA8BEF00D144A9 /* TncPrivacyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TncPrivacyBuilder.swift; sourceTree = "<group>"; };
 		650B9B4429EAA8FF00D144A9 /* SpendoraTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpendoraTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		650B9B4629EAA8FF00D144A9 /* SpendoraTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendoraTest.swift; sourceTree = "<group>"; };
+		650D735629F533F8004B0E26 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		6525F79F29EDC1C2000768AC /* Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6525F7A129EDC1C2000768AC /* Authentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
-		6525F7A829EDC6F4000768AC /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		6525F7A929EDC6F4000768AC /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
-		6525F7AC29EDC70C000768AC /* SignupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupBuilder.swift; sourceTree = "<group>"; };
-		6525F7AE29EDC71B000768AC /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
-		6525F7B029EDC725000768AC /* SignupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRouter.swift; sourceTree = "<group>"; };
+		6525F7A829EDC6F4000768AC /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		6525F7A929EDC6F4000768AC /* AuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		6525F7AC29EDC70C000768AC /* AuthBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBuilder.swift; sourceTree = "<group>"; };
+		6525F7AE29EDC71B000768AC /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		6525F7B029EDC725000768AC /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		6525F7BA29EDEE9B000768AC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendoraAssembler.swift; sourceTree = "<group>"; };
 		65321D2C29E995B000BA3E93 /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,31 +248,22 @@
 			isa = PBXGroup;
 			children = (
 				6546E0B329F13A2A00C89F18 /* Models */,
-				6525F7A729EDC60D000768AC /* Signup */,
-				6525F7A629EDC603000768AC /* Login */,
+				6525F7A729EDC60D000768AC /* Auth */,
 				6525F7A129EDC1C2000768AC /* Authentication.h */,
-				6546E0A629F041E000C89F18 /* Views */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		6525F7A629EDC603000768AC /* Login */ = {
+		6525F7A729EDC60D000768AC /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				6525F7A829EDC6F4000768AC /* AuthViewController.swift */,
+				6525F7A929EDC6F4000768AC /* AuthViewController.xib */,
+				6525F7AC29EDC70C000768AC /* AuthBuilder.swift */,
+				6525F7AE29EDC71B000768AC /* AuthPresenter.swift */,
+				6525F7B029EDC725000768AC /* AuthRouter.swift */,
 			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		6525F7A729EDC60D000768AC /* Signup */ = {
-			isa = PBXGroup;
-			children = (
-				6525F7A829EDC6F4000768AC /* SignupViewController.swift */,
-				6525F7A929EDC6F4000768AC /* SignupViewController.xib */,
-				6525F7AC29EDC70C000768AC /* SignupBuilder.swift */,
-				6525F7AE29EDC71B000768AC /* SignupPresenter.swift */,
-				6525F7B029EDC725000768AC /* SignupRouter.swift */,
-			);
-			path = Signup;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		65321D2429E994D800BA3E93 /* AppAssembler */ = {
@@ -382,13 +375,6 @@
 			path = TncPrivacy;
 			sourceTree = "<group>";
 		};
-		6546E0A629F041E000C89F18 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		6546E0B329F13A2A00C89F18 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +476,7 @@
 			children = (
 				6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */,
 				65AC2D6B29F2D5A9002C6C20 /* APIManager.swift */,
+				650D735629F533F8004B0E26 /* LocationManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -713,7 +700,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6525F7AB29EDC6F4000768AC /* SignupViewController.xib in Resources */,
+				6525F7AB29EDC6F4000768AC /* AuthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -857,10 +844,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6525F7B229EDC729000768AC /* SignupRouter.swift in Sources */,
-				6525F7AA29EDC6F4000768AC /* SignupViewController.swift in Sources */,
-				6525F7AF29EDC71B000768AC /* SignupPresenter.swift in Sources */,
-				6525F7AD29EDC70C000768AC /* SignupBuilder.swift in Sources */,
+				6525F7B229EDC729000768AC /* AuthRouter.swift in Sources */,
+				6525F7AA29EDC6F4000768AC /* AuthViewController.swift in Sources */,
+				6525F7AF29EDC71B000768AC /* AuthPresenter.swift in Sources */,
+				6525F7AD29EDC70C000768AC /* AuthBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,6 +877,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65321D5329E9986E00BA3E93 /* UIViewExtension.swift in Sources */,
+				650D735729F533F8004B0E26 /* LocationManager.swift in Sources */,
 				65AC2D7029F2DC10002C6C20 /* CountryPickerPresenter.swift in Sources */,
 				6546E0C029F2930400C89F18 /* AuthButton.swift in Sources */,
 				6546E0C129F2931D00C89F18 /* CountryModel.swift in Sources */,

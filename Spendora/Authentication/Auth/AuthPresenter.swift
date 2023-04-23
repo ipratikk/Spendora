@@ -1,5 +1,5 @@
 //
-//  SignupPresenter.swift
+//  AuthPresenter.swift
 //  Authentication
 //
 //  Created by Goel, Pratik | RIEPL on 17/04/23.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-public final class SignupPresenter: SignupPresentation {
+public final class AuthPresenter: AuthPresentation {
     let output: Output
 
     let input: Input
@@ -19,25 +19,25 @@ public final class SignupPresenter: SignupPresentation {
 
     private let disposeBag = DisposeBag()
 
-    init(input: Input, router: SignupRouter) {
+    init(input: Input, router: AuthRouter) {
         self.input = input
         self.output = type(of: self).output(with: input)
         process(input, with: router)
     }
 }
 
-private extension SignupPresenter {
+private extension AuthPresenter {
     private static func output(with input: Input) -> Output {
-        let signupPhoneEnabled = input.phoneNumberText
+        let authPhoneEnabled = input.phoneNumberText
             .map { $0.count == 10 }
         return (
             countryCode: Driver.just("+91"),
-            isSignupNumberEnabled: signupPhoneEnabled
+            isAuthNumberEnabled: authPhoneEnabled
         )
     }
 
-    private func process(_ input: Input, with router: SignupRouter) {
-        input.signupNumberTapped
+    private func process(_ input: Input, with router: AuthRouter) {
+        input.authNumberTapped
             .withLatestFrom(input.phoneNumberText)
             .map { $0 }
             .drive(onNext: { phoneNumber in
