@@ -35,3 +35,10 @@ public extension NibLoadable {
         bundle.loadNibNamed(Self.nibName, owner: self, options: nil)
     }
 }
+
+public extension UITableView {
+    func registerCellNib<T: UITableViewCell>(_ cellClass: T.Type) {
+        let nib = UINib(nibName: String(describing: cellClass), bundle: Bundle(for: cellClass))
+        register(nib, forCellReuseIdentifier: String(describing: cellClass))
+    }
+}

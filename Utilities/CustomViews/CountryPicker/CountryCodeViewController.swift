@@ -7,17 +7,6 @@
 
 import UIKit
 
-struct CountryListModel
-{
-    var countries: [Country] = []
-
-    mutating func getNameSortedDictionary() -> (sectionNamesArray: [String], dataSourceDictionary: [String: [Country]]) {
-        let characterSortedDictionary = Dictionary(grouping: countries) { String($0.name.first!) }
-        let characterSections = Array(characterSortedDictionary.keys).sorted{ $0 < $1 }
-        return (characterSections, characterSortedDictionary)
-    }
-}
-
 public class CountryCodeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -34,7 +23,7 @@ public class CountryCodeViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         title = "Select Country"
-        tableView.register(UINib.init(nibName: "CountryTableViewCell", bundle: Bundle.init(for: CountryTableViewCell.self)), forCellReuseIdentifier: "CountryTableViewCell")
+        tableView.registerCellNib(CountryTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         fetchCountryCodes { [weak self] result in
@@ -58,13 +47,12 @@ public class CountryCodeViewController: UIViewController {
         searchController.searchBar.enablesReturnKeyAutomatically = false
         searchController.searchBar.returnKeyType = .done
         searchController.searchBar.sizeToFit()
+        searchController.searchBar.showsCancelButton = false
 
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-        
-        searchController.searchBar.delegate = self
 
-            // Set definesPresentationContext to false to ensure that searchController is not hidden when a view controller is presented
+        searchController.searchBar.delegate = self
         definesPresentationContext = false
     }
 
@@ -85,6 +73,12 @@ extension CountryCodeViewController: UISearchBarDelegate, UISearchResultsUpdatin
         let searchBar = searchController.searchBar
         let searchText = searchBar.text!
         filterForSearchText(searchText)
+    }
+
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            // Dismiss keyboard and hide search bar
+        searchBar.resignFirstResponder()
+        searchController.isActive = false
     }
 
     func filterForSearchText(_ searchText: String) {
@@ -120,6 +114,7 @@ extension CountryCodeViewController: UITableViewDataSource, UITableViewDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell", for: indexPath) as! CountryTableViewCell
         let country: Country! = _tableViewDataSource[_tableViewSectionsArray[indexPath.section]]?[indexPath.row]
         cell.setup(country: country)
+        cell.setRowSelected(country.name == selectedCountry.first?.name, animated: true)
         return cell
     }
 
@@ -128,13 +123,14 @@ extension CountryCodeViewController: UITableViewDataSource, UITableViewDelegate 
         if let alreadySelectedIndex = findIndexPathForFirstMatchedRow() {
             updateSelected(alreadySelectedIndex, selected: false)
             updateSelected(indexPath, selected: true)
-            tableView.reloadRows(at: [alreadySelectedIndex, indexPath], with: .automatic)
+            refreshTable()
         } else {
             country.isSelected = true
             let cell = tableView.cellForRow(at: indexPath) as! CountryTableViewCell
             cell.setRowSelected(true, animated: true)
         }
         setSelectedCountry(country)
+        searchController.searchBar.resignFirstResponder()
     }
 
     func updateSelected(_ indexPath: IndexPath, selected: Bool) {

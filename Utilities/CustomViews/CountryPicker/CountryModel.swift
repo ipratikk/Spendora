@@ -30,4 +30,13 @@ public struct Country: Codable {
     }
 }
 
+struct CountryListModel
+{
+    var countries: [Country] = []
 
+    mutating func getNameSortedDictionary() -> (sectionNamesArray: [String], dataSourceDictionary: [String: [Country]]) {
+        let characterSortedDictionary = Dictionary(grouping: countries) { String($0.name.first!) }
+        let characterSections = Array(characterSortedDictionary.keys).sorted{ $0 < $1 }
+        return (characterSections, characterSortedDictionary)
+    }
+}
