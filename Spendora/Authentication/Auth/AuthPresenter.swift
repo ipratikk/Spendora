@@ -50,5 +50,11 @@ private extension AuthPresenter {
                 print(text)
             })
             .disposed(by: disposeBag)
+
+        input.countryCodeButtonTapped
+            .drive(onNext: {
+                router.routeToCountryPicker()
+            })
+            .disposed(by: disposeBag)
     }
 }

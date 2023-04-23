@@ -78,7 +78,6 @@ public class AuthViewController: UIViewController, UITextFieldDelegate {
         authImage.image = UIImage(named: "signupVector")
         authTitle.text = "Sign up to Spendora"
         authSubtitle.text = "add, manage and analyze your spendings"
-        setupCountryCodeBtn()
         phoneNumber.delegate = self
         phoneNumber.placeholder = "Enter phone number"
         phoneNumberStack.layer.cornerRadius = phoneNumberStack.frame.height / 2
@@ -129,18 +128,14 @@ public class AuthViewController: UIViewController, UITextFieldDelegate {
             .disposed(by: disposeBag)
     }
 
-    func setupCountryCodeBtn() {
-        countryCodeBtn.addTarget(self, action: #selector(showView), for: .touchUpInside)
-    }
-
-    @objc func showView() {
-        let vc = CountryCodeViewController.initFromNib()
-        let navController = UINavigationController(rootViewController: vc)
-        if let sheets = vc.sheetPresentationController {
-            sheets.detents = [.medium()]
-        }
-        present(navController, animated: true)
-    }
+//    @objc func showView() {
+//        let vc = Ap
+//        let navController = UINavigationController(rootViewController: vc)
+//        if let sheets = vc.sheetPresentationController {
+//            sheets.detents = [.medium()]
+//        }
+//        present(navController, animated: true)
+//    }
 
     func setupAuthButton() {
         authNumber.layer.cornerRadius = authNumber.frame.height / 2

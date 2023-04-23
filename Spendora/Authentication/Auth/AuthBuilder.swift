@@ -10,9 +10,9 @@ import Utilities
 import UIKit
 
 public class AuthBuilder {
-    public static func build() -> UIViewController {
+    public static func build(submodules: AuthRouter.Submodules) -> UIViewController {
         let view = AuthViewController.initFromNib()
-        let router = AuthRouter(view: view)
+        let router = AuthRouter(view: view, submodules: submodules)
         view.presenterProducer = {
             AuthPresenter(input: $0, router: router)
         }

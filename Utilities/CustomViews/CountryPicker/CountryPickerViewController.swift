@@ -1,13 +1,44 @@
 //
-//  CountryCodeViewController.swift
+//  CountryPickerViewController.swift
 //  Utilities
 //
 //  Created by Goel, Pratik | RIEPL on 20/04/23.
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-public class CountryCodeViewController: UIViewController {
+enum AuthType {
+    case signup
+    case signin
+}
+
+protocol CountryPickerPresentation {
+
+    typealias Input = (
+        selectedCountry: Driver<Country?>,
+        ()
+    )
+
+    typealias Output = (
+        countries: Driver<[Country]>,
+        ()
+    )
+
+    typealias Subviews = (
+        noData: UIView?,
+        ()
+    )
+
+    typealias producer = (Input) -> CountryPickerPresentation
+
+    var input: Input { get }
+    var output: Output { get }
+    var subviews: Subviews { get }
+}
+
+class CountryPickerViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -17,27 +48,51 @@ public class CountryCodeViewController: UIViewController {
     private var _tableViewSectionsArray = [String]()
     private var selectedCountry: [Country] = []
 
+    private var selectedCountryRelay = PublishSubject<Country?>()
+    private lazy var selectedCountryDriver = selectedCountryRelay.asDriver(onErrorJustReturn: nil)
+
+    private var presenter: CountryPickerPresentation!
+    var presenterProducer: ((CountryPickerPresentation.Input) -> CountryPickerPresentation)!
+
+    let disposeBag = DisposeBag()
 
     let searchController = UISearchController(searchResultsController: nil)
 
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        setupBindings()
+    }
+
+    func setupUI() {
         title = "Select Country"
+        setupTableView()
+        initSearchController()
+    }
+
+    func setupBindings() {
+        let input = ( selectedCountry: selectedCountryDriver, ())
+        presenter = presenterProducer(input)
+
+        presenter.output.countries
+            .drive(onNext:{ [weak self] countries in
+                guard let sself = self else { return }
+                sself.dataSource.countries = countries
+                sself.filteredData = sself.dataSource
+                sself.refreshTable()
+            })
+            .disposed(by: disposeBag)
+
+        if let noDataView = presenter.subviews.noData {
+            noDataView.frame = tableView.bounds
+            tableView.backgroundView = noDataView
+        }
+    }
+
+    func setupTableView() {
         tableView.registerCellNib(CountryTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
-        fetchCountryCodes { [weak self] result in
-            guard let sself = self else { return }
-            switch result {
-                case .success(let countries):
-                    sself.dataSource.countries = countries
-                    sself.filteredData = sself.dataSource
-                    sself.refreshTable()
-                case .failure(let error):
-                    print("Error fetching countries: \(error.localizedDescription)")
-            }
-        }
-        initSearchController()
     }
 
     func initSearchController() {
@@ -62,20 +117,20 @@ public class CountryCodeViewController: UIViewController {
         _tableViewDataSource = filteredData.dataSourceDictionary
         _tableViewSectionsArray = filteredData.sectionNamesArray
         DispatchQueue.main.async {
+            self.tableView.backgroundView?.isHidden = self._tableViewSectionsArray.count != 0
             self.tableView.reloadData()
         }
     }
-
 }
 
-extension CountryCodeViewController: UISearchBarDelegate, UISearchResultsUpdating {
-    public func updateSearchResults(for searchController: UISearchController) {
+extension CountryPickerViewController: UISearchBarDelegate, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         let searchText = searchBar.text!
         filterForSearchText(searchText)
     }
 
-    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             // Dismiss keyboard and hide search bar
         searchBar.resignFirstResponder()
         searchController.isActive = false
@@ -89,28 +144,27 @@ extension CountryCodeViewController: UISearchBarDelegate, UISearchResultsUpdatin
                 return country.name.lowercased().contains(searchText.lowercased())
             }
         }
-
         filteredData.countries = filteredCountries
         refreshTable()
     }
 
 }
 
-extension CountryCodeViewController: UITableViewDataSource, UITableViewDelegate {
+extension CountryPickerViewController: UITableViewDataSource, UITableViewDelegate {
 
-    public func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return _tableViewSectionsArray.count
     }
 
-    public func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return _tableViewSectionsArray
     }
 
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return _tableViewDataSource[_tableViewSectionsArray[section]]?.count ?? 0
     }
 
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryTableViewCell", for: indexPath) as! CountryTableViewCell
         let country: Country! = _tableViewDataSource[_tableViewSectionsArray[indexPath.section]]?[indexPath.row]
         cell.setup(country: country)
@@ -118,7 +172,7 @@ extension CountryCodeViewController: UITableViewDataSource, UITableViewDelegate 
         return cell
     }
 
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var country: Country! = _tableViewDataSource[_tableViewSectionsArray[indexPath.section]]?[indexPath.row]
         if let alreadySelectedIndex = findIndexPathForFirstMatchedRow() {
             updateSelected(alreadySelectedIndex, selected: false)
@@ -135,6 +189,7 @@ extension CountryCodeViewController: UITableViewDataSource, UITableViewDelegate 
 
     func updateSelected(_ indexPath: IndexPath, selected: Bool) {
         _tableViewDataSource[_tableViewSectionsArray[indexPath.section]]?[indexPath.row].isSelected = selected
+        selectedCountryRelay.onNext(_tableViewDataSource[_tableViewSectionsArray[indexPath.section]]?[indexPath.row])
     }
 
     func setSelectedCountry(_ country: Country) {
@@ -156,22 +211,22 @@ extension CountryCodeViewController: UITableViewDataSource, UITableViewDelegate 
     }
 
 
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
 
-    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return _tableViewSectionsArray[section]
     }
 
-    public func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         let sectionNumber = _tableViewSectionsArray.firstIndex(of: title) ?? 0
         tableView.scrollToRow(at: IndexPath(row: 0, section: sectionNumber), at: .top, animated: true)
         return sectionNumber
     }
 }
 
-extension CountryCodeViewController {
+extension CountryPickerViewController {
     func fetchCountryCodes(completion: @escaping (Result<[Country], Error>) -> Void) {
         do {
             let apiManager = try APIManager<[Country]>(fileName: "country_dial_info")

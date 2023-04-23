@@ -9,8 +9,14 @@ import Foundation
 import UIKit
 import Onboarding
 import Authentication
+import Utilities
+import RxSwift
+import RxCocoa
 
 public final class AppAssembler {
+
+    private static let countryPickerInteractor = CountryPickerInteractor()
+
     static func onboardingModule() -> UIViewController {
         return OnboardingBuilder.build(
             submodules: (
@@ -34,11 +40,44 @@ public final class AppAssembler {
             ))
     }
 
+    static func countryPickerModule() -> UIViewController {
+        return CountryPickerBuilder.build(
+            submodules:
+                (
+                    forRouter: (
+                        noData: UIView(),
+                        ()
+                    ),
+                    forPresenter: (
+                        noData: noDataModule,
+                        ()
+                    )
+                ),
+            useCases: (
+                output: (
+                    countries: countryPickerInteractor.countriesList,
+                    ()
+                ),
+                input: (
+                    selectedCountry: countryPickerInteractor.setSelectedCountry,
+                    ()
+                )
+            )
+        )
+    }
+
     static func tncPrivacyModule() -> UIViewController {
         return TncPrivacyBuilder.build(type: .tnc)
     }
 
+    static func noDataModule(image: UIImage?, title: String) -> UIView {
+        return NoDataViewBuilder.build(image: image, title: title)
+    }
+
     static func signupModule() -> UIViewController {
-        return AuthBuilder.build()
+        return AuthBuilder.build(submodules: (
+            countryPicker: countryPickerModule(),
+            ()
+        ))
     }
 }
