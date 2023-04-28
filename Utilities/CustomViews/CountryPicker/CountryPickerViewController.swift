@@ -180,6 +180,7 @@ extension CountryPickerViewController: UITableViewDataSource, UITableViewDelegat
             refreshTable()
         } else {
             country.isSelected = true
+            updateSelected(indexPath, selected: true)
             let cell = tableView.cellForRow(at: indexPath) as! CountryTableViewCell
             cell.setRowSelected(true, animated: true)
         }
