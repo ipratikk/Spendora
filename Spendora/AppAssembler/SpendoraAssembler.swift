@@ -75,9 +75,20 @@ public final class AppAssembler {
     }
 
     static func signupModule() -> UIViewController {
-        return AuthBuilder.build(submodules: (
-            countryPicker: countryPickerModule(),
-            ()
-        ))
+        return AuthBuilder.build(
+            submodules: (
+                countryPicker: countryPickerModule(),
+                ()
+            ),
+            useCases: (
+                output: (
+                    selectedCountry: countryPickerInteractor.selectedCountry,
+                    ()
+                ),
+                input: (
+                    ()
+                )
+            )
+        )
     }
 }

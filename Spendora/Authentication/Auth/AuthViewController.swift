@@ -12,7 +12,7 @@ import RxCocoa
 
 protocol AuthPresentation {
     typealias Output = (
-        countryCode: Driver<String>,
+        countryCode: Driver<Country?>,
         isAuthNumberEnabled: Driver<Bool>
     )
 
@@ -113,9 +113,11 @@ public class AuthViewController: UIViewController, UITextFieldDelegate {
             .disposed(by: disposeBag)
 
         presenter.output.countryCode
-            .drive(onNext:{ [weak self] code in
+            .drive(onNext:{ [weak self] country in
                 guard let sself = self else { return }
-                sself.countryCodeBtn.setTitle(code, for: .normal)
+                guard let country = country else { return }
+                let title = country.getFlag() + " " + country.code
+                sself.countryCodeBtn.setTitle(title, for: .normal)
             })
             .disposed(by: disposeBag)
 
@@ -127,15 +129,6 @@ public class AuthViewController: UIViewController, UITextFieldDelegate {
             })
             .disposed(by: disposeBag)
     }
-
-//    @objc func showView() {
-//        let vc = Ap
-//        let navController = UINavigationController(rootViewController: vc)
-//        if let sheets = vc.sheetPresentationController {
-//            sheets.detents = [.medium()]
-//        }
-//        present(navController, animated: true)
-//    }
 
     func setupAuthButton() {
         authNumber.layer.cornerRadius = authNumber.frame.height / 2
