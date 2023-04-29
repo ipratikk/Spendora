@@ -17,14 +17,21 @@ def util_pods
   pod 'SwiftLint'
 end
 
+def google_pods
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+end
+
 target 'Onboarding' do
     util_pods
 end
 
 target 'Spendora' do
     util_pods
+    google_pods
 end
 
 target 'Utilities' do
     util_pods
+    google_pods
 end

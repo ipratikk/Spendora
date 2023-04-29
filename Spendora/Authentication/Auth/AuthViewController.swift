@@ -81,8 +81,12 @@ public class AuthViewController: UIViewController, UITextFieldDelegate {
         phoneNumber.delegate = self
         phoneNumber.placeholder = "Enter phone number"
         phoneNumberStack.layer.cornerRadius = phoneNumberStack.frame.height / 2
-        phoneNumberStack.layer.borderColor = UIColor.lightGray.cgColor
-        phoneNumberStack.layer.borderWidth = 0.5
+        phoneNumberStack.clipsToBounds = true
+        [phoneNumberStack,countryCodeBtn].forEach {
+            $0.layer.borderColor = UIColor.lightGray.cgColor
+            $0.layer.borderWidth = 0.5
+        }
+        countryCodeBtn.setTitle("🌐" ,for: .normal)
         setupAuthButton()
         setupAuthOtherBtn()
 
@@ -135,11 +139,17 @@ public class AuthViewController: UIViewController, UITextFieldDelegate {
         authNumber.tintColor = .white
         authNumber.setTitle("Sign up with phone", for: .normal)
         authNumber.addDefaultShadow()
+        authNumber.rx.tap.bind(to: authNumberTapRelay)
+            .disposed(by: disposeBag)
     }
 
     func setupAuthOtherBtn() {
         authGoogle.setup(with: .google)
+        authGoogle.rx.tap.bind(to: authGoogleTapRelay)
+            .disposed(by: disposeBag)
         authApple.setup(with: .apple)
+        authApple.rx.tap.bind(to: authAppleTapRelay)
+            .disposed(by: disposeBag)
     }
 }
 

@@ -14,10 +14,10 @@ public final class CountryPickerPresenter: CountryPickerPresentation {
     public typealias UseCases = (
         output: (
             countries: Driver<[Country]>,
-            ()
+            selectedCountry: Driver<Country?>
         ),
         input: (
-            selectedCountry: (_ country: Country) -> Void,
+            selectCountry: (_ country: Country) -> Void,
             ()
         )
     )
@@ -44,7 +44,7 @@ private extension CountryPickerPresenter {
     private static func output(with input: Input, usecases: UseCases) -> Output {
         return (
             usecases.output.countries,
-            ()
+            usecases.output.selectedCountry
         )
     }
 
@@ -62,7 +62,7 @@ private extension CountryPickerPresenter {
     private func process(_ input: Input, with router: CountryPickerRouter, useCases: UseCases) {
         input.selectedCountry
             .drive(onNext: {
-                useCases.input.selectedCountry($0!)
+                useCases.input.selectCountry($0!)
             })
             .disposed(by: disposeBag)
     }

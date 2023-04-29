@@ -23,7 +23,7 @@ protocol CountryPickerPresentation {
 
     typealias Output = (
         countries: Driver<[Country]>,
-        ()
+        selectedCountry: Driver<Country?>
     )
 
     typealias Subviews = (
@@ -47,6 +47,7 @@ class CountryPickerViewController: UIViewController {
     private var _tableViewDataSource = [String: [Country]]()
     private var _tableViewSectionsArray = [String]()
     private var selectedCountry: [Country] = []
+    private var isCurrentCountry: Bool = true
 
     private var selectedCountryRelay = PublishSubject<Country?>()
     private lazy var selectedCountryDriver = selectedCountryRelay.asDriver(onErrorJustReturn: nil)
@@ -64,8 +65,34 @@ class CountryPickerViewController: UIViewController {
         setupBindings()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+            // Get the index path for the selected country
+        presenter.output.selectedCountry
+            .drive(onNext: { [weak self] country in
+                guard let self = self else { return }
+                guard let country = country else { return }
+                let indexPathOfCountry = self.findIndexPathForFirstMatchedRow(country)
+                if let indexPath = indexPathOfCountry {
+                    if self.isCurrentCountry {
+                        self.updateSelected(indexPath, selected: true)
+                        self.setSelectedCountry(country)
+                        self.refreshTable()
+                        self.isCurrentCountry = false
+                    }
+                    self.tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+                } else {
+                    print("The country does not exist in the data source")
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
     func setupUI() {
         title = "Select Country"
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissViewController))
+        navigationItem.rightBarButtonItem = doneButton
         setupTableView()
         initSearchController()
     }
@@ -121,6 +148,10 @@ class CountryPickerViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+
+    @objc func dismissViewController() {
+        self.dismiss(animated: true)
+    }
 }
 
 extension CountryPickerViewController: UISearchBarDelegate, UISearchResultsUpdating {
@@ -174,7 +205,7 @@ extension CountryPickerViewController: UITableViewDataSource, UITableViewDelegat
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var country: Country! = _tableViewDataSource[_tableViewSectionsArray[indexPath.section]]?[indexPath.row]
-        if let alreadySelectedIndex = findIndexPathForFirstMatchedRow() {
+        if let alreadySelectedIndex = findIndexPathForFirstMatchedRow(selectedCountry.first) {
             updateSelected(alreadySelectedIndex, selected: false)
             updateSelected(indexPath, selected: true)
             refreshTable()
@@ -186,6 +217,7 @@ extension CountryPickerViewController: UITableViewDataSource, UITableViewDelegat
         }
         setSelectedCountry(country)
         searchController.searchBar.resignFirstResponder()
+        searchController.isActive = false
     }
 
     func updateSelected(_ indexPath: IndexPath, selected: Bool) {
@@ -198,12 +230,12 @@ extension CountryPickerViewController: UITableViewDataSource, UITableViewDelegat
         selectedCountry.append(country)
     }
 
-    func findIndexPathForFirstMatchedRow() -> IndexPath? {
+    func findIndexPathForFirstMatchedRow(_ selectedCountry: Country?) -> IndexPath? {
         for section in 0..<tableView.numberOfSections {
             for row in 0..<tableView.numberOfRows(inSection: section) {
                 let indexPath = IndexPath(row: row, section: section)
                 let country: Country! = _tableViewDataSource[_tableViewSectionsArray[section]]?[row]
-                if country.name == selectedCountry.first?.name {
+                if country.name == selectedCountry?.name {
                     return indexPath
                 }
             }

@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 import Onboarding
 import Utilities
+import FirebaseCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,11 +23,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = UIViewController()
         self.window?.makeKeyAndVisible()
         startOnboardingFlow()
         return true
+    }
+
+    func startAppFlow() {
+        AuthManager.shared.isLoggedIn(completion: { isLoggedIn in
+            if isLoggedIn {
+                let vc = UIViewController()
+                vc.view.backgroundColor = .red
+                vc.makeRootViewController()
+            } else {
+                self.startOnboardingFlow()
+            }
+        })
     }
 
     func startOnboardingFlow() {

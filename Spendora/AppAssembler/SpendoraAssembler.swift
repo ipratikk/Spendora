@@ -56,10 +56,10 @@ public final class AppAssembler {
             useCases: (
                 output: (
                     countries: countryPickerInteractor.countriesList,
-                    ()
+                    selectedCountry: countryPickerInteractor.selectedCountry
                 ),
                 input: (
-                    selectedCountry: countryPickerInteractor.setSelectedCountry,
+                    selectCountry: countryPickerInteractor.setSelectedCountry,
                     ()
                 )
             )
