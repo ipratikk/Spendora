@@ -70,6 +70,8 @@
 		655974E829EC411400C5DE75 /* FeaturesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655974E729EC411400C5DE75 /* FeaturesRouter.swift */; };
 		655A933629ED8BF7007A201C /* FeatureCardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655A933529ED8BF6007A201C /* FeatureCardBuilder.swift */; };
 		655A933929EDA28B007A201C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655A933729ED9935007A201C /* MainCoordinator.swift */; };
+		657DA27129FCEFAC00C72CDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 657DA27029FCEFAB00C72CDF /* GoogleService-Info.plist */; };
+		657DA27529FCF7C900C72CDF /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DA27429FCF7C900C72CDF /* AuthManager.swift */; };
 		65AC2D6629F2B9D3002C6C20 /* AuthButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6546E0A929F0421B00C89F18 /* AuthButtonView.xib */; };
 		65AC2D6729F2B9E1002C6C20 /* CountryPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6546E0B829F1491E00C89F18 /* CountryPickerViewController.xib */; };
 		65AC2D6C29F2D5A9002C6C20 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC2D6B29F2D5A9002C6C20 /* APIManager.swift */; };
@@ -185,6 +187,8 @@
 		6562EF9529E7D96C00D6E1D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6562EF9829E7DAF500D6E1D5 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		657DA27029FCEFAB00C72CDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		657DA27429FCF7C900C72CDF /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		65AC2D6B29F2D5A9002C6C20 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		65AC2D6D29F2DC00002C6C20 /* CountryPickerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerBuilder.swift; sourceTree = "<group>"; };
 		65AC2D6F29F2DC10002C6C20 /* CountryPickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerPresenter.swift; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 		65321D4129E9965D00BA3E93 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				657DA27229FCF57500C72CDF /* Authenticators */,
 				65AC2D6A29F2D0DE002C6C20 /* CustomViews */,
 				65AC2D6929F2D0CB002C6C20 /* Helper */,
 				65AC2D6829F2D0AB002C6C20 /* UIKitExtensions */,
@@ -441,6 +446,7 @@
 				65321D2429E994D800BA3E93 /* AppAssembler */,
 				6557312329E460C9008BEA22 /* Assets */,
 				6557310129E4581D008BEA22 /* AppDelegate.swift */,
+				657DA27029FCEFAB00C72CDF /* GoogleService-Info.plist */,
 				6557310D29E45822008BEA22 /* Assets.xcassets */,
 				6557310F29E45822008BEA22 /* LaunchScreen.storyboard */,
 				6557311229E45822008BEA22 /* Info.plist */,
@@ -460,6 +466,23 @@
 				650231C829E835E600C13139 /* analyzeExpense.json */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		657DA27229FCF57500C72CDF /* Authenticators */ = {
+			isa = PBXGroup;
+			children = (
+				657DA27329FCF58600C72CDF /* PhoneAuthenticator */,
+				657DA27429FCF7C900C72CDF /* AuthManager.swift */,
+			);
+			path = Authenticators;
+			sourceTree = "<group>";
+		};
+		657DA27329FCF58600C72CDF /* PhoneAuthenticator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PhoneAuthenticator;
+			path = "../New Group/PhoneAuthenticator";
 			sourceTree = "<group>";
 		};
 		65AC2D6529F2AEFA002C6C20 /* AuthButton */ = {
@@ -646,6 +669,7 @@
 				655730FB29E4581D008BEA22 /* Frameworks */,
 				655730FC29E4581D008BEA22 /* Resources */,
 				650B9B3F29EAA0BD00D144A9 /* Swiftlint */,
+				381F47622281EF984E16BB4C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -757,6 +781,7 @@
 			files = (
 				650231C929E835E700C13139 /* analyzeExpense.json in Resources */,
 				6557312729E47320008BEA22 /* Localizable.strings in Resources */,
+				657DA27129FCEFAC00C72CDF /* GoogleService-Info.plist in Resources */,
 				650231C729E834F300C13139 /* splitExpense.json in Resources */,
 				650231B129E7F45600C13139 /* listExpense.json in Resources */,
 				6557311129E45822008BEA22 /* LaunchScreen.storyboard in Resources */,
@@ -789,6 +814,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		381F47622281EF984E16BB4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Spendora/Pods-Spendora-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5BB9816BC93350F1D1FE28F1 /* [CP] Check Pods Manifest.lock */ = {
@@ -919,6 +959,7 @@
 				65AC2D6E29F2DC00002C6C20 /* CountryPickerBuilder.swift in Sources */,
 				65AC2D7529F2E43B002C6C20 /* CountryTableViewCell.swift in Sources */,
 				6546E0AE29F071B200C89F18 /* UIButtonExtension.swift in Sources */,
+				657DA27529FCF7C900C72CDF /* AuthManager.swift in Sources */,
 				65321D5C29E999FE00BA3E93 /* Constants.swift in Sources */,
 				6525F7BB29EDEE9B000768AC /* UIColorExtension.swift in Sources */,
 			);

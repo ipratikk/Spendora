@@ -32,34 +32,49 @@ public final class AuthPresenter: AuthPresentation {
     init(input: Input, router: AuthRouter, useCases: UseCases) {
         self.input = input
         self.output = type(of: self).output(with: input, useCases: useCases)
-        process(input, with: router)
+        process(input, with: router, useCases: useCases)
     }
 }
 
 private extension AuthPresenter {
+
     static let staticDisposeBag = DisposeBag()
+
     private static func output(with input: Input, useCases: UseCases) -> Output {
-        let authPhoneEnabled = input.phoneNumberText
-            .map { $0.count == 10 }
+     let authPhoneEnabled = Driver.combineLatest(input.phoneNumberText, useCases.output.selectedCountry)
+            .map { phoneNumber, country in
+                guard country != nil else { return false }
+                return phoneNumber.count == 10
+            }
+            .startWith(false)
+
         useCases.output.selectedCountry
             .drive(onNext: { country in
                 guard let country = country else { return }
                 print(country)
             })
+            .disposed(by: staticDisposeBag)
         return (
             countryCode: useCases.output.selectedCountry,
             isAuthNumberEnabled: authPhoneEnabled
         )
     }
 
-    private func process(_ input: Input, with router: AuthRouter) {
+    private func process(_ input: Input, with router: AuthRouter, useCases: UseCases) {
         input.authNumberTapped
-            .withLatestFrom(input.phoneNumberText)
-            .map { $0 }
-            .drive(onNext: { phoneNumber in
-                guard phoneNumber.count == 10 else { return }
+            .withLatestFrom(input.phoneNumberText) { _, phoneNumber in
+                return phoneNumber
+            }
+            .withLatestFrom(useCases.output.selectedCountry) { phoneNumber, country in
+                return (phoneNumber, country)
+            }
+            .drive(onNext: { (phoneNumber, country) in
+                guard let country = country else { return }
+                let phoneNumberWithCode = country.dial_code + phoneNumber
+                print("Authenticating phonenumber = \(phoneNumberWithCode)")
             })
             .disposed(by: disposeBag)
+
 
         input.phoneNumberText
             .drive(onNext:{ text in

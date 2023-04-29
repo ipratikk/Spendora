@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -28,14 +29,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQk-ed-bIF">
-                    <rect key="frame" x="-53.666666666666657" y="10" width="500.33333333333326" height="300"/>
+                    <rect key="frame" x="-53.666666666666657" y="69" width="500.33333333333326" height="300"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="V7f-I5-iPZ"/>
                         <constraint firstAttribute="width" constant="500" id="loZ-QM-O6w"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jUu-Aq-UMf">
-                    <rect key="frame" x="30" y="340" width="333" height="482"/>
+                    <rect key="frame" x="30" y="399" width="333" height="389"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="p2a-Gl-jpS">
                             <rect key="frame" x="0.0" y="0.0" width="333" height="69.333333333333329"/>
@@ -55,17 +56,17 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OKs-ky-kIP">
-                            <rect key="frame" x="0.0" y="172.33333333333337" width="333" height="120"/>
+                            <rect key="frame" x="0.0" y="125.66666666666663" width="333" height="120"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QqD-4o-ZFq">
                                     <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5S0-4e-2PQ">
-                                            <rect key="frame" x="0.0" y="8" width="60" height="34"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="l7a-hE-vIC"/>
                                             </constraints>
-                                            <state key="normal">
+                                            <state key="normal" title="🌏">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
@@ -77,6 +78,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="3ny-TI-8JZ"/>
+                                        <constraint firstItem="5S0-4e-2PQ" firstAttribute="top" secondItem="QqD-4o-ZFq" secondAttribute="top" id="KzW-Cy-ScG"/>
+                                        <constraint firstAttribute="bottom" secondItem="5S0-4e-2PQ" secondAttribute="bottom" id="UVF-HD-HYN"/>
                                         <constraint firstItem="gGC-3S-1gV" firstAttribute="top" secondItem="QqD-4o-ZFq" secondAttribute="top" id="bhf-iu-b3C"/>
                                         <constraint firstAttribute="bottom" secondItem="gGC-3S-1gV" secondAttribute="bottom" id="iYe-Rf-kgV"/>
                                     </constraints>
@@ -95,7 +98,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="61y-ZR-6rR">
-                            <rect key="frame" x="0.0" y="395" width="333" height="87"/>
+                            <rect key="frame" x="0.0" y="302" width="333" height="87"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or sign up using" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S85-mF-YXj">
                                     <rect key="frame" x="113.66666666666666" y="0.0" width="105.66666666666666" height="17"/>
