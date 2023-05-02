@@ -72,6 +72,10 @@ private extension AuthPresenter {
                 guard let country = country else { return }
                 let phoneNumberWithCode = country.dial_code + phoneNumber
                 print("Authenticating phonenumber = \(phoneNumberWithCode)")
+                router.routeToOTP()
+//                AuthManager.shared.startAuth(phoneNumber: phoneNumberWithCode, completion: {_ in
+//                    
+//                })
             })
             .disposed(by: disposeBag)
 

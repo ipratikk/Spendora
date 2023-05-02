@@ -28,7 +28,7 @@ public final class FeaturesRouter {
 extension FeaturesRouter {
     func routeToAuthentication() {
         let authVC = submodules.singup
-//        view.navigationController?.pushViewController(authVC, animated: true)
-        view.present(authVC, animated: true)
+        view.navigationController?.pushViewController(authVC, animated: true)
+//        view.present(authVC, animated: true)
     }
 }

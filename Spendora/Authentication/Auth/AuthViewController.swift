@@ -31,7 +31,7 @@ protocol AuthPresentation {
 }
 
 
-public class AuthViewController: UIViewController, UITextFieldDelegate {
+class AuthViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var authImage: UIImageView!
     @IBOutlet weak var authTitle: UILabel!
@@ -68,10 +68,15 @@ public class AuthViewController: UIViewController, UITextFieldDelegate {
     private let disposeBag = DisposeBag()
 
 
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupBindings()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.endEditing(true)
     }
 
     func setupUI() {
@@ -89,13 +94,12 @@ public class AuthViewController: UIViewController, UITextFieldDelegate {
         countryCodeBtn.setTitle("🌐" ,for: .normal)
         setupAuthButton()
         setupAuthOtherBtn()
-
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
+        addKeyboardNotification()
     }
 
-    @objc func dismissKeyboard() {
-        phoneNumber.resignFirstResponder()
+    deinit {
+        removeKeyboardNotification()
+        print("\(#file) Deinit Called")
     }
 
     func setupBindings() {
@@ -154,7 +158,7 @@ public class AuthViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension AuthViewController {
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         let newLength = text.count + string.count - range.length
         return newLength <= 10 && string.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
