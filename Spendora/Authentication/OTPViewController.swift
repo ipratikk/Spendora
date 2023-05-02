@@ -16,12 +16,7 @@ class OTPViewController: UIViewController {
     @IBOutlet weak var resendTitle: UILabel!
     @IBOutlet weak var submitBtn: UIButton!
 
-    @IBOutlet weak var otpField1: UITextField!
-    @IBOutlet weak var otpField2: UITextField!
-    @IBOutlet weak var otpField3: UITextField!
-    @IBOutlet weak var otpField4: UITextField!
-    @IBOutlet weak var otpField5: UITextField!
-    @IBOutlet weak var otpField6: UITextField!
+    @IBOutlet weak var otpField: UITextField!
 
 
 
@@ -120,18 +115,67 @@ class OTPViewController: UIViewController {
     }
 
     func setupOTPFields() {
-        [otpField1, otpField2, otpField3, otpField4, otpField5, otpField6]
-            .forEach { field in
-                    // Create a new layer for the bottom border
-                let bottomBorder = CALayer()
-                bottomBorder.frame = CGRect(x: 0, y: field.frame.size.height - 1, width: field.frame.size.width, height: 1)
-                bottomBorder.backgroundColor = UIColor.gray.cgColor
 
-                    // Add the bottom border to the text view's layer
-                field.layer.addSublayer(bottomBorder)
+        // Create a new layer for the bottom border
+        otpField.delegate = self
+        updateAttrText("", textField: otpField)
+        updateAttrText("XXXXXX", textField: otpField, placeholder: true)
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x: 0, y: otpField.frame.size.height - 1, width: otpField.frame.size.width, height: 1)
+        bottomBorder.backgroundColor = UIColor.gray.cgColor
 
-                    // Set the text view's border style to none
-                field.borderStyle = .none
-            }
+            // Add the bottom border to the text view's layer
+        otpField.layer.addSublayer(bottomBorder)
+
+            // Set the text view's border style to none
+        otpField.borderStyle = .none
+    }
+}
+
+extension OTPViewController: UITextFieldDelegate {
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+            // Check if the text field is the same as the one that triggered the event
+        guard textField == otpField else {
+            return true
+        }
+
+            // Get the current text and calculate the new length
+        guard let currentText = textField.text else {
+            return true
+        }
+        let newLength = currentText.count + string.count - range.length
+
+            // Check if the new length is within the allowed range
+        if newLength > 6 {
+            return false
+        }
+
+            // Create an attributed string with the updated text
+        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        updateAttrText(newText, textField: textField)
+
+            // Return false to prevent the text field from updating its text
+        return false
+    }
+
+    func updateAttrText(_ newText: String, textField: UITextField, placeholder: Bool = false) {
+        let attributedString = NSMutableAttributedString(string: newText)
+
+            // Set the character spacing to 1.5 points
+        let kernAttrs: [NSAttributedString.Key: Any] = [
+            .kern: placeholder ? 13.0: 15.0,
+            .font: UIFont.boldSystemFont(ofSize: 27)
+        ]
+        let range = NSRange(location: 0, length: attributedString.length)
+        attributedString.addAttributes(kernAttrs, range: range)
+
+            // Set the attributed string as the text of the UITextField
+        if placeholder {
+            textField.attributedPlaceholder = attributedString
+        } else {
+            textField.attributedText = attributedString
+        }
     }
 }
