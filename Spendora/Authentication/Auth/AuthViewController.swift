@@ -33,6 +33,7 @@ protocol AuthPresentation {
 
 class AuthViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var authImage: UIImageView!
     @IBOutlet weak var authTitle: UILabel!
     @IBOutlet weak var authSubtitle: UILabel!
@@ -94,7 +95,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         countryCodeBtn.setTitle("🌐" ,for: .normal)
         setupAuthButton()
         setupAuthOtherBtn()
-        addKeyboardNotification()
+        addKeyboardNotification(with: scrollView)
     }
 
     deinit {
