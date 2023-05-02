@@ -55,9 +55,15 @@ public extension UIViewController {
 }
 
 public extension UIViewController {
-    func addKeyboardNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    func addKeyboardNotification(with scrollView: UIScrollView) {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { [weak self] notification in
+            guard let self = self else { return }
+            self.keyboardWillShow(notification, scrollView: scrollView)
+        }
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { [weak self] notification in
+            guard let self = self else { return }
+            self.keyboardWillHide(notification, scrollView: scrollView)
+        }
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
     }
@@ -71,7 +77,7 @@ public extension UIViewController {
         self.view.endEditing(true)
     }
 
-    @objc private func keyboardWillShow(_ notification: Notification) {
+    private func keyboardWillShow(_ notification: Notification, scrollView: UIScrollView) {
         guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
             return
         }
@@ -80,15 +86,19 @@ public extension UIViewController {
         let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0.25
 
         UIView.animate(withDuration: duration) {
-            self.view.frame.origin.y = -keyboardHeight // adjust the view's Y position to move it up by the keyboard height
+            scrollView.contentInset.bottom = keyboardHeight
+            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+            scrollView.verticalScrollIndicatorInsets = contentInsets
         }
     }
 
-    @objc private func keyboardWillHide(_ notification: Notification) {
+    private func keyboardWillHide(_ notification: Notification, scrollView: UIScrollView) {
         let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval ?? 0.25
 
         UIView.animate(withDuration: duration) {
-            self.view.frame.origin.y = 0 // reset the view's Y position
+            scrollView.contentInset.bottom = 0
+            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            scrollView.verticalScrollIndicatorInsets = contentInsets
         }
     }
 }

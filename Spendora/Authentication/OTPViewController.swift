@@ -10,6 +10,7 @@ import Utilities
 
 class OTPViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var otpImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -42,7 +43,7 @@ class OTPViewController: UIViewController {
         setupOTPFields()
         setupResendTitle()
         setupSubmitBtn()
-        addKeyboardNotification()
+        addKeyboardNotification(with: scrollView)
     }
 
     func setupOTPImage() {
