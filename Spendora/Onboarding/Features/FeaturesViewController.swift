@@ -107,8 +107,8 @@ public class FeaturesViewController: UIViewController {
             .drive(onNext: { featureList in
                 featureList.enumerated().forEach { [weak self] (offset,featureVC) in
                     guard let sself = self else { return }
-                    sself.scrollView.addSubview(featureVC)
                     featureVC.frame = CGRect(x: CGFloat(offset) * sself.view.frame.width, y: 0, width: sself.view.frame.width, height: sself.scrollView.frame.height)
+                    sself.scrollView.addSubview(featureVC)
                 }
             })
             .disposed(by: disposeBag)

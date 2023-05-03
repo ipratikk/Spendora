@@ -70,6 +70,16 @@
 		655974E829EC411400C5DE75 /* FeaturesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655974E729EC411400C5DE75 /* FeaturesRouter.swift */; };
 		655A933629ED8BF7007A201C /* FeatureCardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655A933529ED8BF6007A201C /* FeatureCardBuilder.swift */; };
 		655A933929EDA28B007A201C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655A933729ED9935007A201C /* MainCoordinator.swift */; };
+		6578B2132A02B25100F81012 /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6525F79F29EDC1C2000768AC /* Authentication.framework */; };
+		6578B2142A02B25200F81012 /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65321D2C29E995B000BA3E93 /* Onboarding.framework */; };
+		6578B2152A02B25200F81012 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65321D4029E9965D00BA3E93 /* Utilities.framework */; };
+		6578B2182A02B43E00F81012 /* Onboarding.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65321D2C29E995B000BA3E93 /* Onboarding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6578B2192A02B43F00F81012 /* Utilities.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65321D4029E9965D00BA3E93 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6578B21A2A02B43F00F81012 /* Authentication.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6525F79F29EDC1C2000768AC /* Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6578B21F2A02B5E000F81012 /* RxCocoa.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 650B9B3629E9DAD200D144A9 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6578B2202A02B5E000F81012 /* RxRelay.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 650B9B3729E9DAD200D144A9 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6578B2212A02B5E000F81012 /* RxSwift.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 650B9B3829E9DAD200D144A9 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6578B2232A02B64B00F81012 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6578B2222A02B64B00F81012 /* Lottie */; };
 		657DA27129FCEFAC00C72CDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 657DA27029FCEFAB00C72CDF /* GoogleService-Info.plist */; };
 		657DA27529FCF7C900C72CDF /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DA27429FCF7C900C72CDF /* AuthManager.swift */; };
 		657DA27929FD44EA00C72CDF /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DA27729FD44EA00C72CDF /* OTPViewController.swift */; };
@@ -117,6 +127,24 @@
 			remoteInfo = Onboarding;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6578B2172A02B42E00F81012 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6578B21F2A02B5E000F81012 /* RxCocoa.xcframework in CopyFiles */,
+				6578B2202A02B5E000F81012 /* RxRelay.xcframework in CopyFiles */,
+				6578B2212A02B5E000F81012 /* RxSwift.xcframework in CopyFiles */,
+				6578B2182A02B43E00F81012 /* Onboarding.framework in CopyFiles */,
+				6578B2192A02B43F00F81012 /* Utilities.framework in CopyFiles */,
+				6578B21A2A02B43F00F81012 /* Authentication.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00172E92B7E1D60695D0CA91 /* Pods-Spendora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendora.debug.xcconfig"; path = "Target Support Files/Pods-Spendora/Pods-Spendora.debug.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +275,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6578B2232A02B64B00F81012 /* Lottie in Frameworks */,
+				6578B2132A02B25100F81012 /* Authentication.framework in Frameworks */,
+				6578B2142A02B25200F81012 /* Onboarding.framework in Frameworks */,
+				6578B2152A02B25200F81012 /* Utilities.framework in Frameworks */,
 				564DD8A919F802DF2A931F87 /* Pods_Spendora.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +716,7 @@
 				655730FC29E4581D008BEA22 /* Resources */,
 				650B9B3F29EAA0BD00D144A9 /* Swiftlint */,
 				381F47622281EF984E16BB4C /* [CP] Embed Pods Frameworks */,
+				6578B2172A02B42E00F81012 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -691,6 +724,9 @@
 				65321D3A29E995FC00BA3E93 /* PBXTargetDependency */,
 			);
 			name = Spendora;
+			packageProductDependencies = (
+				6578B2222A02B64B00F81012 /* Lottie */,
+			);
 			productName = Spendora;
 			productReference = 655730FE29E4581D008BEA22 /* Spendora.app */;
 			productType = "com.apple.product-type.application";
@@ -1425,6 +1461,7 @@
 				DEVELOPMENT_TEAM = 59SR2WBZJT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spendora/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Spendora to access your location for signing up";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1457,6 +1494,7 @@
 				DEVELOPMENT_TEAM = 59SR2WBZJT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spendora/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Spendora to access your location for signing up";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1549,6 +1587,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		65321D5A29E9999F00BA3E93 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6557311D29E45D53008BEA22 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+		6578B2222A02B64B00F81012 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6557311D29E45D53008BEA22 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;

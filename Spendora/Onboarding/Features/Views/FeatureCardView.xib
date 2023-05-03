@@ -15,21 +15,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBJ-Z3-kg5">
-                    <rect key="frame" x="46.666666666666657" y="79" width="300" height="300"/>
+                    <rect key="frame" x="49" y="79" width="295" height="294.66666666666669"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="300" id="4lH-Mc-5Q1"/>
-                        <constraint firstAttribute="width" constant="300" id="IJe-um-kfi"/>
+                        <constraint firstAttribute="width" secondItem="bBJ-Z3-kg5" secondAttribute="height" multiplier="1:1" id="USm-iq-MyR"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPd-WJ-tJ4">
-                    <rect key="frame" x="30" y="389" width="333" height="30"/>
+                    <rect key="frame" x="30" y="383.66666666666669" width="333" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="POA-jR-6YO">
-                    <rect key="frame" x="20" y="439" width="353" height="359"/>
+                    <rect key="frame" x="20" y="433.66666666666674" width="353" height="364.33333333333326"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <color key="textColor" systemColor="labelColor"/>
@@ -49,6 +48,7 @@
                 <constraint firstItem="bBJ-Z3-kg5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ssa-2a-dl1"/>
                 <constraint firstItem="RPd-WJ-tJ4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="YaW-Sw-A4b"/>
                 <constraint firstItem="RPd-WJ-tJ4" firstAttribute="top" secondItem="bBJ-Z3-kg5" secondAttribute="bottom" constant="10" id="mbm-3V-wkn"/>
+                <constraint firstItem="bBJ-Z3-kg5" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.75" id="qic-9v-DGJ"/>
             </constraints>
             <connections>
                 <outlet property="animationView" destination="bBJ-Z3-kg5" id="VV6-WI-WEd"/>

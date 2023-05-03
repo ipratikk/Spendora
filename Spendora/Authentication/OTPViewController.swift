@@ -19,8 +19,6 @@ class OTPViewController: UIViewController {
 
     @IBOutlet weak var otpField: UITextField!
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
