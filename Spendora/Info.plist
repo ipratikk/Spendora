@@ -4,9 +4,9 @@
 <dict>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>fetch</string>
+		<string>processing</string>
 		<string>remote-notification</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Allow Spendora to access your location for signing up</string>
 </dict>
 </plist>

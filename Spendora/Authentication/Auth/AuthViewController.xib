@@ -33,7 +33,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAr-jC-hGE">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="722.66666666666663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="712.66666666666663"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQk-ed-bIF">
                                     <rect key="frame" x="-50" y="10" width="493" height="301.33333333333331"/>
@@ -72,7 +72,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="l7a-hE-vIC"/>
                                                             </constraints>
-                                                            <state key="normal" title="🌏">
+                                                            <state key="normal" title="🌐">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                         </button>
@@ -154,7 +154,7 @@
                                 <constraint firstAttribute="trailing" secondItem="jUu-Aq-UMf" secondAttribute="trailing" constant="25" id="2XC-WR-DTm"/>
                                 <constraint firstItem="QQk-ed-bIF" firstAttribute="leading" secondItem="YAr-jC-hGE" secondAttribute="leading" constant="-50" id="AfD-J4-4uf"/>
                                 <constraint firstAttribute="trailing" secondItem="jUu-Aq-UMf" secondAttribute="trailing" constant="25" id="K2z-4a-rbx"/>
-                                <constraint firstAttribute="bottom" secondItem="jUu-Aq-UMf" secondAttribute="bottom" constant="40" id="c3L-oW-6qZ"/>
+                                <constraint firstAttribute="bottom" secondItem="jUu-Aq-UMf" secondAttribute="bottom" constant="30" id="c3L-oW-6qZ"/>
                                 <constraint firstItem="jUu-Aq-UMf" firstAttribute="top" secondItem="QQk-ed-bIF" secondAttribute="bottom" constant="30" id="giG-Yb-Kr4"/>
                                 <constraint firstItem="jUu-Aq-UMf" firstAttribute="leading" secondItem="YAr-jC-hGE" secondAttribute="leading" constant="25" id="sSF-yD-0WQ"/>
                                 <constraint firstItem="jUu-Aq-UMf" firstAttribute="leading" secondItem="YAr-jC-hGE" secondAttribute="leading" constant="25" id="u6M-jw-iyF"/>
