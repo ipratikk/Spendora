@@ -13,6 +13,6 @@ public final class MainCoordinator {
 
     func routeToFeatures(from view: UIViewController, type: PushType) {
         let featuresVC = AppAssembler.featuresModule()
-        view.navigationController?.pushViewController(featuresVC, animated: true)
+        view.show(featuresVC, type: .push, animated: true)
     }
 }

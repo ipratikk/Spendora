@@ -160,8 +160,18 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
 
 extension AuthViewController {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else { return true }
-        let newLength = text.count + string.count - range.length
-        return newLength <= 10 && string.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
+        if let text = textField.text, let textRange = Range(range, in: text) {
+            let updatedText = text.replacingCharacters(in: textRange, with: string).filter("0123456789".contains)
+            if updatedText.count >= 10 {
+                let newText = String(updatedText.suffix(10))
+                textField.text = newText
+                view.endEditing(true)
+                return false
+            } else {
+                textField.text = updatedText
+            }
+        }
+
+        return false
     }
 }

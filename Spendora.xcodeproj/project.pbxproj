@@ -30,7 +30,6 @@
 		65321D2629E9950300BA3E93 /* SpendoraAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */; };
 		65321D2F29E995B100BA3E93 /* Onboarding.h in Headers */ = {isa = PBXBuildFile; fileRef = 65321D2E29E995B100BA3E93 /* Onboarding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65321D4329E9965D00BA3E93 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 65321D4229E9965D00BA3E93 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65321D5229E9982300BA3E93 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562EF9829E7DAF500D6E1D5 /* UIViewControllerExtension.swift */; };
 		65321D5329E9986E00BA3E93 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231C429E8171C00C13139 /* UIViewExtension.swift */; };
 		65321D5529E998E500BA3E93 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */; };
 		65321D5829E9992800BA3E93 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D5729E9992800BA3E93 /* LottieView.swift */; };
@@ -215,7 +214,6 @@
 		655A933529ED8BF6007A201C /* FeatureCardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCardBuilder.swift; sourceTree = "<group>"; };
 		655A933729ED9935007A201C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		6562EF9529E7D96C00D6E1D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		6562EF9829E7DAF500D6E1D5 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		657DA27029FCEFAB00C72CDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		657DA27429FCF7C900C72CDF /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -352,14 +350,6 @@
 			path = ../Utilities;
 			sourceTree = "<group>";
 		};
-		65321D4F29E9981500BA3E93 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				6562EF9829E7DAF500D6E1D5 /* UIViewControllerExtension.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		65321D5629E9992800BA3E93 /* LottieView */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,7 +469,6 @@
 				6525F7A029EDC1C2000768AC /* Authentication */,
 				65321D4129E9965D00BA3E93 /* Utilities */,
 				65321D2D29E995B100BA3E93 /* Onboarding */,
-				65321D4F29E9981500BA3E93 /* Shared */,
 				65321D2429E994D800BA3E93 /* AppAssembler */,
 				6557312329E460C9008BEA22 /* Assets */,
 				6557310129E4581D008BEA22 /* AppDelegate.swift */,
@@ -1023,7 +1012,6 @@
 			files = (
 				6557310C29E4581D008BEA22 /* Spendora.xcdatamodeld in Sources */,
 				6557310229E4581D008BEA22 /* AppDelegate.swift in Sources */,
-				65321D5229E9982300BA3E93 /* UIViewControllerExtension.swift in Sources */,
 				655A933929EDA28B007A201C /* MainCoordinator.swift in Sources */,
 				65321D2629E9950300BA3E93 /* SpendoraAssembler.swift in Sources */,
 			);

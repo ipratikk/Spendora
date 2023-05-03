@@ -42,15 +42,28 @@ public extension UIViewController {
 }
 
 public extension UIViewController {
-    func show(_ viewController: UIViewController, type: PushType, animated: Bool) {
+    func show(_ viewController: UIViewController, type: PushType, animated: Bool, withNavigationBar: Bool = true) {
         switch type {
             case .push:
                 if let navigationController = navigationController {
                     navigationController.pushViewController(viewController, animated: animated)
+                    navigationController.isNavigationBarHidden = !withNavigationBar
                 }
             case .present:
-                present(viewController, animated: animated, completion: nil)
+                if withNavigationBar {
+                    let navigationController = UINavigationController(rootViewController: viewController)
+                    present(navigationController, animated: animated)
+                } else {
+                    present(viewController, animated: animated, completion: nil)
+                }
         }
+    }
+
+    func makeRootViewController() {
+        let navigationController = UINavigationController(rootViewController: self)
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = navigationController
+        appDelegate?.window??.makeKeyAndVisible()
     }
 }
 
