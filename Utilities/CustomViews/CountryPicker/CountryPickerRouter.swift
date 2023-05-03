@@ -30,7 +30,6 @@ extension CountryPickerRouter {
             self.view.dismiss(animated: true)
         })
         alert.addAction(dismissAction)
-        view.present(alert, animated: true)
+        view.show(alert, type: .present, animated: true, withNavigationBar: false)
     }
-
 }

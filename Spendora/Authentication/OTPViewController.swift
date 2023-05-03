@@ -31,7 +31,6 @@ class OTPViewController: UIViewController {
 
     deinit {
         removeKeyboardNotification()
-        print("\(#file) Deinit Called")
     }
 
     func setupUI() {

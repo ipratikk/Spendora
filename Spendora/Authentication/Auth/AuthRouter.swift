@@ -25,16 +25,11 @@ public final class AuthRouter {
 extension AuthRouter {
     func routeToCountryPicker() {
         let countryPickerVC = submodules.countryPicker
-        let navController = UINavigationController(rootViewController: countryPickerVC)
-        if let sheets = countryPickerVC.sheetPresentationController {
-            sheets.detents = [.medium()]
-        }
-        view.present(navController, animated: true)
+        view.show(countryPickerVC, type: .present, animated: true)
     }
 
     func routeToOTP() {
         let otpVC = OTPViewController.initFromNib()
-        view.navigationController?.pushViewController(otpVC, animated: true)
-//        view.present(otpVC, animated: true)
+        view.show(otpVC, type: .push, animated: true)
     }
 }

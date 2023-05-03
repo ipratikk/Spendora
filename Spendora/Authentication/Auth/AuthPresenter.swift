@@ -51,7 +51,6 @@ private extension AuthPresenter {
         useCases.output.selectedCountry
             .drive(onNext: { country in
                 guard let country = country else { return }
-                print(country)
             })
             .disposed(by: staticDisposeBag)
         return (
@@ -71,18 +70,10 @@ private extension AuthPresenter {
             .drive(onNext: { (phoneNumber, country) in
                 guard let country = country else { return }
                 let phoneNumberWithCode = country.dial_code + phoneNumber
-                print("Authenticating phonenumber = \(phoneNumberWithCode)")
                 router.routeToOTP()
 //                AuthManager.shared.startAuth(phoneNumber: phoneNumberWithCode, completion: {_ in
 //                    
 //                })
-            })
-            .disposed(by: disposeBag)
-
-
-        input.phoneNumberText
-            .drive(onNext:{ text in
-                print(text)
             })
             .disposed(by: disposeBag)
 

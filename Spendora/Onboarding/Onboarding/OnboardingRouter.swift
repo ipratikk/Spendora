@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Utilities
 
 public final class OnboardingRouter {
     public typealias Submodules = (
@@ -26,18 +27,18 @@ public final class OnboardingRouter {
 extension OnboardingRouter {
     func routeToTnc(type: TncType) {
         let tncPrivacy = submodules.tncPrivacy(type)
-        view.present(tncPrivacy, animated: true)
+        view.show(tncPrivacy, type: .present, animated: true, withNavigationBar: false)
     }
 
     func routeToFeatures(){
         let features = submodules.features
-        view.navigationController?.pushViewController(features, animated: true)
-        view.navigationController?.isNavigationBarHidden = true
+        features.makeRootViewController()
+//        view.show(features, type: .push, animated: true, withNavigationBar: false)
     }
 
     func showAlert() {
         let alert = UIAlertController(title: .empty, message: Module.Strings.Alert.message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: .ok, style: .default))
-        view.present(alert, animated: true)
+        view.show(alert, type: .present, animated: true, withNavigationBar: false)
     }
 }
