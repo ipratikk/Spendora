@@ -16,7 +16,7 @@ class FeatureCardView: UIView, NibLoadable {
 
     @IBOutlet weak var animationView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionView: UITextView!
+    @IBOutlet weak var descriptionView: UILabel!
 
     var lottieView: LottieView!
 
@@ -31,7 +31,5 @@ class FeatureCardView: UIView, NibLoadable {
         titleLabel.text = featureModel.title
         descriptionView.text = featureModel.body
         lottieView.play()
-
-        descriptionView.isUserInteractionEnabled = false
     }
 }

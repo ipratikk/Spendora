@@ -4,7 +4,7 @@
 //
 //  Created by Pratik Goel on 13/04/23.
 //
-
+import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
@@ -69,20 +69,16 @@ protocol FeaturesPresentation {
              $0.removeFromSuperview()
          }
 
-         presenter.output.features
-             .drive(onNext: { [weak self] features in
-                 guard let sself = self else { return }
-                 sself.pageControl.numberOfPages = features.count
-                 sself.scrollView.contentSize = CGSize(width: sself.scrollView.frame.width * CGFloat(features.count), height: sself.scrollView.frame.height)
-             })
-             .disposed(by: disposeBag)
-
          presenter.subviews.features
              .drive(onNext: { featureList in
-                 featureList.enumerated().forEach { [weak self] (offset,featureVC) in
+                 self.pageControl.numberOfPages = featureList.count
+                 featureList.enumerated().forEach { [weak self] (offset, featureVC) in
                      guard let sself = self else { return }
                      featureVC.frame = CGRect(x: CGFloat(offset) * sself.scrollView.frame.width, y: 0, width: sself.scrollView.frame.width, height: sself.scrollView.frame.height)
                      sself.scrollView.addSubview(featureVC)
+                         // Set the content size to enable vertical scrolling
+                     let totalWidth = CGFloat(featureList.count) * sself.scrollView.frame.width
+                     sself.scrollView.contentSize = CGSize(width: totalWidth, height: featureVC.frame.height)
                  }
              })
              .disposed(by: disposeBag)
@@ -148,7 +144,7 @@ protocol FeaturesPresentation {
 
 extension FeaturesViewController: UIScrollViewDelegate {
      func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollView.contentOffset.y = 0
+//        scrollView.contentOffset.y = 0
         let contentOffset = Float(scrollView.contentOffset.x)
         let width = Float(scrollView.frame.width)
         let currPage = Int(roundf(contentOffset / width)) // round to nearest integer
