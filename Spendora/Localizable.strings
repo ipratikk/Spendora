@@ -116,3 +116,14 @@ If you have any questions or concerns about this Privacy Policy, please contact 
 
 "features.signup.button" = "Create an account";
 "features.signin.button" = "or Sign in";
+
+
+// Auth Module
+"auth.title.text" = "%@ to Spendora";
+"auth.subtitle.text" = "add, manage and analyze your spendings";
+"auth.number.placeholder.text" = "Enter phone number";
+"auth.number.button.text" = "%@ with phone";
+"auth.other.title.text" = "Or %@ using";
+"auth.signup.text" = "Sign Up";
+"auth.signin.text" = "Sign In";
+"auth.countrycode.text" = "🌐";

@@ -13,7 +13,8 @@ import RxCocoa
 protocol AuthPresentation {
     typealias Output = (
         countryCode: Driver<Country?>,
-        isAuthNumberEnabled: Driver<Bool>
+        isAuthNumberEnabled: Driver<Bool>,
+        authType: Driver<AuthType>
     )
 
     typealias Input = (
@@ -21,7 +22,8 @@ protocol AuthPresentation {
         phoneNumberText: Driver<String>,
         authGoogleTapped: Driver<Void>,
         authAppleTapped: Driver<Void>,
-        countryCodeButtonTapped: Driver<Void>
+        countryCodeButtonTapped: Driver<Void>,
+        authType: Driver<AuthType>
     )
 
     typealias producer = (Input) -> AuthPresentation
@@ -50,6 +52,8 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     private var presenter: AuthPresentation!
     var presenterProducer: ((AuthPresentation.Input) -> AuthPresentation)!
 
+    private let authTypeRelay = BehaviorRelay<AuthType>(value: .signup)
+    private lazy var authTypeDriver = authTypeRelay.asDriver(onErrorJustReturn: .signup)
 
     private let authNumberTapRelay = PublishSubject<Void>()
     private lazy var authNumberTapDriver = authNumberTapRelay.asDriver(onErrorJustReturn: ())
@@ -68,6 +72,8 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
 
     private let disposeBag = DisposeBag()
 
+    private var currentAuthType: AuthType = .signup
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,18 +87,15 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     }
 
     func setupUI() {
-        authImage.image = UIImage(named: "signupVector")
-        authTitle.text = "Sign up to Spendora"
-        authSubtitle.text = "add, manage and analyze your spendings"
         phoneNumber.delegate = self
-        phoneNumber.placeholder = "Enter phone number"
+        countryCodeBtn.setTitle(Module.Auth.Strings.countryCode ,for: .normal)
         phoneNumberStack.layer.cornerRadius = phoneNumberStack.frame.height / 2
         phoneNumberStack.clipsToBounds = true
         [phoneNumberStack,countryCodeBtn].forEach {
             $0.layer.borderColor = UIColor.lightGray.cgColor
             $0.layer.borderWidth = 0.5
         }
-        countryCodeBtn.setTitle("🌐" ,for: .normal)
+        setupNavigationBarAuthButton()
         setupAuthButton()
         setupAuthOtherBtn()
         addKeyboardNotification(with: scrollView)
@@ -109,8 +112,26 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             phoneNumberText: phoneNumberTextDriver,
             authGoogleTapped: authGoogleTapDriver,
             authAppleTapped: authAppleTapDriver,
-            countryCodeButtonTapped: countryCodeBtnTapDriver
+            countryCodeButtonTapped: countryCodeBtnTapDriver,
+            authType: authTypeDriver
         ))
+
+        presenter.output.authType
+            .drive(authTypeRelay)
+            .disposed(by: disposeBag)
+
+
+        authTypeDriver
+            .distinctUntilChanged()
+            .drive(onNext: { [weak self] authType in
+                guard let sself = self else { return }
+                print("Auth Type Driver triggered")
+                UIView.transition(with: sself.view, duration: 0.5, options: [.transitionCrossDissolve, .preferredFramesPerSecond60]) {
+                    sself.setupStrings(for: authType)
+                    sself.currentAuthType = authType
+                }
+            })
+            .disposed(by: disposeBag)
 
         countryCodeBtn.rx.tap.bind(to: countryCodeBtnTapRelay)
             .disposed(by: disposeBag)
@@ -139,10 +160,39 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             .disposed(by: disposeBag)
     }
 
+    func setupNavigationBarAuthButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Module.Auth.Strings.signin, style: .done, target: self, action: #selector(barButtonTapped))
+    }
+
+    @objc func barButtonTapped(_ sender: Any) {
+        switch currentAuthType {
+            case .signup:
+                authTypeRelay.accept(.signin)
+            case .signin:
+                authTypeRelay.accept(.signup)
+        }
+    }
+
+    func setupStrings(for authType: AuthType) {
+        authTitle.text = String(format: Module.Auth.Strings.title, authType.rawValue)
+        authSubtitle.text = Module.Auth.Strings.subtitle
+        phoneNumber.placeholder = Module.Auth.Strings.placeholder
+        authNumber.setTitle(String(format: Module.Auth.Strings.numButton, authType.rawValue), for: .normal)
+        authOtherTitle.text = String(format: Module.Auth.Strings.otherTitle, authType.rawValue)
+        switch authType {
+            case .signup:
+                navigationItem.rightBarButtonItem?.title = AuthType.signin.rawValue
+                authImage.image = Module.Auth.Images.signupImage
+            case .signin:
+                navigationItem.rightBarButtonItem?.title = AuthType.signup.rawValue
+                authImage.image = Module.Auth.Images.signinImage
+        }
+        authTypeRelay.accept(authType)
+    }
+
     func setupAuthButton() {
         authNumber.layer.cornerRadius = authNumber.frame.height / 2
         authNumber.tintColor = .white
-        authNumber.setTitle("Sign up with phone", for: .normal)
         authNumber.addDefaultShadow()
         authNumber.rx.tap.bind(to: authNumberTapRelay)
             .disposed(by: disposeBag)

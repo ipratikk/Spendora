@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTPViewController" customModule="Authentication" customModuleProvider="target">
             <connections>
-                <outlet property="otpField" destination="KBc-yA-ffj" id="oFn-ht-HZA"/>
+                <outlet property="otpField1" destination="KBc-yA-ffj" id="1cc-Hd-ol8"/>
+                <outlet property="otpField2" destination="BzS-Mh-o3T" id="ePs-vl-YWI"/>
+                <outlet property="otpField3" destination="8F8-WK-L09" id="u0p-jW-aF1"/>
+                <outlet property="otpField4" destination="hOK-mE-MK4" id="crq-JS-6fV"/>
+                <outlet property="otpField5" destination="qYc-xU-gZf" id="bt2-yF-SFq"/>
+                <outlet property="otpField6" destination="Ni7-Ml-thD" id="S6A-Nl-AJz"/>
                 <outlet property="otpImageView" destination="Phx-GE-Xxq" id="C3X-KL-ArO"/>
                 <outlet property="resendTitle" destination="Hop-ve-tvX" id="pyS-Ld-zzR"/>
                 <outlet property="scrollView" destination="XCq-YC-u5b" id="SN1-el-Cih"/>
@@ -29,7 +35,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h55-Fd-N2j">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="684.66666666666663"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="otpSecureEntry" translatesAutoresizingMaskIntoConstraints="NO" id="Phx-GE-Xxq">
                                     <rect key="frame" x="40" y="25" width="313" height="313"/>
@@ -49,22 +55,52 @@
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="XXXXXX" adjustsFontSizeToFit="NO" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="KBc-yA-ffj">
-                                    <rect key="frame" x="100" y="490.33333333333337" width="193" height="50"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vWD-9b-bcH">
+                                    <rect key="frame" x="50" y="490.33333333333337" width="293" height="50"/>
+                                    <subviews>
+                                        <textField opaque="NO" tag="1001" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="X" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="KBc-yA-ffj" userLabel="otpField1" customClass="OTPTextField" customModule="Authentication" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="40.666666666666664" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
+                                        </textField>
+                                        <textField opaque="NO" tag="1002" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="X" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="BzS-Mh-o3T" userLabel="otpField2" customClass="OTPTextField" customModule="Authentication" customModuleProvider="target">
+                                            <rect key="frame" x="50.666666666666671" y="0.0" width="40.333333333333329" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
+                                        </textField>
+                                        <textField opaque="NO" tag="1003" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="X" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="8F8-WK-L09" userLabel="otpField3" customClass="OTPTextField" customModule="Authentication" customModuleProvider="target">
+                                            <rect key="frame" x="101" y="0.0" width="40.666666666666657" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
+                                        </textField>
+                                        <textField opaque="NO" tag="1004" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="X" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="hOK-mE-MK4" userLabel="otpField4" customClass="OTPTextField" customModule="Authentication" customModuleProvider="target">
+                                            <rect key="frame" x="151.66666666666666" y="0.0" width="40.333333333333343" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
+                                        </textField>
+                                        <textField opaque="NO" tag="1005" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="X" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="qYc-xU-gZf" userLabel="otpField5" customClass="OTPTextField" customModule="Authentication" customModuleProvider="target">
+                                            <rect key="frame" x="202" y="0.0" width="40.666666666666657" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
+                                        </textField>
+                                        <textField opaque="NO" tag="1006" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="X" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="Ni7-Ml-thD" userLabel="otpField6" customClass="OTPTextField" customModule="Authentication" customModuleProvider="target">
+                                            <rect key="frame" x="252.66666666666671" y="0.0" width="40.333333333333343" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
+                                        </textField>
+                                    </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="8VO-sh-ips"/>
+                                        <constraint firstAttribute="height" constant="50" id="BvC-7N-qKI"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
-                                </textField>
+                                </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="Didn't receive a code? Resend SMS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hop-ve-tvX">
-                                    <rect key="frame" x="25" y="580.33333333333337" width="343" height="93.666666666666629"/>
-                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                    <rect key="frame" x="25" y="580.33333333333337" width="343" height="19.333333333333371"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJb-br-veK">
-                                    <rect key="frame" x="30" y="699" width="333" height="50"/>
+                                    <rect key="frame" x="30" y="624.66666666666663" width="333" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="CIE-rb-gIR"/>
                                     </constraints>
@@ -77,23 +113,23 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="LJb-br-veK" secondAttribute="bottom" constant="10" id="1NB-K6-a01"/>
+                                <constraint firstItem="vWD-9b-bcH" firstAttribute="leading" secondItem="h55-Fd-N2j" secondAttribute="leading" constant="50" id="9vs-kG-egG"/>
                                 <constraint firstAttribute="trailing" secondItem="abd-fe-CvS" secondAttribute="trailing" constant="25" id="ByM-lA-oGO"/>
                                 <constraint firstAttribute="trailing" secondItem="vjG-3P-iK0" secondAttribute="trailing" constant="50" id="CvE-VY-8IC"/>
                                 <constraint firstItem="Hop-ve-tvX" firstAttribute="leading" secondItem="h55-Fd-N2j" secondAttribute="leading" constant="25" id="DkT-zp-C4W"/>
                                 <constraint firstAttribute="trailing" secondItem="Hop-ve-tvX" secondAttribute="trailing" constant="25" id="ESC-35-Ahl"/>
                                 <constraint firstItem="vjG-3P-iK0" firstAttribute="leading" secondItem="h55-Fd-N2j" secondAttribute="leading" constant="50" id="KAR-Hm-VQB"/>
-                                <constraint firstAttribute="trailing" secondItem="KBc-yA-ffj" secondAttribute="trailing" constant="100" id="L6o-u4-ydB"/>
                                 <constraint firstItem="Phx-GE-Xxq" firstAttribute="leading" secondItem="h55-Fd-N2j" secondAttribute="leading" constant="40" id="Mhy-Ai-WYF"/>
                                 <constraint firstAttribute="trailing" secondItem="Phx-GE-Xxq" secondAttribute="trailing" constant="40" id="NMv-ML-3T0"/>
                                 <constraint firstItem="LJb-br-veK" firstAttribute="leading" secondItem="h55-Fd-N2j" secondAttribute="leading" constant="30" id="Nvm-Xa-7HH"/>
+                                <constraint firstItem="vWD-9b-bcH" firstAttribute="top" secondItem="vjG-3P-iK0" secondAttribute="bottom" constant="40" id="OwB-LS-uqm"/>
                                 <constraint firstItem="abd-fe-CvS" firstAttribute="top" secondItem="Phx-GE-Xxq" secondAttribute="bottom" constant="25" id="QWp-cy-nEd"/>
-                                <constraint firstItem="KBc-yA-ffj" firstAttribute="top" secondItem="vjG-3P-iK0" secondAttribute="bottom" constant="40" id="Yfv-uW-gDJ"/>
+                                <constraint firstItem="Hop-ve-tvX" firstAttribute="top" secondItem="vWD-9b-bcH" secondAttribute="bottom" constant="40" id="YMf-5U-R93"/>
                                 <constraint firstItem="abd-fe-CvS" firstAttribute="leading" secondItem="h55-Fd-N2j" secondAttribute="leading" constant="25" id="epQ-ik-txi"/>
-                                <constraint firstItem="KBc-yA-ffj" firstAttribute="leading" secondItem="h55-Fd-N2j" secondAttribute="leading" constant="100" id="lBP-qU-PdF"/>
                                 <constraint firstItem="Phx-GE-Xxq" firstAttribute="top" secondItem="h55-Fd-N2j" secondAttribute="top" constant="25" id="m4f-gl-0yE"/>
+                                <constraint firstAttribute="trailing" secondItem="vWD-9b-bcH" secondAttribute="trailing" constant="50" id="nQL-mP-DhQ"/>
                                 <constraint firstItem="LJb-br-veK" firstAttribute="top" secondItem="Hop-ve-tvX" secondAttribute="bottom" constant="25" id="ofO-gv-7D9"/>
                                 <constraint firstAttribute="trailing" secondItem="LJb-br-veK" secondAttribute="trailing" constant="30" id="ruu-KD-VKH"/>
-                                <constraint firstItem="Hop-ve-tvX" firstAttribute="top" secondItem="KBc-yA-ffj" secondAttribute="bottom" constant="40" id="z9W-7p-X1g"/>
                                 <constraint firstItem="vjG-3P-iK0" firstAttribute="top" secondItem="abd-fe-CvS" secondAttribute="bottom" constant="20" id="zOb-s2-Iq3"/>
                             </constraints>
                         </view>
@@ -102,7 +138,6 @@
                         <constraint firstItem="h55-Fd-N2j" firstAttribute="leading" secondItem="74R-iY-ykD" secondAttribute="leading" id="4P5-7g-SGH"/>
                         <constraint firstItem="h55-Fd-N2j" firstAttribute="width" secondItem="sxI-MM-Q9o" secondAttribute="width" id="CZ4-lV-iKP"/>
                         <constraint firstItem="h55-Fd-N2j" firstAttribute="bottom" secondItem="74R-iY-ykD" secondAttribute="bottom" id="SBe-x0-ly0"/>
-                        <constraint firstItem="h55-Fd-N2j" firstAttribute="height" secondItem="sxI-MM-Q9o" secondAttribute="height" id="ZJh-5d-3qs"/>
                         <constraint firstItem="h55-Fd-N2j" firstAttribute="top" secondItem="74R-iY-ykD" secondAttribute="top" id="d9Q-l0-4co"/>
                         <constraint firstItem="h55-Fd-N2j" firstAttribute="trailing" secondItem="74R-iY-ykD" secondAttribute="trailing" id="hCV-7y-Ihi"/>
                     </constraints>

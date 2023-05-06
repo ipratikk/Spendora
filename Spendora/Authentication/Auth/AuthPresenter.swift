@@ -12,6 +12,13 @@ import RxCocoa
 import Utilities
 import CoreLocation
 
+
+public enum AuthType: String {
+    case signup = "Sign Up"
+    case signin = "Sign In"
+}
+
+
 public final class AuthPresenter: AuthPresentation {
     let output: Output
 
@@ -20,7 +27,7 @@ public final class AuthPresenter: AuthPresentation {
     public typealias UseCases = (
         output: (
             selectedCountry: Driver<Country?>,
-            ()
+            authType: Driver<AuthType>
         ),
         input: (
             ()
@@ -41,21 +48,16 @@ private extension AuthPresenter {
     static let staticDisposeBag = DisposeBag()
 
     private static func output(with input: Input, useCases: UseCases) -> Output {
-     let authPhoneEnabled = Driver.combineLatest(input.phoneNumberText, useCases.output.selectedCountry)
+        let authPhoneEnabled = Driver.combineLatest(input.phoneNumberText, useCases.output.selectedCountry)
             .map { phoneNumber, country in
                 guard country != nil else { return false }
                 return phoneNumber.count == 10
             }
             .startWith(false)
-
-        useCases.output.selectedCountry
-            .drive(onNext: { country in
-                guard let country = country else { return }
-            })
-            .disposed(by: staticDisposeBag)
         return (
             countryCode: useCases.output.selectedCountry,
-            isAuthNumberEnabled: authPhoneEnabled
+            isAuthNumberEnabled: authPhoneEnabled,
+            authType: useCases.output.authType
         )
     }
 

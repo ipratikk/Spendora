@@ -9,7 +9,6 @@ import Foundation
 import Utilities
 import UIKit
 
-
 public final class AuthBuilder {
     public static func build(
         submodules: AuthRouter.Submodules,
