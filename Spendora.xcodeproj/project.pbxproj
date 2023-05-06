@@ -90,6 +90,9 @@
 		65AC2D7029F2DC10002C6C20 /* CountryPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC2D6F29F2DC10002C6C20 /* CountryPickerPresenter.swift */; };
 		65AC2D7529F2E43B002C6C20 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC2D7329F2E43B002C6C20 /* CountryTableViewCell.swift */; };
 		65AC2D7629F2E43B002C6C20 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65AC2D7429F2E43B002C6C20 /* CountryTableViewCell.xib */; };
+		65CB8F9B2A069FF500CFCAC6 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB8F9A2A069FF500CFCAC6 /* Module.swift */; };
+		65CB8F9C2A06B5E000CFCAC6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
+		65CB90042A06E99200CFCAC6 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB90022A06E98B00CFCAC6 /* OTPTextField.swift */; };
 		65F1A7B029F5C2CC0024F82F /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1A7AF29F5C2CC0024F82F /* NoDataView.swift */; };
 		65F1A7B229F5C2DD0024F82F /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F1A7B129F5C2DC0024F82F /* NoDataView.xib */; };
 		65F1A7B429F5C44A0024F82F /* NoDataViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1A7B329F5C44A0024F82F /* NoDataViewBuilder.swift */; };
@@ -224,6 +227,8 @@
 		65AC2D6F29F2DC10002C6C20 /* CountryPickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerPresenter.swift; sourceTree = "<group>"; };
 		65AC2D7329F2E43B002C6C20 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		65AC2D7429F2E43B002C6C20 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		65CB8F9A2A069FF500CFCAC6 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		65CB90022A06E98B00CFCAC6 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		65F1A7AF29F5C2CC0024F82F /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		65F1A7B129F5C2DC0024F82F /* NoDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
 		65F1A7B329F5C44A0024F82F /* NoDataViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataViewBuilder.swift; sourceTree = "<group>"; };
@@ -299,6 +304,7 @@
 				6546E0B329F13A2A00C89F18 /* Models */,
 				6525F7A729EDC60D000768AC /* Auth */,
 				6525F7A129EDC1C2000768AC /* Authentication.h */,
+				65CB8F9A2A069FF500CFCAC6 /* Module.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -516,6 +522,7 @@
 			children = (
 				657DA27729FD44EA00C72CDF /* OTPViewController.swift */,
 				657DA27829FD44EA00C72CDF /* OTPViewController.xib */,
+				65CB90022A06E98B00CFCAC6 /* OTPTextField.swift */,
 			);
 			name = OTP;
 			sourceTree = "<group>";
@@ -787,6 +794,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				657DA27A29FD44EA00C72CDF /* OTPViewController.xib in Resources */,
+				65CB8F9C2A06B5E000CFCAC6 /* Localizable.strings in Resources */,
 				6525F7AB29EDC6F4000768AC /* AuthViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -949,10 +957,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				657DA27929FD44EA00C72CDF /* OTPViewController.swift in Sources */,
+				65CB90042A06E99200CFCAC6 /* OTPTextField.swift in Sources */,
 				6525F7B229EDC729000768AC /* AuthRouter.swift in Sources */,
 				6525F7AA29EDC6F4000768AC /* AuthViewController.swift in Sources */,
 				6525F7AF29EDC71B000768AC /* AuthPresenter.swift in Sources */,
 				6525F7AD29EDC70C000768AC /* AuthBuilder.swift in Sources */,
+				65CB8F9B2A069FF500CFCAC6 /* Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

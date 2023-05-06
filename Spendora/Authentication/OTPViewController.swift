@@ -8,7 +8,7 @@
 import UIKit
 import Utilities
 
-class OTPViewController: UIViewController {
+class OTPViewController: UIViewController, OTPTextFieldDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var otpImageView: UIImageView!
@@ -17,11 +17,25 @@ class OTPViewController: UIViewController {
     @IBOutlet weak var resendTitle: UILabel!
     @IBOutlet weak var submitBtn: UIButton!
 
-    @IBOutlet weak var otpField: UITextField!
+    @IBOutlet weak var otpField1: OTPTextField!
+    @IBOutlet weak var otpField2: OTPTextField!
+    @IBOutlet weak var otpField3: OTPTextField!
+    @IBOutlet weak var otpField4: OTPTextField!
+    @IBOutlet weak var otpField5: OTPTextField!
+    @IBOutlet weak var otpField6: OTPTextField!
+
+    public var fieldsCount: Int = 6
+    var secureDataEntry: [String] = Array(repeating: "", count: 6)
+    let shouldAllowIntermediateEditing: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        otpField1.becomeFirstResponder()
+        super.viewWillAppear(animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -114,66 +128,129 @@ class OTPViewController: UIViewController {
 
     func setupOTPFields() {
 
-        // Create a new layer for the bottom border
-        otpField.delegate = self
-        updateAttrText("", textField: otpField)
-        updateAttrText("XXXXXX", textField: otpField, placeholder: true)
-        let bottomBorder = CALayer()
-        bottomBorder.frame = CGRect(x: 0, y: otpField.frame.size.height - 1, width: otpField.frame.size.width, height: 1)
-        bottomBorder.backgroundColor = UIColor.gray.cgColor
+            // Create a new layer for the bottom border
+        [otpField1, otpField2, otpField3, otpField4, otpField5, otpField6]
+            .forEach {
+                $0.otpDelegate = self
+                $0.delegate = self
+                let bottomBorder = CALayer()
+                bottomBorder.frame = CGRect(x: 0, y: $0.frame.size.height - 1, width: $0.frame.size.width, height: 1)
+                bottomBorder.backgroundColor = UIColor.gray.cgColor
 
-            // Add the bottom border to the text view's layer
-        otpField.layer.addSublayer(bottomBorder)
+                    // Add the bottom border to the text view's layer
+                $0.layer.addSublayer(bottomBorder)
 
-            // Set the text view's border style to none
-        otpField.borderStyle = .none
+                    // Set the text view's border style to none
+                $0.borderStyle = .none
+            }
+    }
+
+    func disbleViews(){
+        DispatchQueue.main.async {
+            for i in 1001...1006 {
+                if let prevOTPField = self.view.viewWithTag(i) as? UITextField {
+                    prevOTPField.isUserInteractionEnabled =   false
+                    prevOTPField.isEnabled =  false
+                }
+            }
+            self.submitBtn.isEnabled = false
+        }
+    }
+
+    func enableViews(isError: Bool){
+        DispatchQueue.main.async {
+            for i in 1001...1006 {
+                if let prevOTPField = self.view.viewWithTag(i) as? UITextField {
+                    prevOTPField.isUserInteractionEnabled =  true
+                    prevOTPField.isEnabled = true
+                }
+            }
+
+            self.submitBtn.isEnabled  =  true
+        }
     }
 }
 
 extension OTPViewController: UITextFieldDelegate {
 
+    fileprivate func isPreviousFieldsEntered(forTextField textField: UITextField) -> Bool {
+        var isTextFilled = true
+        var nextOTPField: UITextField?
+
+            // If intermediate editing is not allowed, then check for last filled field in forward direction.
+        if !shouldAllowIntermediateEditing {
+            for index in stride(from: 1, to: fieldsCount + 1, by: 1) {
+                let tempNextOTPField = self.view.viewWithTag( index + 1000 ) as? UITextField
+
+                if let tempNextOTPFieldText = tempNextOTPField?.text, tempNextOTPFieldText.isEmpty {
+                    nextOTPField = tempNextOTPField
+                    break
+                }
+            }
+            if let nextOTPField = nextOTPField {
+                isTextFilled = (nextOTPField == textField || (textField.tag) == (nextOTPField.tag - 1))
+            }
+        }
+        return isTextFilled
+    }
+
+    func textFieldDidDelete() {
+            // Delete character from current active OTP field and set that to 1st responder
+        for index in stride(from: 1, to: fieldsCount + 1, by: 1) {
+            let curOTP = self.view.viewWithTag(index + 1000) as? UITextField
+            if let curOTP = curOTP {
+                if curOTP.isFirstResponder{
+                    deleteTextInTextField(in: curOTP)
+                    break
+                }
+            }
+        }
+    }
+
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return isPreviousFieldsEntered(forTextField: textField)
+    }
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
-            // Check if the text field is the same as the one that triggered the event
-        guard textField == otpField else {
-            return true
+        let replacedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+
+
+        if replacedText.count >= 1 {
+                // Enter character only if the current OTP field is empty (edge case for last character overflow)
+            if textField.tag <= fieldsCount + 1000 && textField.text == "" {
+                secureDataEntry[textField.tag - 1001] = string
+                textField.text = string
+            }
+
+            let nextOTPField = self.view.viewWithTag(textField.tag + 1)
+
+            if let nextOTPField = nextOTPField {
+                nextOTPField.becomeFirstResponder()
+            }
+        } else {
+            deleteTextInTextField(in: textField)
         }
-
-            // Get the current text and calculate the new length
-        guard let currentText = textField.text else {
-            return true
-        }
-        let newLength = currentText.count + string.count - range.length
-
-            // Check if the new length is within the allowed range
-        if newLength > 6 {
-            return false
-        }
-
-            // Create an attributed string with the updated text
-        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
-        updateAttrText(newText, textField: textField)
-
-            // Return false to prevent the text field from updating its text
         return false
     }
 
-    func updateAttrText(_ newText: String, textField: UITextField, placeholder: Bool = false) {
-        let attributedString = NSMutableAttributedString(string: newText)
+    private func deleteTextInTextField(in textField : UITextField) {
+        let currentText = textField.text ?? ""
 
-            // Set the character spacing to 1.5 points
-        let kernAttrs: [NSAttributedString.Key: Any] = [
-            .kern: placeholder ? 13.0: 15.0,
-            .font: UIFont.boldSystemFont(ofSize: 27)
-        ]
-        let range = NSRange(location: 0, length: attributedString.length)
-        attributedString.addAttributes(kernAttrs, range: range)
-
-            // Set the attributed string as the text of the UITextField
-        if placeholder {
-            textField.attributedPlaceholder = attributedString
+            // On Delete, Move to previous OTP field only if the current field is empty
+        if textField.tag > 1001 && currentText.isEmpty {
+            if let prevOTPField = self.view.viewWithTag(textField.tag - 1) as? UITextField {
+                deleteText(in: prevOTPField)
+            }
         } else {
-            textField.attributedText = attributedString
+            deleteText(in: textField)
         }
+    }
+
+    private func deleteText(in textField: UITextField) {
+            // If deleting the text, set the current textfield as active for next input
+        secureDataEntry[textField.tag - 1001] = ""
+        textField.text = ""
+        textField.becomeFirstResponder()
     }
 }

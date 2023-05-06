@@ -30,8 +30,8 @@ public final class AppAssembler {
         return FeaturesBuilder.build(
             submodules: (
                 forRouter: (
-                    singup: signupModule(),
-                    signin: signupModule()
+                    authentication: authModule,
+                    ()
                 ),
                 forPresenter: (
                     feature: FeatureCardBuilder.build,
@@ -74,7 +74,7 @@ public final class AppAssembler {
         return NoDataViewBuilder.build(image: image, title: title)
     }
 
-    static func signupModule() -> UIViewController {
+    static func authModule(authType: AuthType) -> UIViewController {
         return AuthBuilder.build(
             submodules: (
                 countryPicker: countryPickerModule(),
@@ -83,7 +83,7 @@ public final class AppAssembler {
             useCases: (
                 output: (
                     selectedCountry: countryPickerInteractor.selectedCountry,
-                    ()
+                    authType: Driver.just(authType)
                 ),
                 input: (
                     ()
