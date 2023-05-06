@@ -34,7 +34,7 @@ protocol FeaturesPresentation {
     var subviews: Subviews { get }
 }
 
-public class FeaturesViewController: UIViewController {
+ class FeaturesViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -56,11 +56,37 @@ public class FeaturesViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
 
-    public override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupBindings()
     }
+
+     override func viewDidLayoutSubviews() {
+         super.viewDidLayoutSubviews()
+
+         scrollView.subviews.forEach {
+             $0.removeFromSuperview()
+         }
+
+         presenter.output.features
+             .drive(onNext: { [weak self] features in
+                 guard let sself = self else { return }
+                 sself.pageControl.numberOfPages = features.count
+                 sself.scrollView.contentSize = CGSize(width: sself.scrollView.frame.width * CGFloat(features.count), height: sself.scrollView.frame.height)
+             })
+             .disposed(by: disposeBag)
+
+         presenter.subviews.features
+             .drive(onNext: { featureList in
+                 featureList.enumerated().forEach { [weak self] (offset,featureVC) in
+                     guard let sself = self else { return }
+                     featureVC.frame = CGRect(x: CGFloat(offset) * sself.scrollView.frame.width, y: 0, width: sself.scrollView.frame.width, height: sself.scrollView.frame.height)
+                     sself.scrollView.addSubview(featureVC)
+                 }
+             })
+             .disposed(by: disposeBag)
+     }
 
     func setupUI() {
         setupPageControl()
@@ -86,13 +112,6 @@ public class FeaturesViewController: UIViewController {
             .disposed(by: disposeBag)
 
         // Output Bindings
-        presenter.output.features
-            .drive(onNext: { [weak self] features in
-                guard let sself = self else { return }
-                sself.pageControl.numberOfPages = features.count
-                sself.scrollView.contentSize = CGSize(width: sself.view.frame.width * CGFloat(features.count), height: sself.scrollView.frame.height)
-            })
-            .disposed(by: disposeBag)
 
         presenter.output.currentPage
             .drive(onNext: { [weak self] currPage in
@@ -100,16 +119,6 @@ public class FeaturesViewController: UIViewController {
                 sself.pageControl.currentPage = currPage
                 let offsetX = CGFloat(currPage) * sself.scrollView.bounds.width
                 sself.scrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
-            })
-            .disposed(by: disposeBag)
-
-        presenter.subviews.features
-            .drive(onNext: { featureList in
-                featureList.enumerated().forEach { [weak self] (offset,featureVC) in
-                    guard let sself = self else { return }
-                    featureVC.frame = CGRect(x: CGFloat(offset) * sself.view.frame.width, y: 0, width: sself.view.frame.width, height: sself.scrollView.frame.height)
-                    sself.scrollView.addSubview(featureVC)
-                }
             })
             .disposed(by: disposeBag)
     }
@@ -138,7 +147,7 @@ public class FeaturesViewController: UIViewController {
 }
 
 extension FeaturesViewController: UIScrollViewDelegate {
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.contentOffset.y = 0
         let contentOffset = Float(scrollView.contentOffset.x)
         let width = Float(scrollView.frame.width)
