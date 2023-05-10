@@ -18,6 +18,7 @@ public class AuthManager {
     public func startAuth(phoneNumber: String, completion: @escaping (Bool) -> Void) {
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { [weak self] verificationID, error in
             guard let verificationID = verificationID, error == nil else {
+                print("Error during registration with phone number: \(error)")
                 completion(false)
                 return
             }

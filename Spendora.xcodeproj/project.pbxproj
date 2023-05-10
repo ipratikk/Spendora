@@ -79,7 +79,6 @@
 		6578B2202A02B5E000F81012 /* RxRelay.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 650B9B3729E9DAD200D144A9 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6578B2212A02B5E000F81012 /* RxSwift.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 650B9B3829E9DAD200D144A9 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6578B2232A02B64B00F81012 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6578B2222A02B64B00F81012 /* Lottie */; };
-		657DA27129FCEFAC00C72CDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 657DA27029FCEFAB00C72CDF /* GoogleService-Info.plist */; };
 		657DA27529FCF7C900C72CDF /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DA27429FCF7C900C72CDF /* AuthManager.swift */; };
 		657DA27929FD44EA00C72CDF /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DA27729FD44EA00C72CDF /* OTPViewController.swift */; };
 		657DA27A29FD44EA00C72CDF /* OTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657DA27829FD44EA00C72CDF /* OTPViewController.xib */; };
@@ -93,6 +92,7 @@
 		65CB8F9B2A069FF500CFCAC6 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB8F9A2A069FF500CFCAC6 /* Module.swift */; };
 		65CB8F9C2A06B5E000CFCAC6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
 		65CB90042A06E99200CFCAC6 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB90022A06E98B00CFCAC6 /* OTPTextField.swift */; };
+		65E5E62F2A0AE0E30080F920 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65E5E62E2A0AE0E30080F920 /* GoogleService-Info.plist */; };
 		65F1A7B029F5C2CC0024F82F /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1A7AF29F5C2CC0024F82F /* NoDataView.swift */; };
 		65F1A7B229F5C2DD0024F82F /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F1A7B129F5C2DC0024F82F /* NoDataView.xib */; };
 		65F1A7B429F5C44A0024F82F /* NoDataViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1A7B329F5C44A0024F82F /* NoDataViewBuilder.swift */; };
@@ -218,7 +218,6 @@
 		655A933729ED9935007A201C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		6562EF9529E7D96C00D6E1D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		657DA27029FCEFAB00C72CDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		657DA27429FCF7C900C72CDF /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		657DA27729FD44EA00C72CDF /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		657DA27829FD44EA00C72CDF /* OTPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTPViewController.xib; sourceTree = "<group>"; };
@@ -229,6 +228,8 @@
 		65AC2D7429F2E43B002C6C20 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 		65CB8F9A2A069FF500CFCAC6 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		65CB90022A06E98B00CFCAC6 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
+		65E5E62B2A0A88AC0080F920 /* Spendora.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spendora.entitlements; sourceTree = "<group>"; };
+		65E5E62E2A0AE0E30080F920 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65F1A7AF29F5C2CC0024F82F /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		65F1A7B129F5C2DC0024F82F /* NoDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
 		65F1A7B329F5C44A0024F82F /* NoDataViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataViewBuilder.swift; sourceTree = "<group>"; };
@@ -472,13 +473,14 @@
 		6557310029E4581D008BEA22 /* Spendora */ = {
 			isa = PBXGroup;
 			children = (
+				65E5E62B2A0A88AC0080F920 /* Spendora.entitlements */,
 				6525F7A029EDC1C2000768AC /* Authentication */,
 				65321D4129E9965D00BA3E93 /* Utilities */,
 				65321D2D29E995B100BA3E93 /* Onboarding */,
 				65321D2429E994D800BA3E93 /* AppAssembler */,
 				6557312329E460C9008BEA22 /* Assets */,
 				6557310129E4581D008BEA22 /* AppDelegate.swift */,
-				657DA27029FCEFAB00C72CDF /* GoogleService-Info.plist */,
+				65E5E62E2A0AE0E30080F920 /* GoogleService-Info.plist */,
 				6557310D29E45822008BEA22 /* Assets.xcassets */,
 				6557310F29E45822008BEA22 /* LaunchScreen.storyboard */,
 				6557311229E45822008BEA22 /* Info.plist */,
@@ -829,7 +831,7 @@
 			files = (
 				650231C929E835E700C13139 /* analyzeExpense.json in Resources */,
 				6557312729E47320008BEA22 /* Localizable.strings in Resources */,
-				657DA27129FCEFAC00C72CDF /* GoogleService-Info.plist in Resources */,
+				65E5E62F2A0AE0E30080F920 /* GoogleService-Info.plist in Resources */,
 				650231C729E834F300C13139 /* splitExpense.json in Resources */,
 				650231B129E7F45600C13139 /* listExpense.json in Resources */,
 				6557311129E45822008BEA22 /* LaunchScreen.storyboard in Resources */,
@@ -1132,7 +1134,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Authentication;
+				PRODUCT_BUNDLE_IDENTIFIER = in.co.goel.pratik.Authentication;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1170,7 +1172,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Authentication;
+				PRODUCT_BUNDLE_IDENTIFIER = in.co.goel.pratik.Authentication;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1207,7 +1209,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Onboarding;
+				PRODUCT_BUNDLE_IDENTIFIER = in.co.goel.pratik.Onboarding;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1244,7 +1246,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Onboarding;
+				PRODUCT_BUNDLE_IDENTIFIER = in.co.goel.pratik.Onboarding;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1281,7 +1283,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Utilities;
+				PRODUCT_BUNDLE_IDENTIFIER = in.co.goel.pratik.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1318,7 +1320,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Utilities;
+				PRODUCT_BUNDLE_IDENTIFIER = in.co.goel.pratik.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1454,9 +1456,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = Spendora/Spendora.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59SR2WBZJT;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spendora/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Spendora to access your location for signing up";
@@ -1469,8 +1473,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Spendora;
+				PRODUCT_BUNDLE_IDENTIFIER = in.co.goel.pratik.spendora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1487,9 +1492,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = Spendora/Spendora.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 59SR2WBZJT;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spendora/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow Spendora to access your location for signing up";
@@ -1502,8 +1509,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.goel.pratik.Spendora;
+				PRODUCT_BUNDLE_IDENTIFIER = in.co.goel.pratik.spendora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

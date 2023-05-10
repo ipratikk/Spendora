@@ -27,6 +27,9 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
     public var fieldsCount: Int = 6
     var secureDataEntry: [String] = Array(repeating: "", count: 6)
     let shouldAllowIntermediateEditing: Bool = false
+    var otpTimeoutTimer: Timer?
+    var otpTimeoutLimit: Int = 30
+    var otpTimeout: Int = 30
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +55,7 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
         setupOTPTitle()
         setupOTPSubtitle()
         setupOTPFields()
-        setupResendTitle()
+        startOTPTimeout()
         setupSubmitBtn()
         addKeyboardNotification(with: scrollView)
     }
@@ -79,6 +82,19 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
         subtitleLabel.attributedText = attributedString
     }
 
+    func startOTPTimeout() {
+        setupResendTimeoutTitle(otpTimeout)
+        otpTimeoutTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            guard let sself = self else { return }
+            sself.otpTimeout -= 1
+            if sself.otpTimeout == 0 {
+                sself.otpTimeoutTimer?.invalidate()
+                sself.setupResendTitle()
+            } else {
+                sself.setupResendTimeoutTitle(sself.otpTimeout)
+            }
+        }
+    }
 
     func setupResendTitle() {
         let attributedString = NSMutableAttributedString(string: "Didn't receive a code? Resend SMS")
@@ -91,6 +107,11 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
         resendTitle.isUserInteractionEnabled = true
         resendTitle.addGestureRecognizer(tapGesture)
+    }
+
+    func setupResendTimeoutTitle(_ time: Int) {
+        let timeoutString = String(format: "Didn't receive a code? Resend in 00:%02d", time)
+        resendTitle.text = timeoutString
     }
 
     @objc func labelTapped(_ gesture: UITapGestureRecognizer) {
@@ -116,7 +137,9 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
 
     func retryOTP() {
             // Handle retry OTP logic here
-        print("Retry OTP")
+        otpTimeoutTimer?.invalidate()
+        otpTimeout = otpTimeoutLimit
+        startOTPTimeout()
     }
 
     func setupSubmitBtn() {
@@ -227,6 +250,8 @@ extension OTPViewController: UITextFieldDelegate {
 
             if let nextOTPField = nextOTPField {
                 nextOTPField.becomeFirstResponder()
+            } else {
+                textField.resignFirstResponder()
             }
         } else {
             deleteTextInTextField(in: textField)

@@ -113,17 +113,12 @@ If you have any questions or concerns about this Privacy Policy, please contact 
 "features.split.expenses.body" = "Have you ever gone out with friends and had to split the bill? Our app takes care of that for you! Simply input your expenses and the people you were with, and our app will automatically split the expenses between you and your friends. You can easily see who owes whom and how much. No more complicated calculations or awkward moments!";
 "features.analyze.expenses.title" = "Analyze your spend";
 "features.analyze.expenses.body" = "Our app helps you to better understand your spending habits by providing detailed analytics of your expenses. You can view your expenses by type or date range, and see your spending trends over time. This feature can help you identify areas where you can save money and make more informed financial decisions.";
-
-"features.signup.button" = "Create an account";
-"features.signin.button" = "or Sign in";
-
+"features.continue.button" = "Continue to Spendora";
 
 // Auth Module
-"auth.title.text" = "%@ to Spendora";
+"auth.title.text" = "Get Started with Spendora";
 "auth.subtitle.text" = "add, manage and analyze your spendings";
 "auth.number.placeholder.text" = "Enter phone number";
-"auth.number.button.text" = "%@ with phone";
-"auth.other.title.text" = "Or %@ using";
-"auth.signup.text" = "Sign Up";
-"auth.signin.text" = "Sign In";
+"auth.number.button.text" = "Continue with phone";
+"auth.other.title.text" = "Or continue using";
 "auth.countrycode.text" = "🌐";

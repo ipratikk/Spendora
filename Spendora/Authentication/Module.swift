@@ -17,13 +17,10 @@ final class Module {
             static let placeholder = localized("auth.number.placeholder.text")
             static let numButton = localized("auth.number.button.text")
             static let otherTitle = localized("auth.other.title.text")
-            static let signup = localized("auth.signup.text")
-            static let signin = localized("auth.signin.text")
             static let countryCode = localized("auth.countrycode.text")
         }
         enum Images {
-            static let signupImage = UIImage(named: "signupVector")
-            static let signinImage = UIImage(named: "signinVector")
+            static let authImage = UIImage(named: "authVector")
         }
     }
 

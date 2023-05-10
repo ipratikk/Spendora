@@ -13,8 +13,7 @@ import Utilities
 protocol FeaturesPresentation {
     typealias Input = (
         currentPage: Driver<Int>,
-        didTapSignup: Driver<Void>,
-        didTapSignin: Driver<Void>
+        didTapContinue: Driver<Void>
     )
 
     typealias Output = (
@@ -38,8 +37,7 @@ protocol FeaturesPresentation {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var signupBtn: UIButton!
-    @IBOutlet weak var signinBtn: UIButton!
+    @IBOutlet weak var continueBtn: UIButton!
 
     private var presenter: FeaturesPresentation!
     var presenterProducer: ((FeaturesPresentation.Input) -> FeaturesPresentation)!
@@ -48,11 +46,8 @@ protocol FeaturesPresentation {
     private let currentPageRelay = PublishSubject<Int>()
     private lazy var currentPageDriver = currentPageRelay.asDriver(onErrorJustReturn: 0).startWith(0)
 
-    private let tapSignupRelay = PublishSubject<Void>()
-    private lazy var tapSignupDriver = tapSignupRelay.asDriver(onErrorJustReturn: ())
-
-    private let tapSigninRelay = PublishSubject<Void>()
-    private lazy var tapSigninDriver = tapSigninRelay.asDriver(onErrorJustReturn: ())
+    private let tapContinueRelay = PublishSubject<Void>()
+    private lazy var tapContinueDriver = tapContinueRelay.asDriver(onErrorJustReturn: ())
 
     private let disposeBag = DisposeBag()
 
@@ -87,8 +82,8 @@ protocol FeaturesPresentation {
     func setupUI() {
         setupPageControl()
         setupScrollView()
-        setupSignupBtn()
-        setupSigninBtn()
+        setupContinueBtn()
+        setupContinueBtn()
     }
 
     func setupBindings() {
@@ -96,19 +91,15 @@ protocol FeaturesPresentation {
         // Input Bindings
         let input = (
             currentPage: currentPageDriver,
-            didTapSignup: tapSignupDriver,
-            didTapSignin: tapSigninDriver
+            didTapContinue: tapContinueDriver
         )
         presenter = presenterProducer(input)
 
         // Button Bindings
-        signupBtn.rx.tap.bind(to: tapSignupRelay)
-            .disposed(by: disposeBag)
-        signinBtn.rx.tap.bind(to: tapSigninRelay)
+        continueBtn.rx.tap.bind(to: tapContinueRelay)
             .disposed(by: disposeBag)
 
         // Output Bindings
-
         presenter.output.currentPage
             .drive(onNext: { [weak self] currPage in
                 guard let sself = self else { return }
@@ -129,16 +120,11 @@ protocol FeaturesPresentation {
         scrollView.contentInsetAdjustmentBehavior = .never
     }
 
-    func setupSignupBtn() {
-        signupBtn.layer.cornerRadius = 25
-        signupBtn.backgroundColor = .black
-        signupBtn.tintColor = .white
-        signupBtn.setTitle(Module.Strings.signupBtn, for: .normal)
-    }
-
-    func setupSigninBtn() {
-        signinBtn.tintColor = .black
-        signinBtn.setTitle(Module.Strings.signinBtn, for: .normal)
+    func setupContinueBtn() {
+        continueBtn.layer.cornerRadius = 25
+        continueBtn.backgroundColor = .black
+        continueBtn.tintColor = .white
+        continueBtn.setTitle(Module.Strings.continueBtn, for: .normal)
     }
 }
 

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>364778587972-d4uhcip5dp6icdoi5lf1fe1cdq4gl7mo.apps.googleusercontent.com</string>
+	<string>364778587972-nir8epshv00kue5a38ptis9d0do1tv3r.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.364778587972-d4uhcip5dp6icdoi5lf1fe1cdq4gl7mo</string>
+	<string>com.googleusercontent.apps.364778587972-nir8epshv00kue5a38ptis9d0do1tv3r</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCOtGh-38jCcTY_Qp6CZ9B5hvBnn19MLSo</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.goel.pratik.Spendora</string>
+	<string>in.co.goel.pratik.spendora</string>
 	<key>PROJECT_ID</key>
 	<string>spendora-62db6</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:364778587972:ios:d4d0b19e85e27833c3f911</string>
+	<string>1:364778587972:ios:65934896e7935687c3f911</string>
 </dict>
 </plist>

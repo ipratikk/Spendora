@@ -12,13 +12,6 @@ import RxCocoa
 import Utilities
 import CoreLocation
 
-
-public enum AuthType: String {
-    case signup = "Sign Up"
-    case signin = "Sign In"
-}
-
-
 public final class AuthPresenter: AuthPresentation {
     let output: Output
 
@@ -27,7 +20,7 @@ public final class AuthPresenter: AuthPresentation {
     public typealias UseCases = (
         output: (
             selectedCountry: Driver<Country?>,
-            authType: Driver<AuthType>
+            ()
         ),
         input: (
             ()
@@ -56,8 +49,7 @@ private extension AuthPresenter {
             .startWith(false)
         return (
             countryCode: useCases.output.selectedCountry,
-            isAuthNumberEnabled: authPhoneEnabled,
-            authType: useCases.output.authType
+            isAuthNumberEnabled: authPhoneEnabled
         )
     }
 
@@ -67,17 +59,21 @@ private extension AuthPresenter {
                 return phoneNumber
             }
             .withLatestFrom(useCases.output.selectedCountry) { phoneNumber, country in
-                return (phoneNumber, country)
-            }
-            .drive(onNext: { (phoneNumber, country) in
-                guard let country = country else { return }
+                guard let country = country else { return "" }
                 let phoneNumberWithCode = country.dial_code + phoneNumber
-                router.routeToOTP()
-//                AuthManager.shared.startAuth(phoneNumber: phoneNumberWithCode, completion: {_ in
-//                    
-//                })
+                return phoneNumberWithCode
+            }
+            .drive(onNext: { (phoneNumberWithCode: String) in
+                AuthManager.shared.startAuth(phoneNumber: phoneNumberWithCode, completion: { result in
+                    if result {
+                        router.routeToOTP()
+                    } else {
+                        print("Error registering with phone number")
+                    }
+                })
             })
             .disposed(by: disposeBag)
+
 
         input.countryCodeButtonTapped
             .drive(onNext: {

@@ -13,8 +13,7 @@ import RxCocoa
 protocol AuthPresentation {
     typealias Output = (
         countryCode: Driver<Country?>,
-        isAuthNumberEnabled: Driver<Bool>,
-        authType: Driver<AuthType>
+        isAuthNumberEnabled: Driver<Bool>
     )
 
     typealias Input = (
@@ -22,8 +21,7 @@ protocol AuthPresentation {
         phoneNumberText: Driver<String>,
         authGoogleTapped: Driver<Void>,
         authAppleTapped: Driver<Void>,
-        countryCodeButtonTapped: Driver<Void>,
-        authType: Driver<AuthType>
+        countryCodeButtonTapped: Driver<Void>
     )
 
     typealias producer = (Input) -> AuthPresentation
@@ -52,9 +50,6 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     private var presenter: AuthPresentation!
     var presenterProducer: ((AuthPresentation.Input) -> AuthPresentation)!
 
-    private let authTypeRelay = BehaviorRelay<AuthType>(value: .signup)
-    private lazy var authTypeDriver = authTypeRelay.asDriver(onErrorJustReturn: .signup)
-
     private let authNumberTapRelay = PublishSubject<Void>()
     private lazy var authNumberTapDriver = authNumberTapRelay.asDriver(onErrorJustReturn: ())
 
@@ -71,9 +66,6 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     private lazy var phoneNumberTextDriver = phoneNumberTextRelay.asDriver(onErrorJustReturn: "")
 
     private let disposeBag = DisposeBag()
-
-    private var currentAuthType: AuthType = .signup
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,7 +87,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             $0.layer.borderColor = UIColor.lightGray.cgColor
             $0.layer.borderWidth = 0.5
         }
-        setupNavigationBarAuthButton()
+        setupStrings()
         setupAuthButton()
         setupAuthOtherBtn()
         addKeyboardNotification(with: scrollView)
@@ -112,26 +104,8 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             phoneNumberText: phoneNumberTextDriver,
             authGoogleTapped: authGoogleTapDriver,
             authAppleTapped: authAppleTapDriver,
-            countryCodeButtonTapped: countryCodeBtnTapDriver,
-            authType: authTypeDriver
+            countryCodeButtonTapped: countryCodeBtnTapDriver
         ))
-
-        presenter.output.authType
-            .drive(authTypeRelay)
-            .disposed(by: disposeBag)
-
-
-        authTypeDriver
-            .distinctUntilChanged()
-            .drive(onNext: { [weak self] authType in
-                guard let sself = self else { return }
-                print("Auth Type Driver triggered")
-                UIView.transition(with: sself.view, duration: 0.5, options: [.transitionCrossDissolve, .preferredFramesPerSecond60]) {
-                    sself.setupStrings(for: authType)
-                    sself.currentAuthType = authType
-                }
-            })
-            .disposed(by: disposeBag)
 
         countryCodeBtn.rx.tap.bind(to: countryCodeBtnTapRelay)
             .disposed(by: disposeBag)
@@ -160,34 +134,13 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
             .disposed(by: disposeBag)
     }
 
-    func setupNavigationBarAuthButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Module.Auth.Strings.signin, style: .done, target: self, action: #selector(barButtonTapped))
-    }
-
-    @objc func barButtonTapped(_ sender: Any) {
-        switch currentAuthType {
-            case .signup:
-                authTypeRelay.accept(.signin)
-            case .signin:
-                authTypeRelay.accept(.signup)
-        }
-    }
-
-    func setupStrings(for authType: AuthType) {
-        authTitle.text = String(format: Module.Auth.Strings.title, authType.rawValue)
+    func setupStrings() {
+        authTitle.text = Module.Auth.Strings.title
         authSubtitle.text = Module.Auth.Strings.subtitle
         phoneNumber.placeholder = Module.Auth.Strings.placeholder
-        authNumber.setTitle(String(format: Module.Auth.Strings.numButton, authType.rawValue), for: .normal)
-        authOtherTitle.text = String(format: Module.Auth.Strings.otherTitle, authType.rawValue)
-        switch authType {
-            case .signup:
-                navigationItem.rightBarButtonItem?.title = AuthType.signin.rawValue
-                authImage.image = Module.Auth.Images.signupImage
-            case .signin:
-                navigationItem.rightBarButtonItem?.title = AuthType.signup.rawValue
-                authImage.image = Module.Auth.Images.signinImage
-        }
-        authTypeRelay.accept(authType)
+        authNumber.setTitle(Module.Auth.Strings.numButton, for: .normal)
+        authOtherTitle.text = Module.Auth.Strings.otherTitle
+        authImage.image = Module.Auth.Images.authImage
     }
 
     func setupAuthButton() {

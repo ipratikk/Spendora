@@ -12,7 +12,7 @@ import Utilities
 
 public final class FeaturesRouter {
     public typealias Submodules = (
-        authentication: (_ authType: AuthType) -> UIViewController,
+        authentication: () -> UIViewController,
         ()
     )
 
@@ -26,8 +26,8 @@ public final class FeaturesRouter {
 }
 
 extension FeaturesRouter {
-    func routeToAuthentication(_ authType: AuthType) {
-        let authVC = submodules.authentication(authType)
+    func routeToAuthentication() {
+        let authVC = submodules.authentication()
         view.show(authVC, type: .push, animated: true)
     }
 }
