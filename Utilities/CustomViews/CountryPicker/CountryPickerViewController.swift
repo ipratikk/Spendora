@@ -9,11 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-enum AuthType {
-    case signup
-    case signin
-}
-
 protocol CountryPickerPresentation {
 
     typealias Input = (

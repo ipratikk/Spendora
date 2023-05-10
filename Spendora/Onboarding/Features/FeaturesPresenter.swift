@@ -56,14 +56,9 @@ private extension FeaturesPresenter {
     }
 
     private func process(_ input: Input, with router: FeaturesRouter) {
-        input.didTapSignup
+        input.didTapContinue
             .drive(onNext: {
-                router.routeToAuthentication(.signup)
-            })
-            .disposed(by: disposeBag)
-        input.didTapSignin
-            .drive(onNext: {
-                router.routeToAuthentication(.signin)
+                router.routeToAuthentication()
             })
             .disposed(by: disposeBag)
     }

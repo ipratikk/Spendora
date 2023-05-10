@@ -74,7 +74,7 @@ public final class AppAssembler {
         return NoDataViewBuilder.build(image: image, title: title)
     }
 
-    static func authModule(authType: AuthType) -> UIViewController {
+    static func authModule() -> UIViewController {
         return AuthBuilder.build(
             submodules: (
                 countryPicker: countryPickerModule(),
@@ -83,7 +83,7 @@ public final class AppAssembler {
             useCases: (
                 output: (
                     selectedCountry: countryPickerInteractor.selectedCountry,
-                    authType: Driver.just(authType)
+                    ()
                 ),
                 input: (
                     ()

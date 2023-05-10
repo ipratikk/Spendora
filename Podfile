@@ -20,6 +20,7 @@ end
 def google_pods
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'FirebaseMessaging'
 end
 
 target 'Onboarding' do
