@@ -15,6 +15,9 @@ enable_bitcode_for_prebuilt_frameworks!
 
 def util_pods
   pod 'SwiftLint'
+  pod 'SVProgressHUD'
+  pod 'lottie-ios'
+  pod 'SDWebImage'
 end
 
 def google_pods
