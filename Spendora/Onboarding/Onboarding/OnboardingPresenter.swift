@@ -33,10 +33,8 @@ private extension OnboardingPresenter {
         input.clickStartBtn
             .withLatestFrom(input.isCheckboxSelected)
             .map { $0 }
-            .drive(onNext: { value in
-                if value {
-                    let defaults = UserDefaults.standard
-                    defaults.setValue(true, forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
+            .drive(onNext: { isValid in
+                if isValid {
                     router.routeToFeatures()
                 } else {
                     router.showAlert()

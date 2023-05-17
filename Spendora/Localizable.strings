@@ -122,3 +122,17 @@ If you have any questions or concerns about this Privacy Policy, please contact 
 "auth.number.button.text" = "Continue with phone";
 "auth.other.title.text" = "Or continue using";
 "auth.countrycode.text" = "🌐";
+"auth.error.alert.text" = "Authentication Error: %@";
+
+
+// OTP Module
+"otp.title.text" = "Verify Phone Number";
+"otp.subtitle.text" = "Please enter the 6 digit code sent to %@ through SMS";
+"otp.resend.title" = "Didn't receive a code? Resend SMS";
+"otp.resend.placeholder" = "Resend SMS";
+"otp.resend.timer.text" = "Didn't receive a code? Resend in 00:%02d";
+"otp.resend.timer.placeholder" = "Resend in 00:%02d";
+"otp.verify.text" = "Verify Number";
+"otp.error.alert.text" = "OTP Error: %@";
+"otp.activity.verifying" = "Verifying OTP";
+"otp.activity.verified" = "OTP Verified";

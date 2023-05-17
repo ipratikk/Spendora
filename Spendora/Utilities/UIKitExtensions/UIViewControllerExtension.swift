@@ -115,3 +115,12 @@ public extension UIViewController {
         }
     }
 }
+
+public extension UIViewController {
+    func getAttributedString(from string: String, with placeholder: String, attributes: [NSAttributedString.Key: Any]) -> NSMutableAttributedString {
+        let attributedString = NSMutableAttributedString(string: string)
+        let range = (attributedString.string as NSString).range(of: placeholder)
+        attributedString.addAttributes(attributes, range: range)
+        return attributedString
+    }
+}

@@ -32,8 +32,7 @@ extension OnboardingRouter {
 
     func routeToFeatures(){
         let features = submodules.features
-        features.makeRootViewController()
-//        view.show(features, type: .push, animated: true, withNavigationBar: false)
+        view.show(features, type: .push, animated: true, withNavigationBar: false)
     }
 
     func showAlert() {

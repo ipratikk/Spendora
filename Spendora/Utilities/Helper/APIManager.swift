@@ -20,7 +20,7 @@ public class APIManager<T: Decodable> {
         }
 
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let _ = error {
+            if error != nil {
                 completion(.failure(.serverError))
                 return
             }

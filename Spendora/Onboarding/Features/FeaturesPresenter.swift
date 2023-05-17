@@ -58,6 +58,8 @@ private extension FeaturesPresenter {
     private func process(_ input: Input, with router: FeaturesRouter) {
         input.didTapContinue
             .drive(onNext: {
+                let defaults = UserDefaults.standard
+                defaults.setValue(true, forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
                 router.routeToAuthentication()
             })
             .disposed(by: disposeBag)

@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import Utilities
 import CoreLocation
+import SVProgressHUD
 
 public final class AuthPresenter: AuthPresentation {
     let output: Output
@@ -64,11 +65,14 @@ private extension AuthPresenter {
                 return phoneNumberWithCode
             }
             .drive(onNext: { (phoneNumberWithCode: String) in
+                SVProgressHUD.show()
                 AuthManager.shared.startAuth(phoneNumber: phoneNumberWithCode, completion: { result in
-                    if result {
-                        router.routeToOTP()
-                    } else {
-                        print("Error registering with phone number")
+                    SVProgressHUD.dismiss()
+                    switch result {
+                        case .success:
+                            router.routeToOTP(with: phoneNumberWithCode)
+                        case .failure(let error):
+                            router.showAlert(error)
                     }
                 })
             })
