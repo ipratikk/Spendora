@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
 
     var window: UIWindow?
     let defaults = UserDefaults.standard
+    let _mainCoordinator = MainCoordinator()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -42,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = UIViewController()
         self.window?.makeKeyAndVisible()
-        startOnboardingFlow()
+        startAppFlow()
         return true
     }
 
@@ -51,32 +52,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             guard let token = token else {
                 return
             }
-            print("Token: \(token)")
         }
     }
 
     func startAppFlow() {
-        AuthManager.shared.isLoggedIn(completion: { isLoggedIn in
-            if isLoggedIn {
-                let vc = UIViewController()
-                vc.view.backgroundColor = .red
-                vc.makeRootViewController()
-            } else {
-                self.startOnboardingFlow()
+//        AuthManager.shared.signOut { [weak self] signedOut in
+//            guard let sself = self else { return }
+//            if signedOut {
+//                sself._mainCoordinator.startOnboardingFlow()
+//            }
+//        }
+        AuthManager.shared.isLoggedIn(completion: { [weak self] result in
+            guard let sself = self else { return }
+            switch result {
+                case .success(let user):
+                    sself._mainCoordinator.routeToHome(with: user)
+                case .failure:
+                    sself._mainCoordinator.startOnboardingFlow()
             }
         })
-    }
-
-    func startOnboardingFlow() {
-//        defaults.set(false, forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
-        let isOnboarded = defaults.bool(forKey: Constants.UserdefaultKeys.isOnboarded.rawValue)
-        guard isOnboarded else {
-            let onboardingVC = AppAssembler.onboardingModule()
-            onboardingVC.makeRootViewController()
-            return
-        }
-        let featuresVC = AppAssembler.featuresModule()
-        featuresVC.makeRootViewController()
     }
 
     // MARK: - Core Data stack

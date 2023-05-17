@@ -7,6 +7,27 @@
 
 import UIKit
 import Utilities
+import RxSwift
+import RxCocoa
+
+protocol OTPPresentation {
+    typealias Input = (
+        resendOTP: Driver<Void>,
+        otpCode: Driver<[String]>,
+        didTapContinue: Driver<Void>
+    )
+
+    typealias Output = (
+        phoneNumber: Driver<String>,
+        isVerfifyOTPEnabled: Driver<Bool>
+    )
+
+    typealias producer = (Input) -> OTPPresentation
+
+    var output: Output { get }
+    var input: Input { get }
+}
+
 
 class OTPViewController: UIViewController, OTPTextFieldDelegate {
 
@@ -24,6 +45,9 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
     @IBOutlet weak var otpField5: OTPTextField!
     @IBOutlet weak var otpField6: OTPTextField!
 
+    private var presenter: OTPPresentation!
+    var presenterProducer: ((OTPPresentation.Input) -> OTPPresentation)!
+
     public var fieldsCount: Int = 6
     var secureDataEntry: [String] = Array(repeating: "", count: 6)
     let shouldAllowIntermediateEditing: Bool = false
@@ -31,9 +55,22 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
     var otpTimeoutLimit: Int = 30
     var otpTimeout: Int = 30
 
+
+    private let resendOTPRelay = PublishSubject<Void>()
+    private lazy var resendOTPDriver = resendOTPRelay.asDriver(onErrorJustReturn: ())
+
+    private let otpCodeRelay = PublishSubject<[String]>()
+    private lazy var otpCodeDriver = otpCodeRelay.asDriver(onErrorJustReturn: [])
+
+    private let tapContinueRelay = PublishSubject<Void>()
+    private lazy var tapContinueDriver = tapContinueRelay.asDriver(onErrorJustReturn: ())
+
+    private let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupBindings()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -53,32 +90,55 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
     func setupUI() {
         setupOTPImage()
         setupOTPTitle()
-        setupOTPSubtitle()
         setupOTPFields()
         startOTPTimeout()
         setupSubmitBtn()
         addKeyboardNotification(with: scrollView)
     }
 
+    func setupBindings() {
+        let input = (
+            resendOTP: resendOTPDriver,
+            otpCode: otpCodeDriver,
+            didTapContinue: tapContinueDriver
+        )
+        presenter = presenterProducer(input)
+
+        presenter.output.phoneNumber
+            .drive(onNext: { [weak self] phoneNumber in
+                guard let sself = self else { return }
+                sself.setupOTPSubtitle(with: phoneNumber)
+            })
+            .disposed(by: disposeBag)
+
+        presenter.output.isVerfifyOTPEnabled
+            .drive(onNext:{ [weak self] isEnabled in
+                guard let sself = self else { return }
+                sself.submitBtn.isEnabled = isEnabled
+                sself.submitBtn.backgroundColor = isEnabled ? .black : .black.withAlphaComponent(0.6)
+                sself.submitBtn.setTitleColor(.white, for: [.normal, .disabled])
+            })
+            .disposed(by: disposeBag)
+    }
+
     func setupOTPImage() {
-        otpImageView.image = UIImage(named: "otpSecureEntry")
+        otpImageView.image = Module.OTP.Images.otpImage
     }
 
     func setupOTPTitle() {
-        titleLabel.text = "Verify Phone Number"
+        titleLabel.text = Module.OTP.Strings.title
     }
 
-    func setupOTPSubtitle() {
-        let phoneNumber = "+919051481667"
-        var message = "Please enter the 6 digit code sent to {phoneNumber} through SMS"
-        message = message.replacingOccurrences(of: "{phoneNumber}", with: phoneNumber)
-        let attributedString = NSMutableAttributedString(string: message)
-        let placeholderAttrs: [NSAttributedString.Key: Any] = [
-            .font: UIFont.boldSystemFont(ofSize: 14),
-            .foregroundColor: UIColor.black
-        ]
-        let range = (message as NSString).range(of: phoneNumber)
-        attributedString.addAttributes(placeholderAttrs, range: range)
+    func setupOTPSubtitle(with phoneNumber: String) {
+        let message = String(format: Module.OTP.Strings.subtitle, phoneNumber)
+        let attributedString = getAttributedString(
+            from: message,
+            with: phoneNumber,
+            attributes: [
+                .font: UIFont.boldSystemFont(ofSize: 14),
+                .foregroundColor: UIColor.black
+            ]
+        )
         subtitleLabel.attributedText = attributedString
     }
 
@@ -97,12 +157,14 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
     }
 
     func setupResendTitle() {
-        let attributedString = NSMutableAttributedString(string: "Didn't receive a code? Resend SMS")
-        let range = (attributedString.string as NSString).range(of: "Resend SMS")
-        attributedString.addAttribute(.link, value: "retryOTP", range: range)
-
+        let attributedString = getAttributedString(
+            from: Module.OTP.Strings.resendTitle,
+            with: Module.OTP.Strings.resendPlaceholder,
+            attributes: [
+                .link: "retryOTP"
+            ]
+        )
         resendTitle.attributedText = attributedString
-
             // Add a tap gesture recognizer to the label
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
         resendTitle.isUserInteractionEnabled = true
@@ -110,8 +172,17 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
     }
 
     func setupResendTimeoutTitle(_ time: Int) {
-        let timeoutString = String(format: "Didn't receive a code? Resend in 00:%02d", time)
-        resendTitle.text = timeoutString
+        let timeoutString = String(format: Module.OTP.Strings.resendTimeout, time)
+        let resendString = String(format: Module.OTP.Strings.resendTimeoutPlaceholder, time)
+        let attrString = getAttributedString(
+            from: timeoutString,
+            with: resendString,
+            attributes: [
+                .font: UIFont.systemFont(ofSize: 16, weight: .light),
+                .foregroundColor: UIColor.lightGray
+            ]
+        )
+        resendTitle.attributedText = attrString
     }
 
     @objc func labelTapped(_ gesture: UITapGestureRecognizer) {
@@ -137,16 +208,18 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
 
     func retryOTP() {
             // Handle retry OTP logic here
+        resendOTPRelay.onNext(())
         otpTimeoutTimer?.invalidate()
         otpTimeout = otpTimeoutLimit
         startOTPTimeout()
     }
 
     func setupSubmitBtn() {
-        submitBtn.setTitle("Verify Number", for: .normal)
-        submitBtn.backgroundColor = .black
+        submitBtn.setTitle(Module.OTP.Strings.verify, for: .normal)
         submitBtn.layer.cornerRadius = submitBtn.frame.height / 2
         submitBtn.addDefaultShadow()
+        submitBtn.rx.tap.bind(to: tapContinueRelay)
+            .disposed(by: disposeBag)
     }
 
     func setupOTPFields() {
@@ -168,7 +241,7 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
             }
     }
 
-    func disbleViews(){
+    func disableViews(){
         DispatchQueue.main.async {
             for i in 1001...1006 {
                 if let prevOTPField = self.view.viewWithTag(i) as? UITextField {
@@ -188,7 +261,6 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
                     prevOTPField.isEnabled = true
                 }
             }
-
             self.submitBtn.isEnabled  =  true
         }
     }
@@ -201,18 +273,16 @@ extension OTPViewController: UITextFieldDelegate {
         var nextOTPField: UITextField?
 
             // If intermediate editing is not allowed, then check for last filled field in forward direction.
-        if !shouldAllowIntermediateEditing {
-            for index in stride(from: 1, to: fieldsCount + 1, by: 1) {
-                let tempNextOTPField = self.view.viewWithTag( index + 1000 ) as? UITextField
+        for index in stride(from: 1, to: fieldsCount + 1, by: 1) {
+            let tempNextOTPField = self.view.viewWithTag( index + 1000 ) as? UITextField
 
-                if let tempNextOTPFieldText = tempNextOTPField?.text, tempNextOTPFieldText.isEmpty {
-                    nextOTPField = tempNextOTPField
-                    break
-                }
+            if let tempNextOTPFieldText = tempNextOTPField?.text, tempNextOTPFieldText.isEmpty {
+                nextOTPField = tempNextOTPField
+                break
             }
-            if let nextOTPField = nextOTPField {
-                isTextFilled = (nextOTPField == textField || (textField.tag) == (nextOTPField.tag - 1))
-            }
+        }
+        if let nextOTPField = nextOTPField {
+            isTextFilled = (nextOTPField == textField || (textField.tag) == (nextOTPField.tag - 1))
         }
         return isTextFilled
     }
@@ -244,6 +314,7 @@ extension OTPViewController: UITextFieldDelegate {
             if textField.tag <= fieldsCount + 1000 && textField.text == "" {
                 secureDataEntry[textField.tag - 1001] = string
                 textField.text = string
+                otpCodeRelay.onNext(secureDataEntry)
             }
 
             let nextOTPField = self.view.viewWithTag(textField.tag + 1)
@@ -275,6 +346,7 @@ extension OTPViewController: UITextFieldDelegate {
     private func deleteText(in textField: UITextField) {
             // If deleting the text, set the current textfield as active for next input
         secureDataEntry[textField.tag - 1001] = ""
+        otpCodeRelay.onNext(secureDataEntry)
         textField.text = ""
         textField.becomeFirstResponder()
     }

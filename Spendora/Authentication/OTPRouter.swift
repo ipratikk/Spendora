@@ -1,22 +1,21 @@
 //
-//  AuthRouter.swift
-//  Spendora
+//  OTPRouter.swift
+//  Authentication
 //
-//  Created by Goel, Pratik | RIEPL on 17/04/23.
+//  Created by Goel, Pratik | RIEPL on 10/05/23.
 //
 
 import Foundation
 import UIKit
 import Utilities
 
-public final class AuthRouter {
+public final class OTPRouter {
     public typealias Submodules = (
-        countryPicker: UIViewController,
-        otpModule: (_ phoneNumber: String) -> UIViewController
+        setupAccount: () -> UIViewController,
+        homeView: () -> UIViewController
     )
 
     private unowned let view: UIViewController
-
     private let submodules: Submodules
 
     init(view: UIViewController, submodules: Submodules) {
@@ -25,15 +24,16 @@ public final class AuthRouter {
     }
 }
 
-extension AuthRouter {
-    func routeToCountryPicker() {
-        let countryPickerVC = submodules.countryPicker
-        view.show(countryPickerVC, type: .present, animated: true)
+extension OTPRouter {
+    func routeToHomeScreen() {
+        let authVC = submodules.homeView()
+        authVC.makeRootViewController()
     }
 
-    func routeToOTP(with phoneNumber: String) {
-        let otpVC = submodules.otpModule(phoneNumber)
-        view.show(otpVC, type: .push, animated: true)
+    func routeToSetupAccount() {
+        let authVC = submodules.setupAccount()
+        authVC.view.backgroundColor = .gray
+        view.show(authVC, type: .push, animated: true)
     }
 
     func showAlert(_ error: Error) {

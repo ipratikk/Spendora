@@ -10,5 +10,6 @@ import Foundation
 public final class Constants {
     public enum UserdefaultKeys: String {
         case isOnboarded
+        case verificationID
     }
 }

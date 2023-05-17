@@ -11,4 +11,3 @@ public extension String {
     static let empty = ""
     static let ok = "Ok"
 }
-

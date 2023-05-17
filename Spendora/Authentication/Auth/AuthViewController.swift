@@ -38,7 +38,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var authTitle: UILabel!
     @IBOutlet weak var authSubtitle: UILabel!
     @IBOutlet weak var countryCodeBtn: UIButton!
-    @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var phoneNumber: PhoneTextField!
     @IBOutlet weak var authNumber: UIButton!
     @IBOutlet weak var authOtherTitle: UILabel!
     @IBOutlet weak var authGoogle: CustomButton!
@@ -158,23 +158,5 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         authApple.setup(with: .apple)
         authApple.rx.tap.bind(to: authAppleTapRelay)
             .disposed(by: disposeBag)
-    }
-}
-
-extension AuthViewController {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let text = textField.text, let textRange = Range(range, in: text) {
-            let updatedText = text.replacingCharacters(in: textRange, with: string).filter("0123456789".contains)
-            if updatedText.count >= 10 {
-                let newText = String(updatedText.suffix(10))
-                textField.text = newText
-                view.endEditing(true)
-                return false
-            } else {
-                textField.text = updatedText
-            }
-        }
-
-        return false
     }
 }

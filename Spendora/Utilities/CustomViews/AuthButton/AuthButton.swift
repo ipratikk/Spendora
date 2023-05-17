@@ -44,4 +44,3 @@ public enum AuthButton {
         return AuthButtonModel(image: image, background: background)
     }
 }
-

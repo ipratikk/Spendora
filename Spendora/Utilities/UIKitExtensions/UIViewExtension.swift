@@ -41,4 +41,9 @@ public extension UITableView {
         let nib = UINib(nibName: String(describing: cellClass), bundle: Bundle(for: cellClass))
         register(nib, forCellReuseIdentifier: String(describing: cellClass))
     }
+
+    func registerHeaderNib<T: UITableViewHeaderFooterView>(_ cellClass: T.Type) {
+        let nib = UINib(nibName: String(describing: cellClass), bundle: Bundle(for: cellClass))
+        register(nib, forHeaderFooterViewReuseIdentifier: String(describing: cellClass))
+    }
 }

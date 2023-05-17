@@ -28,6 +28,6 @@ public final class FeaturesRouter {
 extension FeaturesRouter {
     func routeToAuthentication() {
         let authVC = submodules.authentication()
-        view.show(authVC, type: .push, animated: true)
+        authVC.makeRootViewController()
     }
 }

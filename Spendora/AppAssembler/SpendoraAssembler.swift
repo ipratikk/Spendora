@@ -12,6 +12,7 @@ import Authentication
 import Utilities
 import RxSwift
 import RxCocoa
+import Account
 
 public final class AppAssembler {
 
@@ -78,7 +79,7 @@ public final class AppAssembler {
         return AuthBuilder.build(
             submodules: (
                 countryPicker: countryPickerModule(),
-                ()
+                otpModule: otpModule
             ),
             useCases: (
                 output: (
@@ -90,5 +91,31 @@ public final class AppAssembler {
                 )
             )
         )
+    }
+
+    static func otpModule(with phoneNumber: String) -> UIViewController {
+        return OTPBuilder.build(
+            submodules: (
+                setupAccount: accountModule,
+                homeView: emptyView
+            ),
+            useCases: (
+                output: (
+                    phoneNumber: Driver.just(phoneNumber),
+                    ()
+                ),
+                input: (
+                    ()
+                )
+            )
+        )
+    }
+
+    static func accountModule() -> UIViewController {
+        return AccountViewController.initFromNib()
+    }
+
+    static func emptyView() -> UIViewController {
+        return UIViewController()
     }
 }

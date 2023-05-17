@@ -18,7 +18,7 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
 
     var completion: ((String?) -> Void)?
 
-    public func getUserLocation(completion: @escaping ((String?)-> Void)) {
+    public func getUserLocation(completion: @escaping ((String?) -> Void)) {
         self.completion = completion
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
@@ -28,7 +28,7 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         let geoCoder = CLGeocoder()
-        geoCoder.reverseGeocodeLocation(location) { (placemark, error) in
+        geoCoder.reverseGeocodeLocation(location) { (placemark, _) in
             guard let currentLocPlacemark = placemark?.first else { return }
             print("Current Location Mark: \(currentLocPlacemark.isoCountryCode)")
             self.completion?(currentLocPlacemark.isoCountryCode)
