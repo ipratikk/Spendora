@@ -10,11 +10,7 @@ import UIKit
 
 public extension UIButton {
     func addDefaultShadow() {
-        self.layer.shadowColor = UIColor.darkGray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 4.0)
-        self.layer.shadowOpacity = 0.1
-        self.layer.shadowRadius = 2
-        self.layer.masksToBounds = false
+        super.addDefaultShadow(height: 4.0, opacity: 0.1, radius: 3)
     }
 
     func setBackgroundColor(_ color: UIColor, for state: UIControl.State) {

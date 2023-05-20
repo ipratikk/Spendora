@@ -47,3 +47,22 @@ public extension UITableView {
         register(nib, forHeaderFooterViewReuseIdentifier: String(describing: cellClass))
     }
 }
+
+public extension UIView {
+    @objc func addDefaultShadow(color: UIColor = .darkGray, width: CGFloat = 0, height: CGFloat = 0, opacity: Float = 0.1, radius: CGFloat = 10) {
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOffset = CGSize(width: width, height: height)
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowRadius = radius
+        self.layer.masksToBounds = false
+    }
+
+    @objc func removeBottomShadow() {
+        self.layer.shadowOffset = CGSize(width: 0, height: -self.layer.shadowRadius)
+    }
+
+    @objc func addBorder(color: UIColor, width: CGFloat) {
+        self.layer.borderColor = color.cgColor
+        self.layer.borderWidth = width
+    }
+}
