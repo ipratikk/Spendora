@@ -17,24 +17,18 @@
 		650B9B3B29E9DAD200D144A9 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 650B9B3829E9DAD200D144A9 /* RxSwift.xcframework */; };
 		650B9B3E29EA8C2000D144A9 /* TncPrivacyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B9B3C29EA8BEF00D144A9 /* TncPrivacyBuilder.swift */; };
 		650B9B4729EAA8FF00D144A9 /* SpendoraTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B9B4629EAA8FF00D144A9 /* SpendoraTest.swift */; };
-		650D735729F533F8004B0E26 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650D735629F533F8004B0E26 /* LocationManager.swift */; };
-		650D735A29F556C6004B0E26 /* CountryPickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650D735829F556C2004B0E26 /* CountryPickerInteractor.swift */; };
-		650D735C29F560D8004B0E26 /* CountryPickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650D735B29F560D8004B0E26 /* CountryPickerRouter.swift */; };
+		651EF1E32A14E23B00CE9508 /* AccountButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EF1E12A14E23B00CE9508 /* AccountButtonTableViewCell.swift */; };
+		651EF1E42A14E23B00CE9508 /* AccountButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651EF1E22A14E23B00CE9508 /* AccountButtonTableViewCell.xib */; };
+		651EF1E62A19059E00CE9508 /* AccountFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651EF1E52A19059E00CE9508 /* AccountFooterView.swift */; };
+		651EF1E82A19062100CE9508 /* AccountFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651EF1E72A19062100CE9508 /* AccountFooterView.xib */; };
 		6525F7A229EDC1C2000768AC /* Authentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 6525F7A129EDC1C2000768AC /* Authentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6525F7AA29EDC6F4000768AC /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7A829EDC6F4000768AC /* AuthViewController.swift */; };
 		6525F7AB29EDC6F4000768AC /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6525F7A929EDC6F4000768AC /* AuthViewController.xib */; };
 		6525F7AD29EDC70C000768AC /* AuthBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7AC29EDC70C000768AC /* AuthBuilder.swift */; };
 		6525F7AF29EDC71B000768AC /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7AE29EDC71B000768AC /* AuthPresenter.swift */; };
 		6525F7B229EDC729000768AC /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7B029EDC725000768AC /* AuthRouter.swift */; };
-		6525F7BB29EDEE9B000768AC /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6525F7BA29EDEE9B000768AC /* UIColorExtension.swift */; };
 		65321D2629E9950300BA3E93 /* SpendoraAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */; };
 		65321D2F29E995B100BA3E93 /* Onboarding.h in Headers */ = {isa = PBXBuildFile; fileRef = 65321D2E29E995B100BA3E93 /* Onboarding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65321D4329E9965D00BA3E93 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 65321D4229E9965D00BA3E93 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65321D5329E9986E00BA3E93 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231C429E8171C00C13139 /* UIViewExtension.swift */; };
-		65321D5529E998E500BA3E93 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */; };
-		65321D5829E9992800BA3E93 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D5729E9992800BA3E93 /* LottieView.swift */; };
-		65321D5B29E9999F00BA3E93 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 65321D5A29E9999F00BA3E93 /* Lottie */; };
-		65321D5C29E999FE00BA3E93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562EF9529E7D96C00D6E1D5 /* Constants.swift */; };
 		65321D6829E99AD100BA3E93 /* FeatureCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231B829E80E3300C13139 /* FeatureCardView.swift */; };
 		65321D6929E99AD100BA3E93 /* FeatureCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650231BA29E80E3F00C13139 /* FeatureCardView.xib */; };
 		65321D6A29E99AD100BA3E93 /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231C029E814F900C13139 /* FeaturesViewController.swift */; };
@@ -45,20 +39,13 @@
 		65321D6F29E99AD100BA3E93 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557311929E45C34008BEA22 /* OnboardingViewController.swift */; };
 		65321D7029E99AD100BA3E93 /* TncPrivacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6557312B29E49673008BEA22 /* TncPrivacyViewController.xib */; };
 		65321D7129E99AD100BA3E93 /* FeatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650231B229E7F62D00C13139 /* FeatureModel.swift */; };
-		65321D7329E99BAE00BA3E93 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D7229E99BAE00BA3E93 /* UIViewControllerExtension.swift */; };
 		65321D7429E99CB000BA3E93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
 		65321D7529E99CB100BA3E93 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
 		65321D7D29E99EAD00BA3E93 /* OnboardingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D7B29E99E6200BA3E93 /* OnboardingBuilder.swift */; };
 		65321D7F29E99F9700BA3E93 /* FeaturesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D7E29E99F9700BA3E93 /* FeaturesBuilder.swift */; };
 		65321D8129E9A02000BA3E93 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D8029E9A02000BA3E93 /* OnboardingPresenter.swift */; };
 		65321D8329E9A02A00BA3E93 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65321D8229E9A02A00BA3E93 /* OnboardingRouter.swift */; };
-		6546E0AE29F071B200C89F18 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546E0AD29F071B200C89F18 /* UIButtonExtension.swift */; };
 		6546E0B029F1115B00C89F18 /* country_dial_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 6546E0AF29F1115B00C89F18 /* country_dial_info.json */; };
-		6546E0C029F2930400C89F18 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546E0BF29F2930400C89F18 /* AuthButton.swift */; };
-		6546E0C129F2931D00C89F18 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546E0B429F13A3700C89F18 /* CountryModel.swift */; };
-		6546E0C329F2933900C89F18 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546E0B129F13A1000C89F18 /* CustomButton.swift */; };
-		6546E0C429F2933900C89F18 /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546E0B729F1491E00C89F18 /* CountryPickerViewController.swift */; };
-		6546E0C529F2933900C89F18 /* AuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546E0A429F041DB00C89F18 /* AuthButtonView.swift */; };
 		6557310229E4581D008BEA22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6557310129E4581D008BEA22 /* AppDelegate.swift */; };
 		6557310C29E4581D008BEA22 /* Spendora.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6557310A29E4581D008BEA22 /* Spendora.xcdatamodeld */; };
 		6557310E29E45822008BEA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6557310D29E45822008BEA22 /* Assets.xcassets */; };
@@ -78,24 +65,55 @@
 		6578B21F2A02B5E000F81012 /* RxCocoa.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 650B9B3629E9DAD200D144A9 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6578B2202A02B5E000F81012 /* RxRelay.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 650B9B3729E9DAD200D144A9 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6578B2212A02B5E000F81012 /* RxSwift.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 650B9B3829E9DAD200D144A9 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6578B2232A02B64B00F81012 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6578B2222A02B64B00F81012 /* Lottie */; };
-		657DA27529FCF7C900C72CDF /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DA27429FCF7C900C72CDF /* AuthManager.swift */; };
 		657DA27929FD44EA00C72CDF /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DA27729FD44EA00C72CDF /* OTPViewController.swift */; };
 		657DA27A29FD44EA00C72CDF /* OTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657DA27829FD44EA00C72CDF /* OTPViewController.xib */; };
-		65AC2D6629F2B9D3002C6C20 /* AuthButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6546E0A929F0421B00C89F18 /* AuthButtonView.xib */; };
-		65AC2D6729F2B9E1002C6C20 /* CountryPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6546E0B829F1491E00C89F18 /* CountryPickerViewController.xib */; };
-		65AC2D6C29F2D5A9002C6C20 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC2D6B29F2D5A9002C6C20 /* APIManager.swift */; };
-		65AC2D6E29F2DC00002C6C20 /* CountryPickerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC2D6D29F2DC00002C6C20 /* CountryPickerBuilder.swift */; };
-		65AC2D7029F2DC10002C6C20 /* CountryPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC2D6F29F2DC10002C6C20 /* CountryPickerPresenter.swift */; };
-		65AC2D7529F2E43B002C6C20 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC2D7329F2E43B002C6C20 /* CountryTableViewCell.swift */; };
-		65AC2D7629F2E43B002C6C20 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65AC2D7429F2E43B002C6C20 /* CountryTableViewCell.xib */; };
+		65880E0D2A0E260E0096F8F9 /* Account.h in Headers */ = {isa = PBXBuildFile; fileRef = 65880E0C2A0E260E0096F8F9 /* Account.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65880E102A0E260E0096F8F9 /* Account.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65880E0A2A0E260E0096F8F9 /* Account.framework */; };
+		65880E112A0E260E0096F8F9 /* Account.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65880E0A2A0E260E0096F8F9 /* Account.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		65880E4F2A0E280F0096F8F9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E4D2A0E280F0096F8F9 /* AccountViewController.swift */; };
+		65880E502A0E280F0096F8F9 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65880E4E2A0E280F0096F8F9 /* AccountViewController.xib */; };
+		65880E542A0E2B600096F8F9 /* AccountHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E522A0E2B600096F8F9 /* AccountHeaderTableViewCell.swift */; };
+		65880E552A0E2B600096F8F9 /* AccountHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65880E532A0E2B600096F8F9 /* AccountHeaderTableViewCell.xib */; };
+		65880E5C2A0E32380096F8F9 /* AccountItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E5B2A0E32380096F8F9 /* AccountItemModel.swift */; };
+		65880E8E2A0E4C450096F8F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E682A0E4C450096F8F9 /* Constants.swift */; };
+		65880E8F2A0E4C450096F8F9 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 65880E692A0E4C450096F8F9 /* Utilities.h */; };
+		65880E902A0E4C450096F8F9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E6B2A0E4C450096F8F9 /* UserModel.swift */; };
+		65880E912A0E4C450096F8F9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E6D2A0E4C450096F8F9 /* CustomButton.swift */; };
+		65880E922A0E4C450096F8F9 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E6F2A0E4C450096F8F9 /* NoDataView.swift */; };
+		65880E932A0E4C450096F8F9 /* NoDataViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E702A0E4C450096F8F9 /* NoDataViewBuilder.swift */; };
+		65880E942A0E4C450096F8F9 /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65880E712A0E4C450096F8F9 /* NoDataView.xib */; };
+		65880E952A0E4C450096F8F9 /* AuthButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E732A0E4C450096F8F9 /* AuthButtonView.swift */; };
+		65880E962A0E4C460096F8F9 /* AuthButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65880E742A0E4C450096F8F9 /* AuthButtonView.xib */; };
+		65880E972A0E4C460096F8F9 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E752A0E4C450096F8F9 /* AuthButton.swift */; };
+		65880E982A0E4C460096F8F9 /* CountryPickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E772A0E4C450096F8F9 /* CountryPickerPresenter.swift */; };
+		65880E992A0E4C460096F8F9 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E782A0E4C450096F8F9 /* CountryModel.swift */; };
+		65880E9A2A0E4C460096F8F9 /* CountryPickerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E792A0E4C450096F8F9 /* CountryPickerBuilder.swift */; };
+		65880E9B2A0E4C460096F8F9 /* CountryPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65880E7A2A0E4C450096F8F9 /* CountryPickerViewController.xib */; };
+		65880E9C2A0E4C460096F8F9 /* CountryPickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E7B2A0E4C450096F8F9 /* CountryPickerInteractor.swift */; };
+		65880E9D2A0E4C460096F8F9 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E7C2A0E4C450096F8F9 /* CountryTableViewCell.swift */; };
+		65880E9E2A0E4C460096F8F9 /* CountryPickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E7D2A0E4C450096F8F9 /* CountryPickerRouter.swift */; };
+		65880E9F2A0E4C460096F8F9 /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E7E2A0E4C450096F8F9 /* CountryPickerViewController.swift */; };
+		65880EA02A0E4C460096F8F9 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65880E7F2A0E4C450096F8F9 /* CountryTableViewCell.xib */; };
+		65880EA12A0E4C460096F8F9 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E812A0E4C450096F8F9 /* LottieView.swift */; };
+		65880EA22A0E4C460096F8F9 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E842A0E4C450096F8F9 /* AuthManager.swift */; };
+		65880EA32A0E4C460096F8F9 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E862A0E4C450096F8F9 /* UIButtonExtension.swift */; };
+		65880EA42A0E4C460096F8F9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E872A0E4C450096F8F9 /* UIColorExtension.swift */; };
+		65880EA52A0E4C460096F8F9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E882A0E4C450096F8F9 /* UIViewControllerExtension.swift */; };
+		65880EA62A0E4C460096F8F9 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E892A0E4C450096F8F9 /* UIViewExtension.swift */; };
+		65880EA72A0E4C460096F8F9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E8B2A0E4C450096F8F9 /* APIManager.swift */; };
+		65880EA82A0E4C460096F8F9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E8C2A0E4C450096F8F9 /* StringExtension.swift */; };
+		65880EA92A0E4C460096F8F9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E8D2A0E4C450096F8F9 /* LocationManager.swift */; };
+		65880EAC2A0E4CFB0096F8F9 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880EAA2A0E4CFA0096F8F9 /* PhoneTextField.swift */; };
+		65880EAD2A0E4CFB0096F8F9 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880EAB2A0E4CFB0096F8F9 /* EmailTextField.swift */; };
+		65880EB22A0E79E20096F8F9 /* AccountDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880EB02A0E79E20096F8F9 /* AccountDetailsTableViewCell.swift */; };
+		65880EB32A0E79E20096F8F9 /* AccountDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65880EB12A0E79E20096F8F9 /* AccountDetailsTableViewCell.xib */; };
 		65CB8F9B2A069FF500CFCAC6 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB8F9A2A069FF500CFCAC6 /* Module.swift */; };
 		65CB8F9C2A06B5E000CFCAC6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
 		65CB90042A06E99200CFCAC6 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB90022A06E98B00CFCAC6 /* OTPTextField.swift */; };
 		65E5E62F2A0AE0E30080F920 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65E5E62E2A0AE0E30080F920 /* GoogleService-Info.plist */; };
-		65F1A7B029F5C2CC0024F82F /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1A7AF29F5C2CC0024F82F /* NoDataView.swift */; };
-		65F1A7B229F5C2DD0024F82F /* NoDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F1A7B129F5C2DC0024F82F /* NoDataView.xib */; };
-		65F1A7B429F5C44A0024F82F /* NoDataViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1A7B329F5C44A0024F82F /* NoDataViewBuilder.swift */; };
+		65E5E6312A0BF7A00080F920 /* OTPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5E6302A0BF7A00080F920 /* OTPPresenter.swift */; };
+		65E5E6332A0BF89E0080F920 /* OTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5E6322A0BF89E0080F920 /* OTPRouter.swift */; };
+		65E5E6352A0BF9890080F920 /* OTPBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5E6342A0BF9890080F920 /* OTPBuilder.swift */; };
 		6DDCBE3C1371E10BC486899F /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF295A80A0870D2939AE592A /* Pods_Utilities.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,13 +124,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 655730FD29E4581D008BEA22;
 			remoteInfo = Spendora;
-		};
-		6525F7B829EDEBA7000768AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 655730F629E4581D008BEA22 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6525F79E29EDC1C2000768AC;
-			remoteInfo = Authentication;
 		};
 		6525F7BC29EDEEE9000768AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -127,6 +138,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 65321D2B29E995B000BA3E93;
 			remoteInfo = Onboarding;
+		};
+		65880E0E2A0E260E0096F8F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655730F629E4581D008BEA22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65880E092A0E260E0096F8F9;
+			remoteInfo = Account;
+		};
+		65880E5D2A0E327B0096F8F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655730F629E4581D008BEA22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65321D3F29E9965D00BA3E93;
+			remoteInfo = Utilities;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -143,6 +168,7 @@
 				6578B2182A02B43E00F81012 /* Onboarding.framework in CopyFiles */,
 				6578B2192A02B43F00F81012 /* Utilities.framework in CopyFiles */,
 				6578B21A2A02B43F00F81012 /* Authentication.framework in CopyFiles */,
+				65880E112A0E260E0096F8F9 /* Account.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +185,6 @@
 		650231BA29E80E3F00C13139 /* FeatureCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureCardView.xib; sourceTree = "<group>"; };
 		650231C029E814F900C13139 /* FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
 		650231C129E814F900C13139 /* FeaturesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturesViewController.xib; sourceTree = "<group>"; };
-		650231C429E8171C00C13139 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		650231C629E834F200C13139 /* splitExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splitExpense.json; sourceTree = "<group>"; };
 		650231C829E835E600C13139 /* analyzeExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = analyzeExpense.json; sourceTree = "<group>"; };
 		650B9B3629E9DAD200D144A9 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
@@ -168,9 +193,10 @@
 		650B9B3C29EA8BEF00D144A9 /* TncPrivacyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TncPrivacyBuilder.swift; sourceTree = "<group>"; };
 		650B9B4429EAA8FF00D144A9 /* SpendoraTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpendoraTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		650B9B4629EAA8FF00D144A9 /* SpendoraTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendoraTest.swift; sourceTree = "<group>"; };
-		650D735629F533F8004B0E26 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		650D735829F556C2004B0E26 /* CountryPickerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerInteractor.swift; sourceTree = "<group>"; };
-		650D735B29F560D8004B0E26 /* CountryPickerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerRouter.swift; sourceTree = "<group>"; };
+		651EF1E12A14E23B00CE9508 /* AccountButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountButtonTableViewCell.swift; sourceTree = "<group>"; };
+		651EF1E22A14E23B00CE9508 /* AccountButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountButtonTableViewCell.xib; sourceTree = "<group>"; };
+		651EF1E52A19059E00CE9508 /* AccountFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFooterView.swift; sourceTree = "<group>"; };
+		651EF1E72A19062100CE9508 /* AccountFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountFooterView.xib; sourceTree = "<group>"; };
 		6525F79F29EDC1C2000768AC /* Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6525F7A129EDC1C2000768AC /* Authentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Authentication.h; sourceTree = "<group>"; };
 		6525F7A829EDC6F4000768AC /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -178,27 +204,15 @@
 		6525F7AC29EDC70C000768AC /* AuthBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBuilder.swift; sourceTree = "<group>"; };
 		6525F7AE29EDC71B000768AC /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		6525F7B029EDC725000768AC /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
-		6525F7BA29EDEE9B000768AC /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		65321D2529E9950300BA3E93 /* SpendoraAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendoraAssembler.swift; sourceTree = "<group>"; };
 		65321D2C29E995B000BA3E93 /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65321D2E29E995B100BA3E93 /* Onboarding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Onboarding.h; sourceTree = "<group>"; };
 		65321D4029E9965D00BA3E93 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		65321D4229E9965D00BA3E93 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
-		65321D5729E9992800BA3E93 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		65321D7229E99BAE00BA3E93 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		65321D7B29E99E6200BA3E93 /* OnboardingBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBuilder.swift; sourceTree = "<group>"; };
 		65321D7E29E99F9700BA3E93 /* FeaturesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesBuilder.swift; sourceTree = "<group>"; };
 		65321D8029E9A02000BA3E93 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		65321D8229E9A02A00BA3E93 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
-		6546E0A429F041DB00C89F18 /* AuthButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonView.swift; sourceTree = "<group>"; };
-		6546E0A929F0421B00C89F18 /* AuthButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthButtonView.xib; sourceTree = "<group>"; };
-		6546E0AD29F071B200C89F18 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		6546E0AF29F1115B00C89F18 /* country_dial_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country_dial_info.json; sourceTree = "<group>"; };
-		6546E0B129F13A1000C89F18 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		6546E0B429F13A3700C89F18 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
-		6546E0B729F1491E00C89F18 /* CountryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
-		6546E0B829F1491E00C89F18 /* CountryPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryPickerViewController.xib; sourceTree = "<group>"; };
-		6546E0BF29F2930400C89F18 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		655730FE29E4581D008BEA22 /* Spendora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6557310129E4581D008BEA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6557310B29E4581D008BEA22 /* Spendora.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spendora.xcdatamodel; sourceTree = "<group>"; };
@@ -216,23 +230,54 @@
 		655974E729EC411400C5DE75 /* FeaturesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesRouter.swift; sourceTree = "<group>"; };
 		655A933529ED8BF6007A201C /* FeatureCardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCardBuilder.swift; sourceTree = "<group>"; };
 		655A933729ED9935007A201C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		6562EF9529E7D96C00D6E1D5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		657DA27429FCF7C900C72CDF /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		657DA27729FD44EA00C72CDF /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		657DA27829FD44EA00C72CDF /* OTPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTPViewController.xib; sourceTree = "<group>"; };
-		65AC2D6B29F2D5A9002C6C20 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		65AC2D6D29F2DC00002C6C20 /* CountryPickerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerBuilder.swift; sourceTree = "<group>"; };
-		65AC2D6F29F2DC10002C6C20 /* CountryPickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerPresenter.swift; sourceTree = "<group>"; };
-		65AC2D7329F2E43B002C6C20 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
-		65AC2D7429F2E43B002C6C20 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		65880E0A2A0E260E0096F8F9 /* Account.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Account.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65880E0C2A0E260E0096F8F9 /* Account.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		65880E4D2A0E280F0096F8F9 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		65880E4E2A0E280F0096F8F9 /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		65880E522A0E2B600096F8F9 /* AccountHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		65880E532A0E2B600096F8F9 /* AccountHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		65880E5B2A0E32380096F8F9 /* AccountItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountItemModel.swift; sourceTree = "<group>"; };
+		65880E682A0E4C450096F8F9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		65880E692A0E4C450096F8F9 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		65880E6B2A0E4C450096F8F9 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		65880E6D2A0E4C450096F8F9 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		65880E6F2A0E4C450096F8F9 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		65880E702A0E4C450096F8F9 /* NoDataViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataViewBuilder.swift; sourceTree = "<group>"; };
+		65880E712A0E4C450096F8F9 /* NoDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
+		65880E732A0E4C450096F8F9 /* AuthButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthButtonView.swift; sourceTree = "<group>"; };
+		65880E742A0E4C450096F8F9 /* AuthButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthButtonView.xib; sourceTree = "<group>"; };
+		65880E752A0E4C450096F8F9 /* AuthButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		65880E772A0E4C450096F8F9 /* CountryPickerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerPresenter.swift; sourceTree = "<group>"; };
+		65880E782A0E4C450096F8F9 /* CountryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		65880E792A0E4C450096F8F9 /* CountryPickerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerBuilder.swift; sourceTree = "<group>"; };
+		65880E7A2A0E4C450096F8F9 /* CountryPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryPickerViewController.xib; sourceTree = "<group>"; };
+		65880E7B2A0E4C450096F8F9 /* CountryPickerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerInteractor.swift; sourceTree = "<group>"; };
+		65880E7C2A0E4C450096F8F9 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		65880E7D2A0E4C450096F8F9 /* CountryPickerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerRouter.swift; sourceTree = "<group>"; };
+		65880E7E2A0E4C450096F8F9 /* CountryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
+		65880E7F2A0E4C450096F8F9 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		65880E812A0E4C450096F8F9 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		65880E842A0E4C450096F8F9 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		65880E862A0E4C450096F8F9 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		65880E872A0E4C450096F8F9 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		65880E882A0E4C450096F8F9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		65880E892A0E4C450096F8F9 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		65880E8B2A0E4C450096F8F9 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		65880E8C2A0E4C450096F8F9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		65880E8D2A0E4C450096F8F9 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		65880EAA2A0E4CFA0096F8F9 /* PhoneTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
+		65880EAB2A0E4CFB0096F8F9 /* EmailTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		65880EB02A0E79E20096F8F9 /* AccountDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		65880EB12A0E79E20096F8F9 /* AccountDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		65CB8F9A2A069FF500CFCAC6 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		65CB90022A06E98B00CFCAC6 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		65E5E62B2A0A88AC0080F920 /* Spendora.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spendora.entitlements; sourceTree = "<group>"; };
 		65E5E62E2A0AE0E30080F920 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		65F1A7AF29F5C2CC0024F82F /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
-		65F1A7B129F5C2DC0024F82F /* NoDataView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataView.xib; sourceTree = "<group>"; };
-		65F1A7B329F5C44A0024F82F /* NoDataViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataViewBuilder.swift; sourceTree = "<group>"; };
+		65E5E6302A0BF7A00080F920 /* OTPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPresenter.swift; sourceTree = "<group>"; };
+		65E5E6322A0BF89E0080F920 /* OTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRouter.swift; sourceTree = "<group>"; };
+		65E5E6342A0BF9890080F920 /* OTPBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPBuilder.swift; sourceTree = "<group>"; };
 		9B63E41933628ED23B6A0023 /* Pods-Onboarding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboarding.release.xcconfig"; path = "Target Support Files/Pods-Onboarding/Pods-Onboarding.release.xcconfig"; sourceTree = "<group>"; };
 		BF295A80A0870D2939AE592A /* Pods_Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F09A011EA8D742488E74C9 /* Pods-Spendora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendora.release.xcconfig"; path = "Target Support Files/Pods-Spendora/Pods-Spendora.release.xcconfig"; sourceTree = "<group>"; };
@@ -267,7 +312,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65321D5B29E9999F00BA3E93 /* Lottie in Frameworks */,
 				650B9B3929E9DAD200D144A9 /* RxCocoa.xcframework in Frameworks */,
 				650B9B3A29E9DAD200D144A9 /* RxRelay.xcframework in Frameworks */,
 				650B9B3B29E9DAD200D144A9 /* RxSwift.xcframework in Frameworks */,
@@ -279,11 +323,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6578B2232A02B64B00F81012 /* Lottie in Frameworks */,
+				65880E102A0E260E0096F8F9 /* Account.framework in Frameworks */,
 				6578B2132A02B25100F81012 /* Authentication.framework in Frameworks */,
 				6578B2142A02B25200F81012 /* Onboarding.framework in Frameworks */,
 				6578B2152A02B25200F81012 /* Utilities.framework in Frameworks */,
 				564DD8A919F802DF2A931F87 /* Pods_Spendora.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65880E072A0E260E0096F8F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,28 +392,6 @@
 				65321D2E29E995B100BA3E93 /* Onboarding.h */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		65321D4129E9965D00BA3E93 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				657DA27229FCF57500C72CDF /* Authenticators */,
-				65AC2D6A29F2D0DE002C6C20 /* CustomViews */,
-				65AC2D6929F2D0CB002C6C20 /* Helper */,
-				65AC2D6829F2D0AB002C6C20 /* UIKitExtensions */,
-				6562EF9529E7D96C00D6E1D5 /* Constants.swift */,
-				65321D4229E9965D00BA3E93 /* Utilities.h */,
-			);
-			name = Utilities;
-			path = ../Utilities;
-			sourceTree = "<group>";
-		};
-		65321D5629E9992800BA3E93 /* LottieView */ = {
-			isa = PBXGroup;
-			children = (
-				65321D5729E9992800BA3E93 /* LottieView.swift */,
-			);
-			path = LottieView;
 			sourceTree = "<group>";
 		};
 		65321D5929E9999F00BA3E93 /* Frameworks */ = {
@@ -431,22 +460,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		6546E0C629F2934F00C89F18 /* CountryPicker */ = {
-			isa = PBXGroup;
-			children = (
-				6546E0B429F13A3700C89F18 /* CountryModel.swift */,
-				6546E0B729F1491E00C89F18 /* CountryPickerViewController.swift */,
-				6546E0B829F1491E00C89F18 /* CountryPickerViewController.xib */,
-				65AC2D6D29F2DC00002C6C20 /* CountryPickerBuilder.swift */,
-				65AC2D6F29F2DC10002C6C20 /* CountryPickerPresenter.swift */,
-				65AC2D7329F2E43B002C6C20 /* CountryTableViewCell.swift */,
-				65AC2D7429F2E43B002C6C20 /* CountryTableViewCell.xib */,
-				650D735829F556C2004B0E26 /* CountryPickerInteractor.swift */,
-				650D735B29F560D8004B0E26 /* CountryPickerRouter.swift */,
-			);
-			path = CountryPicker;
-			sourceTree = "<group>";
-		};
 		655730F529E4581D008BEA22 = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +479,7 @@
 				65321D4029E9965D00BA3E93 /* Utilities.framework */,
 				650B9B4429EAA8FF00D144A9 /* SpendoraTest.xctest */,
 				6525F79F29EDC1C2000768AC /* Authentication.framework */,
+				65880E0A2A0E260E0096F8F9 /* Account.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -473,9 +487,10 @@
 		6557310029E4581D008BEA22 /* Spendora */ = {
 			isa = PBXGroup;
 			children = (
+				65880E672A0E4C450096F8F9 /* Utilities */,
 				65E5E62B2A0A88AC0080F920 /* Spendora.entitlements */,
+				65880E0B2A0E260E0096F8F9 /* Account */,
 				6525F7A029EDC1C2000768AC /* Authentication */,
-				65321D4129E9965D00BA3E93 /* Utilities */,
 				65321D2D29E995B100BA3E93 /* Onboarding */,
 				65321D2429E994D800BA3E93 /* AppAssembler */,
 				6557312329E460C9008BEA22 /* Assets */,
@@ -502,84 +517,169 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		657DA27229FCF57500C72CDF /* Authenticators */ = {
-			isa = PBXGroup;
-			children = (
-				657DA27329FCF58600C72CDF /* PhoneAuthenticator */,
-				657DA27429FCF7C900C72CDF /* AuthManager.swift */,
-			);
-			path = Authenticators;
-			sourceTree = "<group>";
-		};
-		657DA27329FCF58600C72CDF /* PhoneAuthenticator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = PhoneAuthenticator;
-			path = "../New Group/PhoneAuthenticator";
-			sourceTree = "<group>";
-		};
 		657DA27629FD44C100C72CDF /* OTP */ = {
 			isa = PBXGroup;
 			children = (
 				657DA27729FD44EA00C72CDF /* OTPViewController.swift */,
 				657DA27829FD44EA00C72CDF /* OTPViewController.xib */,
 				65CB90022A06E98B00CFCAC6 /* OTPTextField.swift */,
+				65E5E6302A0BF7A00080F920 /* OTPPresenter.swift */,
+				65E5E6322A0BF89E0080F920 /* OTPRouter.swift */,
+				65E5E6342A0BF9890080F920 /* OTPBuilder.swift */,
 			);
 			name = OTP;
 			sourceTree = "<group>";
 		};
-		65AC2D6529F2AEFA002C6C20 /* AuthButton */ = {
+		65880E0B2A0E260E0096F8F9 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				6546E0BF29F2930400C89F18 /* AuthButton.swift */,
-				6546E0A429F041DB00C89F18 /* AuthButtonView.swift */,
-				6546E0A929F0421B00C89F18 /* AuthButtonView.xib */,
+				65880E5A2A0E322C0096F8F9 /* Model */,
+				65880E512A0E2B2D0096F8F9 /* AccountTableCells */,
+				65880E0C2A0E260E0096F8F9 /* Account.h */,
+				65880E4D2A0E280F0096F8F9 /* AccountViewController.swift */,
+				65880E4E2A0E280F0096F8F9 /* AccountViewController.xib */,
 			);
-			path = AuthButton;
+			path = Account;
 			sourceTree = "<group>";
 		};
-		65AC2D6829F2D0AB002C6C20 /* UIKitExtensions */ = {
+		65880E512A0E2B2D0096F8F9 /* AccountTableCells */ = {
 			isa = PBXGroup;
 			children = (
-				650231C429E8171C00C13139 /* UIViewExtension.swift */,
-				65321D7229E99BAE00BA3E93 /* UIViewControllerExtension.swift */,
-				6525F7BA29EDEE9B000768AC /* UIColorExtension.swift */,
-				6546E0AD29F071B200C89F18 /* UIButtonExtension.swift */,
+				65880EB02A0E79E20096F8F9 /* AccountDetailsTableViewCell.swift */,
+				65880EB12A0E79E20096F8F9 /* AccountDetailsTableViewCell.xib */,
+				65880E522A0E2B600096F8F9 /* AccountHeaderTableViewCell.swift */,
+				65880E532A0E2B600096F8F9 /* AccountHeaderTableViewCell.xib */,
+				651EF1E12A14E23B00CE9508 /* AccountButtonTableViewCell.swift */,
+				651EF1E22A14E23B00CE9508 /* AccountButtonTableViewCell.xib */,
+				651EF1E52A19059E00CE9508 /* AccountFooterView.swift */,
+				651EF1E72A19062100CE9508 /* AccountFooterView.xib */,
 			);
-			path = UIKitExtensions;
+			path = AccountTableCells;
 			sourceTree = "<group>";
 		};
-		65AC2D6929F2D0CB002C6C20 /* Helper */ = {
+		65880E5A2A0E322C0096F8F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6562EF9A29E7E12800D6E1D5 /* StringExtension.swift */,
-				65AC2D6B29F2D5A9002C6C20 /* APIManager.swift */,
-				650D735629F533F8004B0E26 /* LocationManager.swift */,
+				65880E5B2A0E32380096F8F9 /* AccountItemModel.swift */,
 			);
-			path = Helper;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		65AC2D6A29F2D0DE002C6C20 /* CustomViews */ = {
+		65880E672A0E4C450096F8F9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				65F1A7AE29F5C2B50024F82F /* NoData */,
-				65321D5629E9992800BA3E93 /* LottieView */,
-				6546E0C629F2934F00C89F18 /* CountryPicker */,
-				65AC2D6529F2AEFA002C6C20 /* AuthButton */,
-				6546E0B129F13A1000C89F18 /* CustomButton.swift */,
+				65880E682A0E4C450096F8F9 /* Constants.swift */,
+				65880E692A0E4C450096F8F9 /* Utilities.h */,
+				65880E6A2A0E4C450096F8F9 /* Models */,
+				65880E6C2A0E4C450096F8F9 /* CustomViews */,
+				65880E822A0E4C450096F8F9 /* New Group */,
+				65880E832A0E4C450096F8F9 /* Authenticators */,
+				65880E852A0E4C450096F8F9 /* UIKitExtensions */,
+				65880E8A2A0E4C450096F8F9 /* Helper */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		65880E6A2A0E4C450096F8F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65880E6B2A0E4C450096F8F9 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		65880E6C2A0E4C450096F8F9 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				65880E6D2A0E4C450096F8F9 /* CustomButton.swift */,
+				65880E6E2A0E4C450096F8F9 /* NoData */,
+				65880E722A0E4C450096F8F9 /* AuthButton */,
+				65880E762A0E4C450096F8F9 /* CountryPicker */,
+				65880E802A0E4C450096F8F9 /* LottieView */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		65F1A7AE29F5C2B50024F82F /* NoData */ = {
+		65880E6E2A0E4C450096F8F9 /* NoData */ = {
 			isa = PBXGroup;
 			children = (
-				65F1A7AF29F5C2CC0024F82F /* NoDataView.swift */,
-				65F1A7B129F5C2DC0024F82F /* NoDataView.xib */,
-				65F1A7B329F5C44A0024F82F /* NoDataViewBuilder.swift */,
+				65880E6F2A0E4C450096F8F9 /* NoDataView.swift */,
+				65880E702A0E4C450096F8F9 /* NoDataViewBuilder.swift */,
+				65880E712A0E4C450096F8F9 /* NoDataView.xib */,
 			);
 			path = NoData;
+			sourceTree = "<group>";
+		};
+		65880E722A0E4C450096F8F9 /* AuthButton */ = {
+			isa = PBXGroup;
+			children = (
+				65880E732A0E4C450096F8F9 /* AuthButtonView.swift */,
+				65880E742A0E4C450096F8F9 /* AuthButtonView.xib */,
+				65880E752A0E4C450096F8F9 /* AuthButton.swift */,
+			);
+			path = AuthButton;
+			sourceTree = "<group>";
+		};
+		65880E762A0E4C450096F8F9 /* CountryPicker */ = {
+			isa = PBXGroup;
+			children = (
+				65880E772A0E4C450096F8F9 /* CountryPickerPresenter.swift */,
+				65880E782A0E4C450096F8F9 /* CountryModel.swift */,
+				65880E792A0E4C450096F8F9 /* CountryPickerBuilder.swift */,
+				65880E7A2A0E4C450096F8F9 /* CountryPickerViewController.xib */,
+				65880E7B2A0E4C450096F8F9 /* CountryPickerInteractor.swift */,
+				65880E7C2A0E4C450096F8F9 /* CountryTableViewCell.swift */,
+				65880E7D2A0E4C450096F8F9 /* CountryPickerRouter.swift */,
+				65880E7E2A0E4C450096F8F9 /* CountryPickerViewController.swift */,
+				65880E7F2A0E4C450096F8F9 /* CountryTableViewCell.xib */,
+			);
+			path = CountryPicker;
+			sourceTree = "<group>";
+		};
+		65880E802A0E4C450096F8F9 /* LottieView */ = {
+			isa = PBXGroup;
+			children = (
+				65880E812A0E4C450096F8F9 /* LottieView.swift */,
+			);
+			path = LottieView;
+			sourceTree = "<group>";
+		};
+		65880E822A0E4C450096F8F9 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		65880E832A0E4C450096F8F9 /* Authenticators */ = {
+			isa = PBXGroup;
+			children = (
+				65880E842A0E4C450096F8F9 /* AuthManager.swift */,
+			);
+			path = Authenticators;
+			sourceTree = "<group>";
+		};
+		65880E852A0E4C450096F8F9 /* UIKitExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				65880E862A0E4C450096F8F9 /* UIButtonExtension.swift */,
+				65880E872A0E4C450096F8F9 /* UIColorExtension.swift */,
+				65880E882A0E4C450096F8F9 /* UIViewControllerExtension.swift */,
+				65880E892A0E4C450096F8F9 /* UIViewExtension.swift */,
+			);
+			path = UIKitExtensions;
+			sourceTree = "<group>";
+		};
+		65880E8A2A0E4C450096F8F9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				65880EAB2A0E4CFB0096F8F9 /* EmailTextField.swift */,
+				65880EAA2A0E4CFA0096F8F9 /* PhoneTextField.swift */,
+				65880E8B2A0E4C450096F8F9 /* APIManager.swift */,
+				65880E8C2A0E4C450096F8F9 /* StringExtension.swift */,
+				65880E8D2A0E4C450096F8F9 /* LocationManager.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		E43FF61CDFE2373F6E002898 /* Pods */ = {
@@ -618,7 +718,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65321D4329E9965D00BA3E93 /* Utilities.h in Headers */,
+				65880E8F2A0E4C450096F8F9 /* Utilities.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65880E052A0E260E0096F8F9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65880E0D2A0E260E0096F8F9 /* Account.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,7 +783,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6525F7B929EDEBA7000768AC /* PBXTargetDependency */,
 			);
 			name = Onboarding;
 			productName = Onboarding;
@@ -698,7 +805,6 @@
 			);
 			name = Utilities;
 			packageProductDependencies = (
-				65321D5A29E9999F00BA3E93 /* Lottie */,
 			);
 			productName = Utilities;
 			productReference = 65321D4029E9965D00BA3E93 /* Utilities.framework */;
@@ -720,14 +826,33 @@
 			);
 			dependencies = (
 				65321D3A29E995FC00BA3E93 /* PBXTargetDependency */,
+				65880E0F2A0E260E0096F8F9 /* PBXTargetDependency */,
 			);
 			name = Spendora;
 			packageProductDependencies = (
-				6578B2222A02B64B00F81012 /* Lottie */,
 			);
 			productName = Spendora;
 			productReference = 655730FE29E4581D008BEA22 /* Spendora.app */;
 			productType = "com.apple.product-type.application";
+		};
+		65880E092A0E260E0096F8F9 /* Account */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65880E122A0E260E0096F8F9 /* Build configuration list for PBXNativeTarget "Account" */;
+			buildPhases = (
+				65880E052A0E260E0096F8F9 /* Headers */,
+				65880E062A0E260E0096F8F9 /* Sources */,
+				65880E072A0E260E0096F8F9 /* Frameworks */,
+				65880E082A0E260E0096F8F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65880E5E2A0E327B0096F8F9 /* PBXTargetDependency */,
+			);
+			name = Account;
+			productName = Account;
+			productReference = 65880E0A2A0E260E0096F8F9 /* Account.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -756,6 +881,10 @@
 					655730FD29E4581D008BEA22 = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					65880E092A0E260E0096F8F9 = {
+						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1430;
+					};
 				};
 			};
 			buildConfigurationList = 655730F929E4581D008BEA22 /* Build configuration list for PBXProject "Spendora" */;
@@ -768,7 +897,6 @@
 			);
 			mainGroup = 655730F529E4581D008BEA22;
 			packageReferences = (
-				6557311D29E45D53008BEA22 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 655730FF29E4581D008BEA22 /* Products */;
 			projectDirPath = "";
@@ -779,6 +907,7 @@
 				65321D3F29E9965D00BA3E93 /* Utilities */,
 				650B9B4329EAA8FF00D144A9 /* SpendoraTest */,
 				6525F79E29EDC1C2000768AC /* Authentication */,
+				65880E092A0E260E0096F8F9 /* Account */,
 			);
 		};
 /* End PBXProject section */
@@ -817,11 +946,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65AC2D7629F2E43B002C6C20 /* CountryTableViewCell.xib in Resources */,
-				65AC2D6729F2B9E1002C6C20 /* CountryPickerViewController.xib in Resources */,
-				65AC2D6629F2B9D3002C6C20 /* AuthButtonView.xib in Resources */,
 				65321D7529E99CB100BA3E93 /* Localizable.strings in Resources */,
-				65F1A7B229F5C2DD0024F82F /* NoDataView.xib in Resources */,
+				65880E9B2A0E4C460096F8F9 /* CountryPickerViewController.xib in Resources */,
+				65880E942A0E4C450096F8F9 /* NoDataView.xib in Resources */,
+				65880E962A0E4C460096F8F9 /* AuthButtonView.xib in Resources */,
+				65880EA02A0E4C460096F8F9 /* CountryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,6 +967,18 @@
 				6557312529E460D9008BEA22 /* finance.json in Resources */,
 				6546E0B029F1115B00C89F18 /* country_dial_info.json in Resources */,
 				6557310E29E45822008BEA22 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65880E082A0E260E0096F8F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65880E552A0E2B600096F8F9 /* AccountHeaderTableViewCell.xib in Resources */,
+				65880EB32A0E79E20096F8F9 /* AccountDetailsTableViewCell.xib in Resources */,
+				65880E502A0E280F0096F8F9 /* AccountViewController.xib in Resources */,
+				651EF1E82A19062100CE9508 /* AccountFooterView.xib in Resources */,
+				651EF1E42A14E23B00CE9508 /* AccountButtonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -958,13 +1099,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E5E6312A0BF7A00080F920 /* OTPPresenter.swift in Sources */,
 				657DA27929FD44EA00C72CDF /* OTPViewController.swift in Sources */,
+				65E5E6332A0BF89E0080F920 /* OTPRouter.swift in Sources */,
 				65CB90042A06E99200CFCAC6 /* OTPTextField.swift in Sources */,
 				6525F7B229EDC729000768AC /* AuthRouter.swift in Sources */,
 				6525F7AA29EDC6F4000768AC /* AuthViewController.swift in Sources */,
 				6525F7AF29EDC71B000768AC /* AuthPresenter.swift in Sources */,
 				6525F7AD29EDC70C000768AC /* AuthBuilder.swift in Sources */,
 				65CB8F9B2A069FF500CFCAC6 /* Module.swift in Sources */,
+				65E5E6352A0BF9890080F920 /* OTPBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -993,28 +1137,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65321D5329E9986E00BA3E93 /* UIViewExtension.swift in Sources */,
-				650D735A29F556C6004B0E26 /* CountryPickerInteractor.swift in Sources */,
-				650D735729F533F8004B0E26 /* LocationManager.swift in Sources */,
-				65F1A7B429F5C44A0024F82F /* NoDataViewBuilder.swift in Sources */,
-				65AC2D7029F2DC10002C6C20 /* CountryPickerPresenter.swift in Sources */,
-				650D735C29F560D8004B0E26 /* CountryPickerRouter.swift in Sources */,
-				65F1A7B029F5C2CC0024F82F /* NoDataView.swift in Sources */,
-				6546E0C029F2930400C89F18 /* AuthButton.swift in Sources */,
-				6546E0C129F2931D00C89F18 /* CountryModel.swift in Sources */,
-				65321D5529E998E500BA3E93 /* StringExtension.swift in Sources */,
-				65321D7329E99BAE00BA3E93 /* UIViewControllerExtension.swift in Sources */,
-				65AC2D6C29F2D5A9002C6C20 /* APIManager.swift in Sources */,
-				65321D5829E9992800BA3E93 /* LottieView.swift in Sources */,
-				6546E0C329F2933900C89F18 /* CustomButton.swift in Sources */,
-				6546E0C429F2933900C89F18 /* CountryPickerViewController.swift in Sources */,
-				6546E0C529F2933900C89F18 /* AuthButtonView.swift in Sources */,
-				65AC2D6E29F2DC00002C6C20 /* CountryPickerBuilder.swift in Sources */,
-				65AC2D7529F2E43B002C6C20 /* CountryTableViewCell.swift in Sources */,
-				6546E0AE29F071B200C89F18 /* UIButtonExtension.swift in Sources */,
-				657DA27529FCF7C900C72CDF /* AuthManager.swift in Sources */,
-				65321D5C29E999FE00BA3E93 /* Constants.swift in Sources */,
-				6525F7BB29EDEE9B000768AC /* UIColorExtension.swift in Sources */,
+				65880E9D2A0E4C460096F8F9 /* CountryTableViewCell.swift in Sources */,
+				65880E952A0E4C450096F8F9 /* AuthButtonView.swift in Sources */,
+				65880EA12A0E4C460096F8F9 /* LottieView.swift in Sources */,
+				65880E982A0E4C460096F8F9 /* CountryPickerPresenter.swift in Sources */,
+				65880E992A0E4C460096F8F9 /* CountryModel.swift in Sources */,
+				65880EA42A0E4C460096F8F9 /* UIColorExtension.swift in Sources */,
+				65880EA72A0E4C460096F8F9 /* APIManager.swift in Sources */,
+				65880EA92A0E4C460096F8F9 /* LocationManager.swift in Sources */,
+				65880E972A0E4C460096F8F9 /* AuthButton.swift in Sources */,
+				65880E9C2A0E4C460096F8F9 /* CountryPickerInteractor.swift in Sources */,
+				65880EAC2A0E4CFB0096F8F9 /* PhoneTextField.swift in Sources */,
+				65880EA32A0E4C460096F8F9 /* UIButtonExtension.swift in Sources */,
+				65880E902A0E4C450096F8F9 /* UserModel.swift in Sources */,
+				65880EA62A0E4C460096F8F9 /* UIViewExtension.swift in Sources */,
+				65880E922A0E4C450096F8F9 /* NoDataView.swift in Sources */,
+				65880EA22A0E4C460096F8F9 /* AuthManager.swift in Sources */,
+				65880E9E2A0E4C460096F8F9 /* CountryPickerRouter.swift in Sources */,
+				65880E9A2A0E4C460096F8F9 /* CountryPickerBuilder.swift in Sources */,
+				65880E8E2A0E4C450096F8F9 /* Constants.swift in Sources */,
+				65880E9F2A0E4C460096F8F9 /* CountryPickerViewController.swift in Sources */,
+				65880EA52A0E4C460096F8F9 /* UIViewControllerExtension.swift in Sources */,
+				65880E932A0E4C450096F8F9 /* NoDataViewBuilder.swift in Sources */,
+				65880EAD2A0E4CFB0096F8F9 /* EmailTextField.swift in Sources */,
+				65880EA82A0E4C460096F8F9 /* StringExtension.swift in Sources */,
+				65880E912A0E4C450096F8F9 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1029,6 +1176,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		65880E062A0E260E0096F8F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65880E542A0E2B600096F8F9 /* AccountHeaderTableViewCell.swift in Sources */,
+				651EF1E32A14E23B00CE9508 /* AccountButtonTableViewCell.swift in Sources */,
+				65880E5C2A0E32380096F8F9 /* AccountItemModel.swift in Sources */,
+				651EF1E62A19059E00CE9508 /* AccountFooterView.swift in Sources */,
+				65880EB22A0E79E20096F8F9 /* AccountDetailsTableViewCell.swift in Sources */,
+				65880E4F2A0E280F0096F8F9 /* AccountViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1036,11 +1196,6 @@
 			isa = PBXTargetDependency;
 			target = 655730FD29E4581D008BEA22 /* Spendora */;
 			targetProxy = 650B9B4B29EAA96000D144A9 /* PBXContainerItemProxy */;
-		};
-		6525F7B929EDEBA7000768AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6525F79E29EDC1C2000768AC /* Authentication */;
-			targetProxy = 6525F7B829EDEBA7000768AC /* PBXContainerItemProxy */;
 		};
 		6525F7BD29EDEEE9000768AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1051,6 +1206,16 @@
 			isa = PBXTargetDependency;
 			target = 65321D2B29E995B000BA3E93 /* Onboarding */;
 			targetProxy = 65321D3929E995FC00BA3E93 /* PBXContainerItemProxy */;
+		};
+		65880E0F2A0E260E0096F8F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65880E092A0E260E0096F8F9 /* Account */;
+			targetProxy = 65880E0E2A0E260E0096F8F9 /* PBXContainerItemProxy */;
+		};
+		65880E5E2A0E327B0096F8F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65321D3F29E9965D00BA3E93 /* Utilities */;
+			targetProxy = 65880E5D2A0E327B0096F8F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1453,6 +1618,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00172E92B7E1D60695D0CA91 /* Pods-Spendora.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -1489,6 +1655,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8F09A011EA8D742488E74C9 /* Pods-Spendora.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -1518,6 +1685,79 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		65880E132A0E260E0096F8F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = in.co.goel.pratik.Account;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		65880E142A0E260E0096F8F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = in.co.goel.pratik.Account;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1578,31 +1818,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		65880E122A0E260E0096F8F9 /* Build configuration list for PBXNativeTarget "Account" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65880E132A0E260E0096F8F9 /* Debug */,
+				65880E142A0E260E0096F8F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6557311D29E45D53008BEA22 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		65321D5A29E9999F00BA3E93 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6557311D29E45D53008BEA22 /* XCRemoteSwiftPackageReference "lottie-spm" */;
-			productName = Lottie;
-		};
-		6578B2222A02B64B00F81012 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6557311D29E45D53008BEA22 /* XCRemoteSwiftPackageReference "lottie-spm" */;
-			productName = Lottie;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6557310A29E4581D008BEA22 /* Spendora.xcdatamodeld */ = {
