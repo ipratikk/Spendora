@@ -34,6 +34,7 @@ class AccountDetailsTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
 
     func setupUI() {
+        backgroundColor = .primaryBackground
         [detailText, detailPhoneStack, detailEmailText]
             .forEach {
                 $0?.addBorder(color: .lightGray.withAlphaComponent(0.7), width: 0.5)

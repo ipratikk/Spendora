@@ -43,7 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = UIViewController()
         self.window?.makeKeyAndVisible()
-//        self.window?.overrideUserInterfaceStyle = .light
         startAppFlow()
         return true
     }

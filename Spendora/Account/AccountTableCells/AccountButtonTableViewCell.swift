@@ -17,6 +17,7 @@ class AccountButtonTableViewCell: UITableViewCell {
     }
 
     func configure(with model: AccountItemModel) {
+        backgroundColor = .primaryBackground
         button.layer.cornerRadius = button.frame.height / 2
         switch model.itemType {
             case .signout, .delete:

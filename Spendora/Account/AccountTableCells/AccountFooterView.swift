@@ -19,7 +19,9 @@ class AccountFooterView: UIView, NibLoadable {
     }
 
     func configure() {
+        backgroundColor = .primaryBackground
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         footerLabel.text = "App version: v\(appVersion)"
+        footerLabel.textColor = .darkGray
     }
 }

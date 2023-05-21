@@ -80,9 +80,9 @@ protocol FeaturesPresentation {
      }
 
     func setupUI() {
+        view.backgroundColor = .primaryBackground
         setupPageControl()
         setupScrollView()
-        setupContinueBtn()
         setupContinueBtn()
     }
 
@@ -112,6 +112,8 @@ protocol FeaturesPresentation {
 
     func setupPageControl() {
         pageControl.isUserInteractionEnabled = false
+        pageControl.tintColor = .pageControlTint
+        pageControl.currentPageIndicatorTintColor = .pageControlSelected
     }
 
     func setupScrollView() {
@@ -121,10 +123,11 @@ protocol FeaturesPresentation {
     }
 
     func setupContinueBtn() {
-        continueBtn.layer.cornerRadius = 25
-        continueBtn.backgroundColor = .black
-        continueBtn.tintColor = .white
+        continueBtn.layer.cornerRadius = continueBtn.bounds.height / 2
+        continueBtn.backgroundColor = .primaryButton
         continueBtn.setTitle(Module.Strings.continueBtn, for: .normal)
+        continueBtn.setTitleColor(.primaryButtonTitle, for: .normal)
+        continueBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
     }
 }
 

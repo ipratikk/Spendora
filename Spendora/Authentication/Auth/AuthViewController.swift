@@ -79,6 +79,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     }
 
     func setupUI() {
+        view.backgroundColor = .primaryBackground
         phoneNumber.delegate = self
         countryCodeBtn.setTitle(Module.Auth.Strings.countryCode ,for: .normal)
         phoneNumberStack.layer.cornerRadius = phoneNumberStack.frame.height / 2
@@ -122,6 +123,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
                 guard let country = country else { return }
                 let title = country.getFlag() + " " + country.code
                 sself.countryCodeBtn.setTitle(title, for: .normal)
+                sself.countryCodeBtn.setTitleColor(.label, for: .normal)
             })
             .disposed(by: disposeBag)
 

@@ -74,6 +74,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="detailEmailText" destination="KLK-Ff-rWr" id="cE7-yh-lnl"/>
                 <outlet property="detailLabel" destination="szL-lw-oe1" id="mC4-dJ-bp7"/>
