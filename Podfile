@@ -35,6 +35,11 @@ target 'Spendora' do
     google_pods
 end
 
+target 'SpendoraTest' do
+  util_pods
+  google_pods
+end
+
 target 'Utilities' do
     util_pods
     google_pods
