@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -79,7 +78,6 @@
                                                         </button>
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gGC-3S-1gV" customClass="PhoneTextField" customModule="Utilities">
                                                             <rect key="frame" x="90" y="0.0" width="253" height="50"/>
-                                                            <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" smartInsertDeleteType="yes" textContentType="tel"/>
                                                         </textField>
@@ -150,7 +148,6 @@
                                     </constraints>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="QQk-ed-bIF" secondAttribute="trailing" constant="-50" id="0t3-wl-8cp"/>
                                 <constraint firstAttribute="trailing" secondItem="jUu-Aq-UMf" secondAttribute="trailing" constant="25" id="2XC-WR-DTm"/>
@@ -176,7 +173,6 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="koS-tT-W9u" secondAttribute="bottom" id="7mi-l3-Rx9"/>
                 <constraint firstItem="koS-tT-W9u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QmV-Sv-a2q"/>
@@ -4143,8 +4139,5 @@ AAG62gABzHoAAcx/AAHMjAABzI8AAcycAAHMoQABzKkAAcysAAHMsQABzLkAAAAAAAAEAQAAAAAAAABo
 AAAAAAAAAAAAAAAAAAHMvA
 </mutableData>
         </image>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

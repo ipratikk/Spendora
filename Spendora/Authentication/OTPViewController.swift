@@ -88,6 +88,7 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
     }
 
     func setupUI() {
+        view.backgroundColor = .primaryBackground
         setupOTPImage()
         setupOTPTitle()
         setupOTPFields()
@@ -115,8 +116,7 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
             .drive(onNext:{ [weak self] isEnabled in
                 guard let sself = self else { return }
                 sself.submitBtn.isEnabled = isEnabled
-                sself.submitBtn.backgroundColor = isEnabled ? .black : .black.withAlphaComponent(0.6)
-                sself.submitBtn.setTitleColor(.white, for: [.normal, .disabled])
+                sself.submitBtn.backgroundColor = isEnabled ? .primaryButton : .primaryButton.withAlphaComponent(0.6)
             })
             .disposed(by: disposeBag)
     }
@@ -136,7 +136,7 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
             with: phoneNumber,
             attributes: [
                 .font: UIFont.boldSystemFont(ofSize: 14),
-                .foregroundColor: UIColor.black
+                .foregroundColor: UIColor.label
             ]
         )
         subtitleLabel.attributedText = attributedString
@@ -215,8 +215,11 @@ class OTPViewController: UIViewController, OTPTextFieldDelegate {
     }
 
     func setupSubmitBtn() {
+        submitBtn.layer.cornerRadius = submitBtn.bounds.height / 2
+        submitBtn.backgroundColor = .primaryButton.withAlphaComponent(0.6)
+        submitBtn.setTitleColor(.primaryButtonTitle, for: .normal)
+        submitBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         submitBtn.setTitle(Module.OTP.Strings.verify, for: .normal)
-        submitBtn.layer.cornerRadius = submitBtn.frame.height / 2
         submitBtn.addDefaultShadow()
         submitBtn.rx.tap.bind(to: tapContinueRelay)
             .disposed(by: disposeBag)

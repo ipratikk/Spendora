@@ -27,3 +27,19 @@ public extension UIColor {
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
 }
+
+public extension UIColor {
+
+    static func get(light: String, dark: String) -> UIColor {
+        return UIColor { (traitCollection: UITraitCollection) -> UIColor in
+            return traitCollection.userInterfaceStyle == .dark ? UIColor(hex: dark) : UIColor(hex: light)
+        }
+    }
+
+    static let primaryBackground: UIColor = get(light: "#FBF8F2", dark: "#101413")
+    static let primaryButton: UIColor = get(light: "#000000", dark: "#FBF8F2")
+    static let primaryButtonTitle: UIColor = get(light: "#FFFFFF", dark: "#000000")
+    static let defaultShadow: UIColor = get(light: "#808080", dark: "#555555")
+    static let pageControlSelected: UIColor = get(light: "#000000", dark: "#ffffff")
+    static let pageControlTint: UIColor = get(light: "#9A9A9A", dark: "#262626")
+}

@@ -125,6 +125,13 @@
 			remoteGlobalIDString = 655730FD29E4581D008BEA22;
 			remoteInfo = Spendora;
 		};
+		651EF1E92A1959A300CE9508 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 655730F629E4581D008BEA22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65321D3F29E9965D00BA3E93;
+			remoteInfo = Utilities;
+		};
 		6525F7BC29EDEEE9000768AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 655730F629E4581D008BEA22 /* Project object */;
@@ -783,6 +790,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				651EF1EA2A1959A300CE9508 /* PBXTargetDependency */,
 			);
 			name = Onboarding;
 			productName = Onboarding;
@@ -1196,6 +1204,11 @@
 			isa = PBXTargetDependency;
 			target = 655730FD29E4581D008BEA22 /* Spendora */;
 			targetProxy = 650B9B4B29EAA96000D144A9 /* PBXContainerItemProxy */;
+		};
+		651EF1EA2A1959A300CE9508 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65321D3F29E9965D00BA3E93 /* Utilities */;
+			targetProxy = 651EF1E92A1959A300CE9508 /* PBXContainerItemProxy */;
 		};
 		6525F7BD29EDEEE9000768AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

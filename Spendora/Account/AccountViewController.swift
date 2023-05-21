@@ -19,6 +19,7 @@ public class AccountViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .primaryBackground
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isExclusiveTouch = true
@@ -27,8 +28,6 @@ public class AccountViewController: UIViewController {
         tableView.separatorStyle = .none
 
             // Create a footer view
-//        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
-//        footerView.backgroundColor = .lightGray
         let footerView = AccountFooterView.loadFromNib()
         footerView.configure()
 

@@ -68,9 +68,9 @@ class OnboardingViewController: UIViewController {
     }
 
     private func setupStartBtn() {
-        startBtn.backgroundColor = .black
-        startBtn.layer.cornerRadius = 25
-        startBtn.setTitleColor(.white, for: .normal)
+        startBtn.backgroundColor = .primaryButton
+        startBtn.layer.cornerRadius = startBtn.bounds.height / 2
+        startBtn.setTitleColor(.primaryButtonTitle, for: .normal)
         startBtn.setTitle(Module.Strings.getStarted, for: .normal)
         startBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
         startBtn.rx.tap.bind(to: clickStartBtnRelay)
@@ -94,7 +94,7 @@ class OnboardingViewController: UIViewController {
         let attributedString = NSMutableAttributedString(string: termsAndConditions)
             // Set attributes for the entire string
         let font = UIFont.systemFont(ofSize: 17)
-        let color = UIColor.black
+        let color: UIColor = .label
         let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: color]
         attributedString.addAttributes(attributes, range: NSRange(location: 0, length: termsAndConditions.count))
 
@@ -133,6 +133,7 @@ class OnboardingViewController: UIViewController {
     }
 
     func setupUI() {
+        view.backgroundColor = .primaryBackground
         [titleLabel, animatiomView, startBtn, tncLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }

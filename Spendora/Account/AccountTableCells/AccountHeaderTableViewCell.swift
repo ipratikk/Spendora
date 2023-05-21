@@ -13,7 +13,6 @@ class AccountHeaderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var displayImage: UIImageView!
     @IBOutlet weak var changeImageButton: UIButton!
-//    @IBOutlet weak var backgroundImageView: UIView!
     @IBOutlet weak var cutoutView: UIView!
 
 
@@ -28,10 +27,13 @@ class AccountHeaderTableViewCell: UITableViewCell {
         changeImageButton.layer.cornerRadius = changeImageButton.bounds.height / 2
         changeImageButton.contentMode = .scaleAspectFill
         changeImageButton.clipsToBounds = true
-//        backgroundImageView.isUserInteractionEnabled = false
+        changeImageButton.backgroundColor = .label
+        let changeImage = UIImage(systemName: "pencil")?.withTintColor(.primaryButtonTitle, renderingMode: .alwaysOriginal)
+        changeImageButton.setImage(changeImage, for: .normal)
     }
 
     func setup(with model: AccountItemModel) {
+        cutoutView.backgroundColor = .primaryBackground
         guard let imageURL = model.user.photoURLString else {
             displayImage.image = UIImage(systemName: "camera.fill")
             return

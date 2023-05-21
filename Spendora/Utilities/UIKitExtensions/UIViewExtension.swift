@@ -49,7 +49,7 @@ public extension UITableView {
 }
 
 public extension UIView {
-    @objc func addDefaultShadow(color: UIColor = .darkGray, width: CGFloat = 0, height: CGFloat = 0, opacity: Float = 0.1, radius: CGFloat = 10) {
+    @objc func addDefaultShadow(color: UIColor = .defaultShadow, width: CGFloat = 0, height: CGFloat = 0, opacity: Float = 0.1, radius: CGFloat = 10) {
         self.layer.shadowColor = color.cgColor
         self.layer.shadowOffset = CGSize(width: width, height: height)
         self.layer.shadowOpacity = opacity
