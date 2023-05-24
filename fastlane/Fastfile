@@ -58,7 +58,7 @@ platform :ios do
       code_coverage: true,
       workspace: "./Spendora.xcworkspace",
       scheme: 'Spendora',
-      device: 'iPhone 14 (16.4)',
+      device: 'iPhone 14 (16.2)',
       derived_data_path: "build/fastlane/derived_data"
     )
   end
@@ -72,7 +72,7 @@ platform :ios do
       prelaunch_simulator: true,
       workspace: "./Spendora.xcworkspace",
       scheme: 'Spendora',
-      device: 'iPhone 14 (16.4)',
+      device: 'iPhone 14 (16.2)',
       derived_data_path: "build/fastlane/derived_data",
       buildlog_path: "build/fastlane/scan_build_log",
       output_directory: "build/fastlane/scan_output"
