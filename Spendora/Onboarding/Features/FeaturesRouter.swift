@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import Authentication
 import Utilities
 
 public final class FeaturesRouter {
