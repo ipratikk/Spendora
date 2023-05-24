@@ -69,14 +69,13 @@
 		657DA27A29FD44EA00C72CDF /* OTPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657DA27829FD44EA00C72CDF /* OTPViewController.xib */; };
 		65880E0D2A0E260E0096F8F9 /* Account.h in Headers */ = {isa = PBXBuildFile; fileRef = 65880E0C2A0E260E0096F8F9 /* Account.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65880E102A0E260E0096F8F9 /* Account.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65880E0A2A0E260E0096F8F9 /* Account.framework */; };
-		65880E112A0E260E0096F8F9 /* Account.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65880E0A2A0E260E0096F8F9 /* Account.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		65880E4F2A0E280F0096F8F9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E4D2A0E280F0096F8F9 /* AccountViewController.swift */; };
 		65880E502A0E280F0096F8F9 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65880E4E2A0E280F0096F8F9 /* AccountViewController.xib */; };
 		65880E542A0E2B600096F8F9 /* AccountHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E522A0E2B600096F8F9 /* AccountHeaderTableViewCell.swift */; };
 		65880E552A0E2B600096F8F9 /* AccountHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65880E532A0E2B600096F8F9 /* AccountHeaderTableViewCell.xib */; };
 		65880E5C2A0E32380096F8F9 /* AccountItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E5B2A0E32380096F8F9 /* AccountItemModel.swift */; };
 		65880E8E2A0E4C450096F8F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E682A0E4C450096F8F9 /* Constants.swift */; };
-		65880E8F2A0E4C450096F8F9 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 65880E692A0E4C450096F8F9 /* Utilities.h */; };
+		65880E8F2A0E4C450096F8F9 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 65880E692A0E4C450096F8F9 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65880E902A0E4C450096F8F9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E6B2A0E4C450096F8F9 /* UserModel.swift */; };
 		65880E912A0E4C450096F8F9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E6D2A0E4C450096F8F9 /* CustomButton.swift */; };
 		65880E922A0E4C450096F8F9 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880E6F2A0E4C450096F8F9 /* NoDataView.swift */; };
@@ -117,6 +116,7 @@
 		65E5E6312A0BF7A00080F920 /* OTPPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5E6302A0BF7A00080F920 /* OTPPresenter.swift */; };
 		65E5E6332A0BF89E0080F920 /* OTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5E6322A0BF89E0080F920 /* OTPRouter.swift */; };
 		65E5E6352A0BF9890080F920 /* OTPBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5E6342A0BF9890080F920 /* OTPBuilder.swift */; };
+		65FE86942A1E36AA00429B02 /* Account.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65880E0A2A0E260E0096F8F9 /* Account.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6DDCBE3C1371E10BC486899F /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF295A80A0870D2939AE592A /* Pods_Utilities.framework */; };
 		B801DE873353C9664BAD1F7E /* Pods_SpendoraTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BDC4F7BB18255AEF247A5A /* Pods_SpendoraTest.framework */; };
 		BAEA9DF5FCE391D9C44FB355 /* Pods_Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C419BFF61CE65927F460AA5D /* Pods_Authentication.framework */; };
@@ -174,13 +174,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				65FE86942A1E36AA00429B02 /* Account.framework in CopyFiles */,
 				6578B21F2A02B5E000F81012 /* RxCocoa.xcframework in CopyFiles */,
 				6578B2202A02B5E000F81012 /* RxRelay.xcframework in CopyFiles */,
 				6578B2212A02B5E000F81012 /* RxSwift.xcframework in CopyFiles */,
 				6578B2182A02B43E00F81012 /* Onboarding.framework in CopyFiles */,
 				6578B2192A02B43F00F81012 /* Utilities.framework in CopyFiles */,
 				6578B21A2A02B43F00F81012 /* Authentication.framework in CopyFiles */,
-				65880E112A0E260E0096F8F9 /* Account.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
