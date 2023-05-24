@@ -18,32 +18,7 @@ public class AccountViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .primaryBackground
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.isExclusiveTouch = true
-        tableView.backgroundColor = .none
-        tableView.sectionHeaderTopPadding = 0
-        tableView.separatorStyle = .none
-
-            // Create a footer view
-        let footerView = AccountFooterView.loadFromNib()
-        footerView.configure()
-
-            // Assign the footer view to the table view's tableFooterView property
-        tableView.tableFooterView = footerView
-        tableView.tableFooterView?.frame.size.height = 100
-
-        setBackgroundImage(imageName: "abstractBG", forView: self.view)
-//        tableView.addDefaultShadow(to: [.top, .left, .right])
-        tableView.addDefaultShadow()
-        tableView.removeBottomShadow()
-
-        tableView.registerCellNib(AccountDetailsTableViewCell.self)
-        tableView.registerCellNib(AccountHeaderTableViewCell.self)
-        tableView.registerCellNib(AccountButtonTableViewCell.self)
-
+        setupUI()
         addKeyboardNotification(with: tableView)
 
         AuthManager.shared.isLoggedIn(completion: { result in
@@ -55,6 +30,35 @@ public class AccountViewController: UIViewController {
                     ()
             }
         })
+    }
+
+    func setupUI() {
+        view.backgroundColor = .primaryBackground
+        setupTableView()
+        setBackgroundImage(imageName: "abstractBG", forView: self.view)
+    }
+
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.isExclusiveTouch = true
+        tableView.backgroundColor = .none
+        tableView.sectionHeaderTopPadding = 0
+        tableView.separatorStyle = .none
+
+        let footerView = AccountFooterView.loadFromNib()
+        footerView.configure()
+
+            // Assign the footer view to the table view's tableFooterView property
+        tableView.tableFooterView = footerView
+        tableView.tableFooterView?.frame.size.height = 100
+
+        tableView.addDefaultShadow()
+        tableView.removeBottomShadow()
+
+        tableView.registerCellNib(AccountDetailsTableViewCell.self)
+        tableView.registerCellNib(AccountHeaderTableViewCell.self)
+        tableView.registerCellNib(AccountButtonTableViewCell.self)
     }
 
     func setBackgroundImage(imageName: String, forView view: UIView) {

@@ -30,6 +30,11 @@ target 'Onboarding' do
     util_pods
 end
 
+target 'Authentication' do
+  util_pods
+  google_pods
+end
+
 target 'Spendora' do
     util_pods
     google_pods
@@ -49,7 +54,7 @@ post_install do |installer|
   installer.generated_projects.each do |project|
     project.targets.each do |target|
       target.build_configurations.each do |config|
-        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
       end
     end
   end

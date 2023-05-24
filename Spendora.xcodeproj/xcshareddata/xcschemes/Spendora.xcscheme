@@ -41,7 +41,52 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "65880E092A0E260E0096F8F9"
+            BuildableName = "Account.framework"
+            BlueprintName = "Account"
+            ReferencedContainer = "container:Spendora.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6525F79E29EDC1C2000768AC"
+            BuildableName = "Authentication.framework"
+            BlueprintName = "Authentication"
+            ReferencedContainer = "container:Spendora.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "65321D2B29E995B000BA3E93"
+            BuildableName = "Onboarding.framework"
+            BlueprintName = "Onboarding"
+            ReferencedContainer = "container:Spendora.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "655730FD29E4581D008BEA22"
+            BuildableName = "Spendora.app"
+            BlueprintName = "Spendora"
+            ReferencedContainer = "container:Spendora.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "650B9B4329EAA8FF00D144A9"
+            BuildableName = "SpendoraTest.xctest"
+            BlueprintName = "SpendoraTest"
+            ReferencedContainer = "container:Spendora.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "65321D3F29E9965D00BA3E93"
+            BuildableName = "Utilities.framework"
+            BlueprintName = "Utilities"
+            ReferencedContainer = "container:Spendora.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">

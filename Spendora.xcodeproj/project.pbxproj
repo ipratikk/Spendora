@@ -107,6 +107,9 @@
 		65880EAD2A0E4CFB0096F8F9 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880EAB2A0E4CFB0096F8F9 /* EmailTextField.swift */; };
 		65880EB22A0E79E20096F8F9 /* AccountDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65880EB02A0E79E20096F8F9 /* AccountDetailsTableViewCell.swift */; };
 		65880EB32A0E79E20096F8F9 /* AccountDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65880EB12A0E79E20096F8F9 /* AccountDetailsTableViewCell.xib */; };
+		65C29DA32A1E29FD0014AAEE /* AccountBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C29DA22A1E29FD0014AAEE /* AccountBuilder.swift */; };
+		65C29DA72A1E2A1B0014AAEE /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C29DA62A1E2A1B0014AAEE /* AccountRouter.swift */; };
+		65C29DA92A1E2A290014AAEE /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C29DA82A1E2A290014AAEE /* AccountPresenter.swift */; };
 		65CB8F9B2A069FF500CFCAC6 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB8F9A2A069FF500CFCAC6 /* Module.swift */; };
 		65CB8F9C2A06B5E000CFCAC6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6557312629E47320008BEA22 /* Localizable.strings */; };
 		65CB90042A06E99200CFCAC6 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB90022A06E98B00CFCAC6 /* OTPTextField.swift */; };
@@ -116,6 +119,7 @@
 		65E5E6352A0BF9890080F920 /* OTPBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5E6342A0BF9890080F920 /* OTPBuilder.swift */; };
 		6DDCBE3C1371E10BC486899F /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF295A80A0870D2939AE592A /* Pods_Utilities.framework */; };
 		B801DE873353C9664BAD1F7E /* Pods_SpendoraTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BDC4F7BB18255AEF247A5A /* Pods_SpendoraTest.framework */; };
+		BAEA9DF5FCE391D9C44FB355 /* Pods_Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C419BFF61CE65927F460AA5D /* Pods_Authentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +188,7 @@
 
 /* Begin PBXFileReference section */
 		00172E92B7E1D60695D0CA91 /* Pods-Spendora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendora.debug.xcconfig"; path = "Target Support Files/Pods-Spendora/Pods-Spendora.debug.xcconfig"; sourceTree = "<group>"; };
+		0B1ACC689529B7F2A67CD74B /* Pods-Authentication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authentication.release.xcconfig"; path = "Target Support Files/Pods-Authentication/Pods-Authentication.release.xcconfig"; sourceTree = "<group>"; };
 		12D962391D00E97B74D98CBF /* Pods-Onboarding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboarding.debug.xcconfig"; path = "Target Support Files/Pods-Onboarding/Pods-Onboarding.debug.xcconfig"; sourceTree = "<group>"; };
 		1D61246C9A074FCA3E3ED921 /* Pods-Utilities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.release.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.release.xcconfig"; sourceTree = "<group>"; };
 		434D98263423A4D93E20DA26 /* Pods_Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +284,9 @@
 		65880EAB2A0E4CFB0096F8F9 /* EmailTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		65880EB02A0E79E20096F8F9 /* AccountDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		65880EB12A0E79E20096F8F9 /* AccountDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		65C29DA22A1E29FD0014AAEE /* AccountBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBuilder.swift; sourceTree = "<group>"; };
+		65C29DA62A1E2A1B0014AAEE /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
+		65C29DA82A1E2A290014AAEE /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
 		65CB8F9A2A069FF500CFCAC6 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		65CB90022A06E98B00CFCAC6 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		65E5E62B2A0A88AC0080F920 /* Spendora.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spendora.entitlements; sourceTree = "<group>"; };
@@ -287,8 +295,10 @@
 		65E5E6322A0BF89E0080F920 /* OTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRouter.swift; sourceTree = "<group>"; };
 		65E5E6342A0BF9890080F920 /* OTPBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPBuilder.swift; sourceTree = "<group>"; };
 		8617242D25BB5C79F841E203 /* Pods-SpendoraTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpendoraTest.release.xcconfig"; path = "Target Support Files/Pods-SpendoraTest/Pods-SpendoraTest.release.xcconfig"; sourceTree = "<group>"; };
+		944D45539119B06235ABA3A5 /* Pods-Authentication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authentication.debug.xcconfig"; path = "Target Support Files/Pods-Authentication/Pods-Authentication.debug.xcconfig"; sourceTree = "<group>"; };
 		9B63E41933628ED23B6A0023 /* Pods-Onboarding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboarding.release.xcconfig"; path = "Target Support Files/Pods-Onboarding/Pods-Onboarding.release.xcconfig"; sourceTree = "<group>"; };
 		BF295A80A0870D2939AE592A /* Pods_Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C419BFF61CE65927F460AA5D /* Pods_Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F09A011EA8D742488E74C9 /* Pods-Spendora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendora.release.xcconfig"; path = "Target Support Files/Pods-Spendora/Pods-Spendora.release.xcconfig"; sourceTree = "<group>"; };
 		D18D327908D756131B743438 /* Pods-SpendoraTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpendoraTest.debug.xcconfig"; path = "Target Support Files/Pods-SpendoraTest/Pods-SpendoraTest.debug.xcconfig"; sourceTree = "<group>"; };
 		D2BDC4F7BB18255AEF247A5A /* Pods_SpendoraTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpendoraTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +319,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAEA9DF5FCE391D9C44FB355 /* Pods_Authentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +427,7 @@
 				FACCE2DBEA924F3F8F6B467E /* Pods_Spendora.framework */,
 				BF295A80A0870D2939AE592A /* Pods_Utilities.framework */,
 				D2BDC4F7BB18255AEF247A5A /* Pods_SpendoraTest.framework */,
+				C419BFF61CE65927F460AA5D /* Pods_Authentication.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -551,6 +563,9 @@
 				65880E0C2A0E260E0096F8F9 /* Account.h */,
 				65880E4D2A0E280F0096F8F9 /* AccountViewController.swift */,
 				65880E4E2A0E280F0096F8F9 /* AccountViewController.xib */,
+				65C29DA22A1E29FD0014AAEE /* AccountBuilder.swift */,
+				65C29DA62A1E2A1B0014AAEE /* AccountRouter.swift */,
+				65C29DA82A1E2A290014AAEE /* AccountPresenter.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -706,6 +721,8 @@
 				1D61246C9A074FCA3E3ED921 /* Pods-Utilities.release.xcconfig */,
 				D18D327908D756131B743438 /* Pods-SpendoraTest.debug.xcconfig */,
 				8617242D25BB5C79F841E203 /* Pods-SpendoraTest.release.xcconfig */,
+				944D45539119B06235ABA3A5 /* Pods-Authentication.debug.xcconfig */,
+				0B1ACC689529B7F2A67CD74B /* Pods-Authentication.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -772,6 +789,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6525F7A529EDC1C3000768AC /* Build configuration list for PBXNativeTarget "Authentication" */;
 			buildPhases = (
+				63A7A9F615AADF0DE4D04748 /* [CP] Check Pods Manifest.lock */,
 				6525F79A29EDC1C2000768AC /* Headers */,
 				6525F79B29EDC1C2000768AC /* Sources */,
 				6525F79C29EDC1C2000768AC /* Frameworks */,
@@ -1078,6 +1096,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		63A7A9F615AADF0DE4D04748 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Authentication-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		650B9B3F29EAA0BD00D144A9 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1233,6 +1273,9 @@
 				651EF1E32A14E23B00CE9508 /* AccountButtonTableViewCell.swift in Sources */,
 				65880E5C2A0E32380096F8F9 /* AccountItemModel.swift in Sources */,
 				651EF1E62A19059E00CE9508 /* AccountFooterView.swift in Sources */,
+				65C29DA92A1E2A290014AAEE /* AccountPresenter.swift in Sources */,
+				65C29DA72A1E2A1B0014AAEE /* AccountRouter.swift in Sources */,
+				65C29DA32A1E29FD0014AAEE /* AccountBuilder.swift in Sources */,
 				65880EB22A0E79E20096F8F9 /* AccountDetailsTableViewCell.swift in Sources */,
 				65880E4F2A0E280F0096F8F9 /* AccountViewController.swift in Sources */,
 			);
@@ -1335,6 +1378,7 @@
 		};
 		6525F7A329EDC1C3000768AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 944D45539119B06235ABA3A5 /* Pods-Authentication.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1373,6 +1417,7 @@
 		};
 		6525F7A429EDC1C3000768AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B1ACC689529B7F2A67CD74B /* Pods-Authentication.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
