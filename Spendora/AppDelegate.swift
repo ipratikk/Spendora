@@ -56,12 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
     }
 
     func startAppFlow() {
-//        AuthManager.shared.signOut { [weak self] signedOut in
-//            guard let sself = self else { return }
-//            if signedOut {
-//                sself._mainCoordinator.startOnboardingFlow()
-//            }
-//        }
+        AuthManager.shared.signOut { [weak self] signedOut in
+            guard let sself = self else { return }
+            if signedOut {
+                sself._mainCoordinator.startOnboardingFlow()
+            }
+        }
         AuthManager.shared.isLoggedIn(completion: { [weak self] result in
             guard let sself = self else { return }
             switch result {

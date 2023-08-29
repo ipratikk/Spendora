@@ -12,9 +12,9 @@ import SDWebImage
 class AccountHeaderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var displayImage: UIImageView!
-    @IBOutlet weak var changeImageButton: UIButton!
+    @IBOutlet weak var updateImage: UIButton!
     @IBOutlet weak var cutoutView: UIView!
-
+    @IBOutlet weak var imageTap: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,17 +24,17 @@ class AccountHeaderTableViewCell: UITableViewCell {
         displayImage.layer.cornerRadius = displayImage.frame.height / 2
         cutoutView.layer.cornerRadius = 30
         cutoutView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        changeImageButton.layer.cornerRadius = changeImageButton.bounds.height / 2
-        changeImageButton.contentMode = .scaleAspectFill
-        changeImageButton.clipsToBounds = true
-        changeImageButton.backgroundColor = .label
+        updateImage.layer.cornerRadius = updateImage.bounds.height / 2
+        updateImage.contentMode = .scaleAspectFill
+        updateImage.clipsToBounds = true
+        updateImage.backgroundColor = .label
         let changeImage = UIImage(systemName: "pencil")?.withTintColor(.primaryButtonTitle, renderingMode: .alwaysOriginal)
-        changeImageButton.setImage(changeImage, for: .normal)
+        updateImage.setImage(changeImage, for: .normal)
     }
 
-    func setup(with model: AccountItemModel) {
+    func configure(for user: AccountModel, with model: AccountItemModel) {
         cutoutView.backgroundColor = .primaryBackground
-        guard let imageURL = model.user.photoURLString else {
+        guard let imageURL = user.imageURL else {
             displayImage.image = UIImage(systemName: "camera.fill")
             return
         }

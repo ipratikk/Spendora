@@ -65,11 +65,17 @@ public enum AccountItemType: String {
 }
 
 public struct AccountItemModel {
-    let user: FirebaseUser
     let itemType: AccountItemType
 
-    init(user: FirebaseUser, itemType: AccountItemType) {
-        self.user = user
+    init(_ itemType: AccountItemType) {
         self.itemType = itemType
     }
+}
+
+public struct AccountModel {
+    var name: String?
+    var imageURL: URL?
+    var email: String?
+    var country: Country?
+    var phone: String?
 }

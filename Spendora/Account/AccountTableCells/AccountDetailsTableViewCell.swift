@@ -49,20 +49,21 @@ class AccountDetailsTableViewCell: UITableViewCell, UITextFieldDelegate {
             }
     }
 
-    func configure(with model: AccountItemModel) {
+    func configure(for user: AccountModel, with model: AccountItemModel) {
         detailLabel.text = model.itemType.rawValue
+        print("Detail label text: \(model.itemType.rawValue)")
         switch model.itemType {
             case .name:
                 detailText.isHidden = false
-                detailText.text = model.user.displayNameString
+                detailText.text = user.name
                 detailText.delegate = self
             case .phone:
                 detailPhoneStack.isHidden = false
-                detailPhoneText.text = model.user.phoneNumberString
+                detailPhoneText.text = user.phone
                 detailPhoneText.delegate = self
             case .email:
                 detailEmailText.isHidden = false
-                detailEmailText.text = model.user.emailString
+                detailEmailText.text = user.email
                 detailEmailText.delegate = self
             default:
                 break

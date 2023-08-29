@@ -7,35 +7,117 @@
 
 import UIKit
 import Utilities
+import RxCocoa
+import RxSwift
+
+protocol AccountPresentation {
+    typealias Output = (
+        user: Driver<AccountModel?>,
+        dataSource: Driver<[[AccountItemModel]]>,
+        countryCode: Driver<Country?>,
+        isModified: Driver<Bool>
+    )
+
+    typealias Input = (
+        imageTap: Driver<Void>,
+        nameText: Driver<String>,
+        emailText: Driver<String>,
+        phoneText: Driver<String>,
+        countryBtnTap: Driver<Void>,
+        deleteAccount: Driver<Void>,
+        signOut: Driver<Void>
+    )
+
+    typealias producer = (Input) -> AccountPresentation
+
+    var output: Output { get }
+    var input: Input { get }
+}
 
 public class AccountViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var user: FirebaseUser?
+    var user: AccountModel?
 
     var dataSource: [[AccountItemModel]] = []
+
+    private let isModifiedRelay = BehaviorRelay<Bool>(value: false)
+
+    private let imageTapRelay = PublishSubject<Void>()
+    private lazy var imageTapDriver = imageTapRelay.asDriver(onErrorJustReturn: ())
+
+    private let deleteAccountTapRelay = PublishSubject<Void>()
+    private lazy var deleteAccountTapDriver = deleteAccountTapRelay.asDriver(onErrorJustReturn: ())
+
+    private let signoutTapRelay = PublishSubject<Void>()
+    private lazy var signoutTapDriver = signoutTapRelay.asDriver(onErrorJustReturn: ())
+
+    private let nameTextRelay = PublishSubject<String>()
+    private lazy var nameTextDriver = nameTextRelay.asDriver(onErrorJustReturn: "")
+
+    private let emailTextRelay = PublishSubject<String>()
+    private lazy var emailTextDriver = emailTextRelay.asDriver(onErrorJustReturn: "")
+
+    private let phoneNumberTextRelay = PublishSubject<String>()
+    private lazy var phoneNumberTextDriver = phoneNumberTextRelay.asDriver(onErrorJustReturn: "")
+
+    private let phoneNumberIconTapRelay = PublishSubject<Void>()
+    private lazy var phoneNumberIconTapDriver = phoneNumberIconTapRelay.asDriver(onErrorJustReturn: ())
+
+    private let disposeBag = DisposeBag()
+
+    private var presenter: AccountPresentation!
+    var presenterProducer: ((AccountPresentation.Input) -> AccountPresentation)!
 
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         addKeyboardNotification(with: tableView)
-
-        AuthManager.shared.isLoggedIn(completion: { result in
-            switch result {
-                case .success(let user):
-                    self.user = user
-                    self.setupDataSource()
-                case .failure:
-                    ()
-            }
-        })
+        setupBindings()
     }
 
     func setupUI() {
         view.backgroundColor = .primaryBackground
         setupTableView()
         setBackgroundImage(imageName: "abstractBG", forView: self.view)
+    }
+
+    func setupBindings() {
+        presenter = presenterProducer((
+            imageTap: imageTapDriver,
+            nameText: nameTextDriver,
+            emailText: emailTextDriver,
+            phoneText: phoneNumberTextDriver,
+            countryBtnTap: phoneNumberIconTapDriver,
+            deleteAccount: deleteAccountTapDriver,
+            signOut: signoutTapDriver
+        ))
+
+        presenter.output.countryCode
+            .drive(onNext: { country in
+                self.user?.country = country
+            })
+            .disposed(by: disposeBag)
+
+        presenter.output.user
+            .drive(onNext: { user in
+                self.user = user
+            })
+            .disposed(by: disposeBag)
+
+        presenter.output.dataSource
+            .drive(onNext: { items in
+                self.dataSource = items
+                self.tableView.reloadData()
+            })
+            .disposed(by: disposeBag)
+
+        presenter.output.isModified
+            .drive(onNext: { isModified in
+                self.isModifiedRelay.accept(isModified)
+            })
+            .disposed(by: disposeBag)
     }
 
     func setupTableView() {
@@ -84,25 +166,6 @@ public class AccountViewController: UIViewController {
             // Send the image view to the back so that it appears as the background
         view.sendSubviewToBack(backgroundImageView)
     }
-
-
-    func setupDataSource() {
-        guard let user = user else { return }
-        dataSource =
-        [
-            [
-                AccountItemModel(user: user, itemType: .image),
-                AccountItemModel(user: user, itemType: .name),
-                AccountItemModel(user: user, itemType: .email),
-                AccountItemModel(user: user, itemType: .phone)
-            ],
-            [
-                AccountItemModel(user: user, itemType: .signout),
-                AccountItemModel(user: user, itemType: .delete)
-            ]
-        ]
-        tableView.reloadData()
-    }
 }
 
 extension AccountViewController: UITableViewDataSource {
@@ -116,23 +179,72 @@ extension AccountViewController: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = dataSource[indexPath.section][indexPath.row]
-        guard indexPath.section == 0, indexPath.row == 0 else {
-            switch model.itemType {
-                case .signout, .delete:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AccountButtonTableViewCell.self), for: indexPath) as! AccountButtonTableViewCell
-                    cell.configure(with: model)
-                    cell.selectionStyle = .none
-                    return cell
-                default:
-                    let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AccountDetailsTableViewCell.self), for: indexPath) as! AccountDetailsTableViewCell
-                    cell.configure(with: model)
-                    cell.selectionStyle = .none
-                    return cell
-            }
+        switch model.itemType {
+            case .signout, .delete:
+                return setupButtonCell(for: indexPath)
+            case .image:
+                return setupHeaderCell(for: indexPath)
+            default:
+                return setupDetailCell(for: indexPath)
+
         }
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: String(describing: AccountHeaderTableViewCell.self)) as! AccountHeaderTableViewCell
-        headerCell.setup(with: model)
-        return headerCell
+    }
+
+    func setupHeaderCell(for indexPath: IndexPath) -> UITableViewCell {
+        let model = dataSource[indexPath.section][indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AccountHeaderTableViewCell.self)) as! AccountHeaderTableViewCell
+        guard let user = user else { return cell }
+        cell.configure(for: user, with: model)
+        cell.imageTap.rx.tap
+            .bind(to: imageTapRelay)
+            .disposed(by: disposeBag)
+        return cell
+    }
+
+    func setupButtonCell(for indexPath: IndexPath) -> UITableViewCell {
+        let model = dataSource[indexPath.section][indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AccountButtonTableViewCell.self), for: indexPath) as! AccountButtonTableViewCell
+        cell.configure(with: model)
+        cell.selectionStyle = .none
+        switch model.itemType {
+            case .signout:
+                cell.button.rx.tap.bind(to: signoutTapRelay)
+                    .disposed(by: disposeBag)
+            case .delete:
+                cell.button.rx.tap.bind(to: deleteAccountTapRelay)
+                    .disposed(by: disposeBag)
+            default:
+                break
+        }
+        return cell
+    }
+
+    func setupDetailCell(for indexPath: IndexPath) -> UITableViewCell {
+        let model = dataSource[indexPath.section][indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AccountDetailsTableViewCell.self), for: indexPath) as! AccountDetailsTableViewCell
+        guard let user = self.user else { return cell }
+        cell.configure(for: user, with: model)
+        cell.selectionStyle = .none
+        switch model.itemType {
+            case .name:
+                cell.detailText.rx.text.orEmpty
+                    .bind(to: nameTextRelay)
+                    .disposed(by: disposeBag)
+            case .email:
+                cell.detailEmailText.rx.text.orEmpty
+                    .bind(to: emailTextRelay)
+                    .disposed(by: disposeBag)
+            case .phone:
+                cell.detailPhoneText.rx.text.orEmpty
+                    .bind(to: phoneNumberTextRelay)
+                    .disposed(by: disposeBag)
+                cell.detailPhoneIcon.rx.tap
+                    .bind(to: phoneNumberIconTapRelay)
+                    .disposed(by: disposeBag)
+            default:
+                break
+        }
+        return cell
     }
 }
 

@@ -43,11 +43,21 @@
                                     <color key="baseBackgroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16m-YA-hIh">
+                                <rect key="frame" x="100" y="-60.000000000000014" width="120" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="16m-YA-hIh" firstAttribute="height" secondItem="czx-Ag-6R4" secondAttribute="height" id="4XH-Ym-BTC"/>
+                            <constraint firstItem="16m-YA-hIh" firstAttribute="centerY" secondItem="czx-Ag-6R4" secondAttribute="centerY" id="6nX-fJ-PX9"/>
+                            <constraint firstItem="16m-YA-hIh" firstAttribute="width" secondItem="czx-Ag-6R4" secondAttribute="width" id="K9B-bI-cKL"/>
                             <constraint firstItem="czx-Ag-6R4" firstAttribute="centerY" secondItem="cgx-az-tYu" secondAttribute="firstBaseline" id="VF1-ny-fGR"/>
                             <constraint firstItem="czx-Ag-6R4" firstAttribute="centerX" secondItem="cgx-az-tYu" secondAttribute="centerX" id="ZSl-ZO-5NQ"/>
+                            <constraint firstItem="16m-YA-hIh" firstAttribute="centerX" secondItem="czx-Ag-6R4" secondAttribute="centerX" id="fVd-rQ-SDV"/>
                             <constraint firstItem="8aA-X6-q6e" firstAttribute="centerX" secondItem="czx-Ag-6R4" secondAttribute="trailing" constant="-20" id="fkR-Xh-9Qm"/>
                             <constraint firstItem="8aA-X6-q6e" firstAttribute="centerY" secondItem="czx-Ag-6R4" secondAttribute="bottom" constant="-20" id="nC5-F3-dvm"/>
                         </constraints>
@@ -64,9 +74,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="changeImageButton" destination="8aA-X6-q6e" id="9jt-nB-D56"/>
                 <outlet property="cutoutView" destination="cgx-az-tYu" id="qcW-Gv-qLt"/>
                 <outlet property="displayImage" destination="czx-Ag-6R4" id="i40-sD-AJg"/>
+                <outlet property="imageTap" destination="16m-YA-hIh" id="Age-pM-Iwy"/>
+                <outlet property="updateImage" destination="8aA-X6-q6e" id="9jt-nB-D56"/>
             </connections>
             <point key="canvasLocation" x="131.29770992366412" y="51.408450704225352"/>
         </tableViewCell>

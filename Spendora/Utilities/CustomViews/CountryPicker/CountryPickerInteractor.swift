@@ -50,6 +50,12 @@ public class CountryPickerInteractor {
         }
     }
 
+    public func selectCountry(with dial_code: String) {
+        let country = self.countriesRelay.value.filter { $0.dial_code == dial_code }.first
+        guard let country = country else { return }
+        setSelectedCountry(country)
+    }
+
     public func setSelectedCountry(_ country: Country) {
 //        selectedCountryRelay.onNext(country)
         selectedCountryRelay.accept(country)

@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Utilities
-import CoreLocation
 import SVProgressHUD
 
 public final class AuthPresenter: AuthPresentation {

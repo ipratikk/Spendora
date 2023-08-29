@@ -112,7 +112,22 @@ public final class AppAssembler {
     }
 
     static func accountModule() -> UIViewController {
-        return AccountViewController.initFromNib()
+        return AccountBuilder.build(
+            submodules: (
+                countryPicker: countryPickerModule(),
+                ()
+            ),
+            useCases: (
+                output: (
+                    countries: countryPickerInteractor.countriesList,
+                    selectedCountry: countryPickerInteractor.selectedCountry
+                ),
+                input: (
+                    setSelectedCountry: countryPickerInteractor.selectCountry,
+                    ()
+                )
+            )
+        )
     }
 
     static func emptyView() -> UIViewController {
