@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5401223A6C09FE00ED20079A /* Pods_Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434D98263423A4D93E20DA26 /* Pods_Onboarding.framework */; };
+		564DD8A919F802DF2A931F87 /* Pods_Spendora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACCE2DBEA924F3F8F6B467E /* Pods_Spendora.framework */; };
 		650231B129E7F45600C13139 /* listExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231B029E7F45600C13139 /* listExpense.json */; };
 		650231C729E834F300C13139 /* splitExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231C629E834F200C13139 /* splitExpense.json */; };
 		650231C929E835E700C13139 /* analyzeExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 650231C829E835E600C13139 /* analyzeExpense.json */; };
@@ -115,6 +117,9 @@
 		65E5E6332A0BF89E0080F920 /* OTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5E6322A0BF89E0080F920 /* OTPRouter.swift */; };
 		65E5E6352A0BF9890080F920 /* OTPBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E5E6342A0BF9890080F920 /* OTPBuilder.swift */; };
 		65FE86942A1E36AA00429B02 /* Account.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65880E0A2A0E260E0096F8F9 /* Account.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6DDCBE3C1371E10BC486899F /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF295A80A0870D2939AE592A /* Pods_Utilities.framework */; };
+		B801DE873353C9664BAD1F7E /* Pods_SpendoraTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BDC4F7BB18255AEF247A5A /* Pods_SpendoraTest.framework */; };
+		BAEA9DF5FCE391D9C44FB355 /* Pods_Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C419BFF61CE65927F460AA5D /* Pods_Authentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +187,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00172E92B7E1D60695D0CA91 /* Pods-Spendora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendora.debug.xcconfig"; path = "Target Support Files/Pods-Spendora/Pods-Spendora.debug.xcconfig"; sourceTree = "<group>"; };
+		0B1ACC689529B7F2A67CD74B /* Pods-Authentication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authentication.release.xcconfig"; path = "Target Support Files/Pods-Authentication/Pods-Authentication.release.xcconfig"; sourceTree = "<group>"; };
+		12D962391D00E97B74D98CBF /* Pods-Onboarding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboarding.debug.xcconfig"; path = "Target Support Files/Pods-Onboarding/Pods-Onboarding.debug.xcconfig"; sourceTree = "<group>"; };
+		1D61246C9A074FCA3E3ED921 /* Pods-Utilities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.release.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.release.xcconfig"; sourceTree = "<group>"; };
+		434D98263423A4D93E20DA26 /* Pods_Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		650231B029E7F45600C13139 /* listExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listExpense.json; sourceTree = "<group>"; };
 		650231B229E7F62D00C13139 /* FeatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureModel.swift; sourceTree = "<group>"; };
 		650231B829E80E3300C13139 /* FeatureCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCardView.swift; sourceTree = "<group>"; };
@@ -284,6 +294,16 @@
 		65E5E6302A0BF7A00080F920 /* OTPPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPresenter.swift; sourceTree = "<group>"; };
 		65E5E6322A0BF89E0080F920 /* OTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRouter.swift; sourceTree = "<group>"; };
 		65E5E6342A0BF9890080F920 /* OTPBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPBuilder.swift; sourceTree = "<group>"; };
+		8617242D25BB5C79F841E203 /* Pods-SpendoraTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpendoraTest.release.xcconfig"; path = "Target Support Files/Pods-SpendoraTest/Pods-SpendoraTest.release.xcconfig"; sourceTree = "<group>"; };
+		944D45539119B06235ABA3A5 /* Pods-Authentication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authentication.debug.xcconfig"; path = "Target Support Files/Pods-Authentication/Pods-Authentication.debug.xcconfig"; sourceTree = "<group>"; };
+		9B63E41933628ED23B6A0023 /* Pods-Onboarding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboarding.release.xcconfig"; path = "Target Support Files/Pods-Onboarding/Pods-Onboarding.release.xcconfig"; sourceTree = "<group>"; };
+		BF295A80A0870D2939AE592A /* Pods_Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C419BFF61CE65927F460AA5D /* Pods_Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8F09A011EA8D742488E74C9 /* Pods-Spendora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendora.release.xcconfig"; path = "Target Support Files/Pods-Spendora/Pods-Spendora.release.xcconfig"; sourceTree = "<group>"; };
+		D18D327908D756131B743438 /* Pods-SpendoraTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpendoraTest.debug.xcconfig"; path = "Target Support Files/Pods-SpendoraTest/Pods-SpendoraTest.debug.xcconfig"; sourceTree = "<group>"; };
+		D2BDC4F7BB18255AEF247A5A /* Pods_SpendoraTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpendoraTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF0E91C82DF89ABE435AD420 /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
+		FACCE2DBEA924F3F8F6B467E /* Pods_Spendora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spendora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +311,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B801DE873353C9664BAD1F7E /* Pods_SpendoraTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +319,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAEA9DF5FCE391D9C44FB355 /* Pods_Authentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +327,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5401223A6C09FE00ED20079A /* Pods_Onboarding.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +338,7 @@
 				650B9B3929E9DAD200D144A9 /* RxCocoa.xcframework in Frameworks */,
 				650B9B3A29E9DAD200D144A9 /* RxRelay.xcframework in Frameworks */,
 				650B9B3B29E9DAD200D144A9 /* RxSwift.xcframework in Frameworks */,
+				6DDCBE3C1371E10BC486899F /* Pods_Utilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +350,7 @@
 				6578B2132A02B25100F81012 /* Authentication.framework in Frameworks */,
 				6578B2142A02B25200F81012 /* Onboarding.framework in Frameworks */,
 				6578B2152A02B25200F81012 /* Utilities.framework in Frameworks */,
+				564DD8A919F802DF2A931F87 /* Pods_Spendora.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +423,11 @@
 				650B9B3629E9DAD200D144A9 /* RxCocoa.xcframework */,
 				650B9B3729E9DAD200D144A9 /* RxRelay.xcframework */,
 				650B9B3829E9DAD200D144A9 /* RxSwift.xcframework */,
+				434D98263423A4D93E20DA26 /* Pods_Onboarding.framework */,
+				FACCE2DBEA924F3F8F6B467E /* Pods_Spendora.framework */,
+				BF295A80A0870D2939AE592A /* Pods_Utilities.framework */,
+				D2BDC4F7BB18255AEF247A5A /* Pods_SpendoraTest.framework */,
+				C419BFF61CE65927F460AA5D /* Pods_Authentication.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -683,6 +713,16 @@
 		E43FF61CDFE2373F6E002898 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				12D962391D00E97B74D98CBF /* Pods-Onboarding.debug.xcconfig */,
+				9B63E41933628ED23B6A0023 /* Pods-Onboarding.release.xcconfig */,
+				00172E92B7E1D60695D0CA91 /* Pods-Spendora.debug.xcconfig */,
+				C8F09A011EA8D742488E74C9 /* Pods-Spendora.release.xcconfig */,
+				EF0E91C82DF89ABE435AD420 /* Pods-Utilities.debug.xcconfig */,
+				1D61246C9A074FCA3E3ED921 /* Pods-Utilities.release.xcconfig */,
+				D18D327908D756131B743438 /* Pods-SpendoraTest.debug.xcconfig */,
+				8617242D25BB5C79F841E203 /* Pods-SpendoraTest.release.xcconfig */,
+				944D45539119B06235ABA3A5 /* Pods-Authentication.debug.xcconfig */,
+				0B1ACC689529B7F2A67CD74B /* Pods-Authentication.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -729,9 +769,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 650B9B4829EAA90000D144A9 /* Build configuration list for PBXNativeTarget "SpendoraTest" */;
 			buildPhases = (
+				23C652CF9A605CF9489FFDA5 /* [CP] Check Pods Manifest.lock */,
 				650B9B4029EAA8FF00D144A9 /* Sources */,
 				650B9B4129EAA8FF00D144A9 /* Frameworks */,
 				650B9B4229EAA8FF00D144A9 /* Resources */,
+				EFDB916DED2440F92ABDF156 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -747,6 +789,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6525F7A529EDC1C3000768AC /* Build configuration list for PBXNativeTarget "Authentication" */;
 			buildPhases = (
+				63A7A9F615AADF0DE4D04748 /* [CP] Check Pods Manifest.lock */,
 				6525F79A29EDC1C2000768AC /* Headers */,
 				6525F79B29EDC1C2000768AC /* Sources */,
 				6525F79C29EDC1C2000768AC /* Frameworks */,
@@ -766,6 +809,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65321D3029E995B100BA3E93 /* Build configuration list for PBXNativeTarget "Onboarding" */;
 			buildPhases = (
+				1D2AAE67DFCA7343C11F6249 /* [CP] Check Pods Manifest.lock */,
 				65321D2729E995B000BA3E93 /* Headers */,
 				65321D2829E995B000BA3E93 /* Sources */,
 				65321D2929E995B000BA3E93 /* Frameworks */,
@@ -785,6 +829,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65321D4429E9965D00BA3E93 /* Build configuration list for PBXNativeTarget "Utilities" */;
 			buildPhases = (
+				5BB9816BC93350F1D1FE28F1 /* [CP] Check Pods Manifest.lock */,
 				65321D3B29E9965D00BA3E93 /* Headers */,
 				65321D3C29E9965D00BA3E93 /* Sources */,
 				65321D3D29E9965D00BA3E93 /* Frameworks */,
@@ -803,10 +848,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6557311529E45822008BEA22 /* Build configuration list for PBXNativeTarget "Spendora" */;
 			buildPhases = (
+				9CD61C3076D97D9297611CAA /* [CP] Check Pods Manifest.lock */,
 				655730FA29E4581D008BEA22 /* Sources */,
 				655730FB29E4581D008BEA22 /* Frameworks */,
 				655730FC29E4581D008BEA22 /* Resources */,
 				650B9B3F29EAA0BD00D144A9 /* Swiftlint */,
+				381F47622281EF984E16BB4C /* [CP] Embed Pods Frameworks */,
 				6578B2172A02B42E00F81012 /* CopyFiles */,
 			);
 			buildRules = (
@@ -968,6 +1015,109 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1D2AAE67DFCA7343C11F6249 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Onboarding-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23C652CF9A605CF9489FFDA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpendoraTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		381F47622281EF984E16BB4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Spendora/Pods-Spendora-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BB9816BC93350F1D1FE28F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Utilities-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63A7A9F615AADF0DE4D04748 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Authentication-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		650B9B3F29EAA0BD00D144A9 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -985,6 +1135,43 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -z \"$CI\" ]; then\n    \"${PODS_ROOT}/SwiftLint/swiftlint\" lint --strict\nfi\n";
+		};
+		9CD61C3076D97D9297611CAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Spendora-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFDB916DED2440F92ABDF156 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpendoraTest/Pods-SpendoraTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1143,6 +1330,7 @@
 /* Begin XCBuildConfiguration section */
 		650B9B4929EAA90000D144A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D18D327908D756131B743438 /* Pods-SpendoraTest.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1166,6 +1354,7 @@
 		};
 		650B9B4A29EAA90000D144A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8617242D25BB5C79F841E203 /* Pods-SpendoraTest.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1189,6 +1378,7 @@
 		};
 		6525F7A329EDC1C3000768AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 944D45539119B06235ABA3A5 /* Pods-Authentication.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1227,6 +1417,7 @@
 		};
 		6525F7A429EDC1C3000768AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B1ACC689529B7F2A67CD74B /* Pods-Authentication.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1264,6 +1455,7 @@
 		};
 		65321D3129E995B100BA3E93 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12D962391D00E97B74D98CBF /* Pods-Onboarding.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1300,6 +1492,7 @@
 		};
 		65321D3229E995B100BA3E93 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B63E41933628ED23B6A0023 /* Pods-Onboarding.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1336,6 +1529,7 @@
 		};
 		65321D4529E9965D00BA3E93 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF0E91C82DF89ABE435AD420 /* Pods-Utilities.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1372,6 +1566,7 @@
 		};
 		65321D4629E9965D00BA3E93 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D61246C9A074FCA3E3ED921 /* Pods-Utilities.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1522,6 +1717,7 @@
 		};
 		6557311629E45822008BEA22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00172E92B7E1D60695D0CA91 /* Pods-Spendora.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1558,6 +1754,7 @@
 		};
 		6557311729E45822008BEA22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8F09A011EA8D742488E74C9 /* Pods-Spendora.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
