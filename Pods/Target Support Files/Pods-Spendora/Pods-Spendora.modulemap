@@ -1,6 +1,0 @@
-framework module Pods_Spendora {
-  umbrella header "Pods-Spendora-umbrella.h"
-
-  export *
-  module * { export * }
-}
