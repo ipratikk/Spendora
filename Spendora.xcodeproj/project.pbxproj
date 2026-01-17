@@ -6,7 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		04D7F9EC2F1B49AA003526FB /* LoginFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7F9E32F1B49AA003526FB /* LoginFeature.framework */; };
+		04D7F9F62F1B49AA003526FB /* LoginFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7F9E32F1B49AA003526FB /* LoginFeature.framework */; };
+		04D7F9F72F1B49AA003526FB /* LoginFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7F9E32F1B49AA003526FB /* LoginFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04D7FA282F1B4A15003526FB /* SharedModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7FA152F1B4A15003526FB /* SharedModels.framework */; };
+		04D7FA292F1B4A15003526FB /* SharedModels.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7FA152F1B4A15003526FB /* SharedModels.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04D7FA6F2F1B4B55003526FB /* Spendora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7FA692F1B4B55003526FB /* Spendora.framework */; };
+		04D7FA702F1B4B55003526FB /* Spendora.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7FA692F1B4B55003526FB /* Spendora.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04D7FA952F1B4D83003526FB /* SwiftyCrop in Frameworks */ = {isa = PBXBuildFile; productRef = 04D7FA942F1B4D83003526FB /* SwiftyCrop */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		049F44D82F1B536B0041AE04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D7F8EF2F1B48FC003526FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D7FA142F1B4A15003526FB;
+			remoteInfo = SharedModels;
+		};
+		049F44DA2F1B537C0041AE04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D7F8EF2F1B48FC003526FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D7F9E22F1B49AA003526FB;
+			remoteInfo = LoginFeature;
+		};
 		04D7F9092F1B48FD003526FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 04D7F8EF2F1B48FC003526FB /* Project object */;
@@ -21,31 +46,100 @@
 			remoteGlobalIDString = 04D7F8F62F1B48FC003526FB;
 			remoteInfo = Spendora;
 		};
+		04D7F9ED2F1B49AA003526FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D7F8EF2F1B48FC003526FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D7F9E22F1B49AA003526FB;
+			remoteInfo = LoginFeature;
+		};
+		04D7F9EF2F1B49AA003526FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D7F8EF2F1B48FC003526FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D7F8F62F1B48FC003526FB;
+			remoteInfo = Spendora;
+		};
+		04D7F9F42F1B49AA003526FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D7F8EF2F1B48FC003526FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D7F9E22F1B49AA003526FB;
+			remoteInfo = LoginFeature;
+		};
+		04D7FA262F1B4A15003526FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D7F8EF2F1B48FC003526FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D7FA142F1B4A15003526FB;
+			remoteInfo = SharedModels;
+		};
+		04D7FA6D2F1B4B55003526FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D7F8EF2F1B48FC003526FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D7FA682F1B4B55003526FB;
+			remoteInfo = Spendora;
+		};
+		04D7FA8C2F1B4CA5003526FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04D7F8EF2F1B48FC003526FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04D7FA142F1B4A15003526FB;
+			remoteInfo = SharedModels;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		04D7F9FB2F1B49AA003526FB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				04D7F9F72F1B49AA003526FB /* LoginFeature.framework in Embed Frameworks */,
+				04D7FA292F1B4A15003526FB /* SharedModels.framework in Embed Frameworks */,
+				04D7FA702F1B4B55003526FB /* Spendora.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		04D7F8F72F1B48FC003526FB /* Spendora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendora.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D7F8F72F1B48FC003526FB /* SpendoraApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendoraApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D7F9082F1B48FD003526FB /* SpendoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpendoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D7F9122F1B48FD003526FB /* SpendoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpendoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D7F9E32F1B49AA003526FB /* LoginFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoginFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D7F9EB2F1B49AA003526FB /* LoginFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D7FA152F1B4A15003526FB /* SharedModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D7FA692F1B4B55003526FB /* Spendora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spendora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		04D7F91A2F1B48FD003526FB /* Exceptions for "Spendora" folder in "Spendora" target */ = {
+		04BF63412F1B523700F681D4 /* Exceptions for "Spendora" folder in "Spendora" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 04D7F8F62F1B48FC003526FB /* Spendora */;
+			target = 04D7FA682F1B4B55003526FB /* Spendora */;
+		};
+		04D7F91A2F1B48FD003526FB /* Exceptions for "SpendoraApp" folder in "SpendoraApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 04D7F8F62F1B48FC003526FB /* SpendoraApp */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		04D7F8F92F1B48FC003526FB /* Spendora */ = {
+		04D7F8F92F1B48FC003526FB /* SpendoraApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				04D7F91A2F1B48FD003526FB /* Exceptions for "Spendora" folder in "Spendora" target */,
+				04D7F91A2F1B48FD003526FB /* Exceptions for "SpendoraApp" folder in "SpendoraApp" target */,
 			);
-			path = Spendora;
+			path = SpendoraApp;
 			sourceTree = "<group>";
 		};
 		04D7F90B2F1B48FD003526FB /* SpendoraTests */ = {
@@ -58,6 +152,29 @@
 			path = SpendoraUITests;
 			sourceTree = "<group>";
 		};
+		04D7F9E42F1B49AA003526FB /* LoginFeature */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LoginFeature;
+			sourceTree = "<group>";
+		};
+		04D7F9F12F1B49AA003526FB /* LoginFeatureTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LoginFeatureTests;
+			sourceTree = "<group>";
+		};
+		04D7FA162F1B4A15003526FB /* SharedModels */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SharedModels;
+			sourceTree = "<group>";
+		};
+		04D7FB072F1B4F49003526FB /* Spendora */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				04BF63412F1B523700F681D4 /* Exceptions for "Spendora" folder in "Spendora" target */,
+			);
+			path = Spendora;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +182,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D7F9F62F1B49AA003526FB /* LoginFeature.framework in Frameworks */,
+				04D7FA282F1B4A15003526FB /* SharedModels.framework in Frameworks */,
+				04D7FA6F2F1B4B55003526FB /* Spendora.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,15 +202,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04D7F9E02F1B49AA003526FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7F9E82F1B49AA003526FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D7F9EC2F1B49AA003526FB /* LoginFeature.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7FA122F1B4A15003526FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D7FA952F1B4D83003526FB /* SwiftyCrop in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7FA662F1B4B55003526FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		04D7F8EE2F1B48FC003526FB = {
 			isa = PBXGroup;
 			children = (
-				04D7F8F92F1B48FC003526FB /* Spendora */,
+				04D7F8F92F1B48FC003526FB /* SpendoraApp */,
+				04D7FB072F1B4F49003526FB /* Spendora */,
 				04D7F90B2F1B48FD003526FB /* SpendoraTests */,
 				04D7F9152F1B48FD003526FB /* SpendoraUITests */,
+				04D7F9E42F1B49AA003526FB /* LoginFeature */,
+				04D7F9F12F1B49AA003526FB /* LoginFeatureTests */,
+				04D7FA162F1B4A15003526FB /* SharedModels */,
 				04D7F8F82F1B48FC003526FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,36 +252,68 @@
 		04D7F8F82F1B48FC003526FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04D7F8F72F1B48FC003526FB /* Spendora.app */,
+				04D7F8F72F1B48FC003526FB /* SpendoraApp.app */,
 				04D7F9082F1B48FD003526FB /* SpendoraTests.xctest */,
 				04D7F9122F1B48FD003526FB /* SpendoraUITests.xctest */,
+				04D7F9E32F1B49AA003526FB /* LoginFeature.framework */,
+				04D7F9EB2F1B49AA003526FB /* LoginFeatureTests.xctest */,
+				04D7FA152F1B4A15003526FB /* SharedModels.framework */,
+				04D7FA692F1B4B55003526FB /* Spendora.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		04D7F9DE2F1B49AA003526FB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7FA102F1B4A15003526FB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7FA642F1B4B55003526FB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		04D7F8F62F1B48FC003526FB /* Spendora */ = {
+		04D7F8F62F1B48FC003526FB /* SpendoraApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04D7F91B2F1B48FD003526FB /* Build configuration list for PBXNativeTarget "Spendora" */;
+			buildConfigurationList = 04D7F91B2F1B48FD003526FB /* Build configuration list for PBXNativeTarget "SpendoraApp" */;
 			buildPhases = (
 				04D7F8F32F1B48FC003526FB /* Sources */,
 				04D7F8F42F1B48FC003526FB /* Frameworks */,
 				04D7F8F52F1B48FC003526FB /* Resources */,
+				04D7F9FB2F1B49AA003526FB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				04D7F9F52F1B49AA003526FB /* PBXTargetDependency */,
+				04D7FA272F1B4A15003526FB /* PBXTargetDependency */,
+				04D7FA6E2F1B4B55003526FB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				04D7F8F92F1B48FC003526FB /* Spendora */,
+				04D7F8F92F1B48FC003526FB /* SpendoraApp */,
 			);
-			name = Spendora;
+			name = SpendoraApp;
 			packageProductDependencies = (
 			);
 			productName = Spendora;
-			productReference = 04D7F8F72F1B48FC003526FB /* Spendora.app */;
+			productReference = 04D7F8F72F1B48FC003526FB /* SpendoraApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		04D7F9072F1B48FD003526FB /* SpendoraTests */ = {
@@ -176,6 +362,103 @@
 			productReference = 04D7F9122F1B48FD003526FB /* SpendoraUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		04D7F9E22F1B49AA003526FB /* LoginFeature */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D7F9F82F1B49AA003526FB /* Build configuration list for PBXNativeTarget "LoginFeature" */;
+			buildPhases = (
+				04D7F9DE2F1B49AA003526FB /* Headers */,
+				04D7F9DF2F1B49AA003526FB /* Sources */,
+				04D7F9E02F1B49AA003526FB /* Frameworks */,
+				04D7F9E12F1B49AA003526FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D7FA8D2F1B4CA5003526FB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				04D7F9E42F1B49AA003526FB /* LoginFeature */,
+			);
+			name = LoginFeature;
+			packageProductDependencies = (
+			);
+			productName = LoginFeature;
+			productReference = 04D7F9E32F1B49AA003526FB /* LoginFeature.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		04D7F9EA2F1B49AA003526FB /* LoginFeatureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D7F9FC2F1B49AA003526FB /* Build configuration list for PBXNativeTarget "LoginFeatureTests" */;
+			buildPhases = (
+				04D7F9E72F1B49AA003526FB /* Sources */,
+				04D7F9E82F1B49AA003526FB /* Frameworks */,
+				04D7F9E92F1B49AA003526FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D7F9EE2F1B49AA003526FB /* PBXTargetDependency */,
+				04D7F9F02F1B49AA003526FB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				04D7F9F12F1B49AA003526FB /* LoginFeatureTests */,
+			);
+			name = LoginFeatureTests;
+			packageProductDependencies = (
+			);
+			productName = LoginFeatureTests;
+			productReference = 04D7F9EB2F1B49AA003526FB /* LoginFeatureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04D7FA142F1B4A15003526FB /* SharedModels */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D7FA2A2F1B4A15003526FB /* Build configuration list for PBXNativeTarget "SharedModels" */;
+			buildPhases = (
+				04D7FA102F1B4A15003526FB /* Headers */,
+				04D7FA112F1B4A15003526FB /* Sources */,
+				04D7FA122F1B4A15003526FB /* Frameworks */,
+				04D7FA132F1B4A15003526FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				04D7FA162F1B4A15003526FB /* SharedModels */,
+			);
+			name = SharedModels;
+			packageProductDependencies = (
+				04D7FA942F1B4D83003526FB /* SwiftyCrop */,
+			);
+			productName = SharedModels;
+			productReference = 04D7FA152F1B4A15003526FB /* SharedModels.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		04D7FA682F1B4B55003526FB /* Spendora */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D7FA712F1B4B55003526FB /* Build configuration list for PBXNativeTarget "Spendora" */;
+			buildPhases = (
+				04D7FA642F1B4B55003526FB /* Headers */,
+				04D7FA652F1B4B55003526FB /* Sources */,
+				04D7FA662F1B4B55003526FB /* Frameworks */,
+				04D7FA672F1B4B55003526FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				049F44DB2F1B537C0041AE04 /* PBXTargetDependency */,
+				049F44D92F1B536B0041AE04 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				04D7FB072F1B4F49003526FB /* Spendora */,
+			);
+			name = Spendora;
+			packageProductDependencies = (
+			);
+			productName = Spendora;
+			productReference = 04D7FA692F1B4B55003526FB /* Spendora.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,6 +480,19 @@
 						CreatedOnToolsVersion = 26.2;
 						TestTargetID = 04D7F8F62F1B48FC003526FB;
 					};
+					04D7F9E22F1B49AA003526FB = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					04D7F9EA2F1B49AA003526FB = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 04D7F8F62F1B48FC003526FB;
+					};
+					04D7FA142F1B4A15003526FB = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					04D7FA682F1B4B55003526FB = {
+						CreatedOnToolsVersion = 26.2;
+					};
 				};
 			};
 			buildConfigurationList = 04D7F8F22F1B48FC003526FB /* Build configuration list for PBXProject "Spendora" */;
@@ -208,14 +504,21 @@
 			);
 			mainGroup = 04D7F8EE2F1B48FC003526FB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				04D7FA932F1B4D83003526FB /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 04D7F8F82F1B48FC003526FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04D7F8F62F1B48FC003526FB /* Spendora */,
+				04D7F8F62F1B48FC003526FB /* SpendoraApp */,
+				04D7FA682F1B4B55003526FB /* Spendora */,
 				04D7F9072F1B48FD003526FB /* SpendoraTests */,
 				04D7F9112F1B48FD003526FB /* SpendoraUITests */,
+				04D7F9E22F1B49AA003526FB /* LoginFeature */,
+				04D7F9EA2F1B49AA003526FB /* LoginFeatureTests */,
+				04D7FA142F1B4A15003526FB /* SharedModels */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +539,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		04D7F9102F1B48FD003526FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7F9E12F1B49AA003526FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7F9E92F1B49AA003526FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7FA132F1B4A15003526FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7FA672F1B4B55003526FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,18 +597,86 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04D7F9DF2F1B49AA003526FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7F9E72F1B49AA003526FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7FA112F1B4A15003526FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D7FA652F1B4B55003526FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		049F44D92F1B536B0041AE04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D7FA142F1B4A15003526FB /* SharedModels */;
+			targetProxy = 049F44D82F1B536B0041AE04 /* PBXContainerItemProxy */;
+		};
+		049F44DB2F1B537C0041AE04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D7F9E22F1B49AA003526FB /* LoginFeature */;
+			targetProxy = 049F44DA2F1B537C0041AE04 /* PBXContainerItemProxy */;
+		};
 		04D7F90A2F1B48FD003526FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04D7F8F62F1B48FC003526FB /* Spendora */;
+			target = 04D7F8F62F1B48FC003526FB /* SpendoraApp */;
 			targetProxy = 04D7F9092F1B48FD003526FB /* PBXContainerItemProxy */;
 		};
 		04D7F9142F1B48FD003526FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04D7F8F62F1B48FC003526FB /* Spendora */;
+			target = 04D7F8F62F1B48FC003526FB /* SpendoraApp */;
 			targetProxy = 04D7F9132F1B48FD003526FB /* PBXContainerItemProxy */;
+		};
+		04D7F9EE2F1B49AA003526FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D7F9E22F1B49AA003526FB /* LoginFeature */;
+			targetProxy = 04D7F9ED2F1B49AA003526FB /* PBXContainerItemProxy */;
+		};
+		04D7F9F02F1B49AA003526FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D7F8F62F1B48FC003526FB /* SpendoraApp */;
+			targetProxy = 04D7F9EF2F1B49AA003526FB /* PBXContainerItemProxy */;
+		};
+		04D7F9F52F1B49AA003526FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D7F9E22F1B49AA003526FB /* LoginFeature */;
+			targetProxy = 04D7F9F42F1B49AA003526FB /* PBXContainerItemProxy */;
+		};
+		04D7FA272F1B4A15003526FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D7FA142F1B4A15003526FB /* SharedModels */;
+			targetProxy = 04D7FA262F1B4A15003526FB /* PBXContainerItemProxy */;
+		};
+		04D7FA6E2F1B4B55003526FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D7FA682F1B4B55003526FB /* Spendora */;
+			targetProxy = 04D7FA6D2F1B4B55003526FB /* PBXContainerItemProxy */;
+		};
+		04D7FA8D2F1B4CA5003526FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04D7FA142F1B4A15003526FB /* SharedModels */;
+			targetProxy = 04D7FA8C2F1B4CA5003526FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -287,6 +686,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SpendoraApp/SpendoraApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68WNSZ48UK;
@@ -295,7 +695,11 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Spendora/Info.plist;
+				INFOPLIST_FILE = SpendoraApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Spendora;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to capture photos.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Use Face ID to autheticate your notes";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -311,7 +715,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.Spendora;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.SpendoraApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -332,6 +736,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SpendoraApp/SpendoraApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68WNSZ48UK;
@@ -340,7 +745,11 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Spendora/Info.plist;
+				INFOPLIST_FILE = SpendoraApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Spendora;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires camera access to capture photos.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Use Face ID to autheticate your notes";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -356,7 +765,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.Spendora;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.SpendoraApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -496,6 +905,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68WNSZ48UK;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_OUTPUT_FORMAT = binary;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
@@ -522,6 +932,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68WNSZ48UK;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_OUTPUT_FORMAT = binary;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
@@ -547,6 +958,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68WNSZ48UK;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_OUTPUT_FORMAT = binary;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
@@ -572,6 +984,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68WNSZ48UK;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_OUTPUT_FORMAT = binary;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
@@ -590,6 +1003,350 @@
 			};
 			name = Release;
 		};
+		04D7F9F92F1B49AA003526FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_OUTPUT_FORMAT = binary;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.LoginFeature;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		04D7F9FA2F1B49AA003526FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_OUTPUT_FORMAT = binary;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.LoginFeature;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		04D7F9FD2F1B49AA003526FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_OUTPUT_FORMAT = binary;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.LoginFeatureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spendora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Spendora";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		04D7F9FE2F1B49AA003526FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_OUTPUT_FORMAT = binary;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.LoginFeatureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spendora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Spendora";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		04D7FA2B2F1B4A15003526FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_OUTPUT_FORMAT = binary;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.SharedModels;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		04D7FA2C2F1B4A15003526FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_OUTPUT_FORMAT = binary;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.SharedModels;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		04D7FA722F1B4B55003526FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_OUTPUT_FORMAT = binary;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.Spendora;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		04D7FA732F1B4B55003526FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 68WNSZ48UK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_OUTPUT_FORMAT = binary;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pratik.Spendora;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -602,7 +1359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04D7F91B2F1B48FD003526FB /* Build configuration list for PBXNativeTarget "Spendora" */ = {
+		04D7F91B2F1B48FD003526FB /* Build configuration list for PBXNativeTarget "SpendoraApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04D7F91C2F1B48FD003526FB /* Debug */,
@@ -629,7 +1386,62 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		04D7F9F82F1B49AA003526FB /* Build configuration list for PBXNativeTarget "LoginFeature" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D7F9F92F1B49AA003526FB /* Debug */,
+				04D7F9FA2F1B49AA003526FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D7F9FC2F1B49AA003526FB /* Build configuration list for PBXNativeTarget "LoginFeatureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D7F9FD2F1B49AA003526FB /* Debug */,
+				04D7F9FE2F1B49AA003526FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D7FA2A2F1B4A15003526FB /* Build configuration list for PBXNativeTarget "SharedModels" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D7FA2B2F1B4A15003526FB /* Debug */,
+				04D7FA2C2F1B4A15003526FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D7FA712F1B4B55003526FB /* Build configuration list for PBXNativeTarget "Spendora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D7FA722F1B4B55003526FB /* Debug */,
+				04D7FA732F1B4B55003526FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04D7FA932F1B4D83003526FB /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benedom/SwiftyCrop";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04D7FA942F1B4D83003526FB /* SwiftyCrop */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04D7FA932F1B4D83003526FB /* XCRemoteSwiftPackageReference "SwiftyCrop" */;
+			productName = SwiftyCrop;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04D7F8EF2F1B48FC003526FB /* Project object */;
 }
