@@ -17,7 +17,7 @@ public struct MainAppView: View {
             
             // MARK: - Account Tab
             NavigationStack {
-                SettingsView()
+                AccountView()
                     .environmentObject(loginViewModel)
             }
             .tabItem { Label("Account", systemImage: "note.text") }
