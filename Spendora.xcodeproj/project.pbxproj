@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049F49B12F1CC2D60041AE04 /* DotLottie in Frameworks */ = {isa = PBXBuildFile; productRef = 049F49B02F1CC2D60041AE04 /* DotLottie */; };
+		049F49B82F1CC6FA0041AE04 /* DotLottie in Frameworks */ = {isa = PBXBuildFile; productRef = 049F49B72F1CC6FA0041AE04 /* DotLottie */; };
 		04D7F9EC2F1B49AA003526FB /* LoginFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7F9E32F1B49AA003526FB /* LoginFeature.framework */; };
 		04D7F9F62F1B49AA003526FB /* LoginFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7F9E32F1B49AA003526FB /* LoginFeature.framework */; };
 		04D7F9F72F1B49AA003526FB /* LoginFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7F9E32F1B49AA003526FB /* LoginFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -183,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D7F9F62F1B49AA003526FB /* LoginFeature.framework in Frameworks */,
+				049F49B82F1CC6FA0041AE04 /* DotLottie in Frameworks */,
 				04D7FA282F1B4A15003526FB /* SharedModels.framework in Frameworks */,
 				04D7FA6F2F1B4B55003526FB /* Spendora.framework in Frameworks */,
 			);
@@ -229,12 +232,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049F49B12F1CC2D60041AE04 /* DotLottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		049F49B62F1CC6FA0041AE04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		04D7F8EE2F1B48FC003526FB = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +256,7 @@
 				04D7F9E42F1B49AA003526FB /* LoginFeature */,
 				04D7F9F12F1B49AA003526FB /* LoginFeatureTests */,
 				04D7FA162F1B4A15003526FB /* SharedModels */,
+				049F49B62F1CC6FA0041AE04 /* Frameworks */,
 				04D7F8F82F1B48FC003526FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -311,6 +323,7 @@
 			);
 			name = SpendoraApp;
 			packageProductDependencies = (
+				049F49B72F1CC6FA0041AE04 /* DotLottie */,
 			);
 			productName = Spendora;
 			productReference = 04D7F8F72F1B48FC003526FB /* SpendoraApp.app */;
@@ -454,6 +467,7 @@
 			);
 			name = Spendora;
 			packageProductDependencies = (
+				049F49B02F1CC2D60041AE04 /* DotLottie */,
 			);
 			productName = Spendora;
 			productReference = 04D7FA692F1B4B55003526FB /* Spendora.framework */;
@@ -506,6 +520,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				04D7FA932F1B4D83003526FB /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
+				049F49AF2F1CC2D60041AE04 /* XCRemoteSwiftPackageReference "dotlottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 04D7F8F82F1B48FC003526FB /* Products */;
@@ -1425,6 +1440,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		049F49AF2F1CC2D60041AE04 /* XCRemoteSwiftPackageReference "dotlottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LottieFiles/dotlottie-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		04D7FA932F1B4D83003526FB /* XCRemoteSwiftPackageReference "SwiftyCrop" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/benedom/SwiftyCrop";
@@ -1436,6 +1459,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		049F49B02F1CC2D60041AE04 /* DotLottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049F49AF2F1CC2D60041AE04 /* XCRemoteSwiftPackageReference "dotlottie-ios" */;
+			productName = DotLottie;
+		};
+		049F49B72F1CC6FA0041AE04 /* DotLottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049F49AF2F1CC2D60041AE04 /* XCRemoteSwiftPackageReference "dotlottie-ios" */;
+			productName = DotLottie;
+		};
 		04D7FA942F1B4D83003526FB /* SwiftyCrop */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04D7FA932F1B4D83003526FB /* XCRemoteSwiftPackageReference "SwiftyCrop" */;

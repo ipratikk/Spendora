@@ -24,6 +24,12 @@ public struct LoginView: View {
         VStack {
             Spacer()
             
+            Image("AppLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
+                .matchedGeometryEffect(id: "appLogo", in: namespace)
+            
             Text("Spendora")
                 .font(.largeTitle)
                 .fontWeight(.bold)
