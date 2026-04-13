@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "E6D7AEF9-F5A1-4B70-A460-9A3E77A6FA3C",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Spendora.xcodeproj",
+      "identifier" : "04D7F8F62F1B48FC003526FB",
+      "name" : "SpendoraApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Spendora.xcodeproj",
+        "identifier" : "04D7F9072F1B48FD003526FB",
+        "name" : "SpendoraTests"
+      }
+    }
+  ],
+  "version" : 1
+}

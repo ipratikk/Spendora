@@ -1,0 +1,65 @@
+{
+    "categories": [
+        { "id": "food", "name": "Food", "icon": "fork.knife" },
+        { "id": "travel", "name": "Travel", "icon": "airplane" },
+        { "id": "shopping", "name": "Shopping", "icon": "bag" },
+        { "id": "health", "name": "Health", "icon": "heart" },
+        { "id": "entertainment", "name": "Entertainment", "icon": "gamecontroller" }
+    ],
+    "spends": [
+        {
+            "title": "Starbucks",
+            "detail": "Morning coffee",
+            "amount": 450,
+            "currency": "INR",
+            "date": 1776038400,
+            "categoryId": "food",
+            "exchangeRateToINR": 1.0
+        },
+        {
+            "title": "Apple Store",
+            "detail": "AirPods purchase",
+            "amount": 199,
+            "currency": "USD",
+            "date": 1775433600,
+            "categoryId": "shopping",
+            "exchangeRateToINR": 83.0
+        },
+        {
+            "title": "Uber Ride",
+            "detail": "Office commute",
+            "amount": 320,
+            "currency": "INR",
+            "date": 1773446400,
+            "categoryId": "travel",
+            "exchangeRateToINR": 1.0
+        },
+        {
+            "title": "Amazon Purchase",
+            "detail": "Bluetooth headphones",
+            "amount": 2499,
+            "currency": "INR",
+            "date": 1768262400,
+            "categoryId": "shopping",
+            "exchangeRateToINR": 1.0
+        },
+        {
+            "title": "Pharmacy",
+            "detail": "Medicines",
+            "amount": 650,
+            "currency": "INR",
+            "date": 1744502400,
+            "categoryId": "health",
+            "exchangeRateToINR": 1.0
+        },
+        {
+            "title": "Flight Ticket",
+            "detail": "Flight booking",
+            "amount": 6500,
+            "currency": "INR",
+            "date": 1712966400,
+            "categoryId": "travel",
+            "exchangeRateToINR": 1.0
+        }
+    ]
+}

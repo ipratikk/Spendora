@@ -42,24 +42,34 @@ public enum DateSectionGrouper {
     public static func sectionSort(_ a: String, _ b: String) -> Bool {
         let fixedOrder: [String] = ["Today", "Yesterday", "This Week", "Last Week", "Last 30 Days"]
         
-        if fixedOrder.contains(a), fixedOrder.contains(b) {
-            return fixedOrder.firstIndex(of: a)! < fixedOrder.firstIndex(of: b)!
+        let aIndex = fixedOrder.firstIndex(of: a)
+        let bIndex = fixedOrder.firstIndex(of: b)
+        
+        // BOTH fixed → compare order
+        if let aIndex, let bIndex {
+            return aIndex < bIndex
         }
+        
+        // ONE fixed → fixed always comes first
+        if aIndex != nil { return true }
+        if bIndex != nil { return false }
         
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM yyyy"
         
         // Try parsing as month-year
-        if let dateA = formatter.date(from: a), let dateB = formatter.date(from: b) {
+        if let dateA = formatter.date(from: a),
+           let dateB = formatter.date(from: b) {
             return dateA > dateB
         }
         
         // Try parsing as year
-        if let yearA = Int(a), let yearB = Int(b) {
+        if let yearA = Int(a),
+           let yearB = Int(b) {
             return yearA > yearB
         }
         
-        // Fallback lexicographic
+        // Fallback
         return a > b
     }
 }

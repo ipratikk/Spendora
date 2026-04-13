@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0427F1732F8D66BC002AF8B6 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0427F1722F8D66BC002AF8B6 /* SnapshotTesting */; };
 		049F49B12F1CC2D60041AE04 /* DotLottie in Frameworks */ = {isa = PBXBuildFile; productRef = 049F49B02F1CC2D60041AE04 /* DotLottie */; };
 		049F49B82F1CC6FA0041AE04 /* DotLottie in Frameworks */ = {isa = PBXBuildFile; productRef = 049F49B72F1CC6FA0041AE04 /* DotLottie */; };
 		04D7F9EC2F1B49AA003526FB /* LoginFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D7F9E32F1B49AA003526FB /* LoginFeature.framework */; };
@@ -109,6 +110,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0427F1762F8D67A4002AF8B6 /* SpendoraApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SpendoraApp.xctestplan; sourceTree = "<group>"; };
 		04D7F8F72F1B48FC003526FB /* SpendoraApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendoraApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D7F9082F1B48FD003526FB /* SpendoraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpendoraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D7F9122F1B48FD003526FB /* SpendoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpendoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0427F1732F8D66BC002AF8B6 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +252,7 @@
 		04D7F8EE2F1B48FC003526FB = {
 			isa = PBXGroup;
 			children = (
+				0427F1762F8D67A4002AF8B6 /* SpendoraApp.xctestplan */,
 				04D7F8F92F1B48FC003526FB /* SpendoraApp */,
 				04D7FB072F1B4F49003526FB /* Spendora */,
 				04D7F90B2F1B48FD003526FB /* SpendoraTests */,
@@ -347,6 +351,7 @@
 			);
 			name = SpendoraTests;
 			packageProductDependencies = (
+				0427F1722F8D66BC002AF8B6 /* SnapshotTesting */,
 			);
 			productName = SpendoraTests;
 			productReference = 04D7F9082F1B48FD003526FB /* SpendoraTests.xctest */;
@@ -521,6 +526,7 @@
 			packageReferences = (
 				04D7FA932F1B4D83003526FB /* XCRemoteSwiftPackageReference "SwiftyCrop" */,
 				049F49AF2F1CC2D60041AE04 /* XCRemoteSwiftPackageReference "dotlottie-ios" */,
+				0427F1712F8D66BC002AF8B6 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 04D7F8F82F1B48FC003526FB /* Products */;
@@ -934,7 +940,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spendora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Spendora";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpendoraApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpendoraApp";
 				XROS_DEPLOYMENT_TARGET = 26.2;
 			};
 			name = Debug;
@@ -961,7 +967,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spendora.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Spendora";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpendoraApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpendoraApp";
 				XROS_DEPLOYMENT_TARGET = 26.2;
 			};
 			name = Release;
@@ -1440,6 +1446,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0427F1712F8D66BC002AF8B6 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.19.2;
+			};
+		};
 		049F49AF2F1CC2D60041AE04 /* XCRemoteSwiftPackageReference "dotlottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/LottieFiles/dotlottie-ios";
@@ -1459,6 +1473,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0427F1722F8D66BC002AF8B6 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0427F1712F8D66BC002AF8B6 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
 		049F49B02F1CC2D60041AE04 /* DotLottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 049F49AF2F1CC2D60041AE04 /* XCRemoteSwiftPackageReference "dotlottie-ios" */;
