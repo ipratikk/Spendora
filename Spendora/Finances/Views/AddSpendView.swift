@@ -24,7 +24,21 @@ public struct AddSpendView: View {
     
     private let service = SpendsService.shared
     
-    public init() {}
+    public init(
+        title: String = "",
+        detail: String = "",
+        amount: String = "",
+        currency: String = "INR",
+        date: Date = Date(),
+        selectedCategory: SpendCategory? = nil
+    ) {
+        _title = State(initialValue: title)
+        _detail = State(initialValue: detail)
+        _amount = State(initialValue: amount)
+        _currency = State(initialValue: currency)
+        _date = State(initialValue: date)
+        _selectedCategory = State(initialValue: selectedCategory)
+    }
     
     public var body: some View {
         NavigationStack {

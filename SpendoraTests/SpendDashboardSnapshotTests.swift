@@ -40,7 +40,16 @@ final class SpendDashboardSnapshotTests: XCTestCase {
     
     func test_add_expense_screen() {
         let container = makeMockContainer()
-        let view = AddSpendView()
+        let spends = mockSpends(from: container)
+        let category = spends.first(where: { $0.category?.name.lowercased() == "food" })?.category
+        
+        let view = AddSpendView(
+            title: "Coffee",
+            detail: "Morning coffee",
+            amount: "250",
+            currency: "INR",
+            selectedCategory: category
+        )
             .modelContainer(container)
         
         verifySnapshots(
