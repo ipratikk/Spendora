@@ -22,6 +22,9 @@ extension XCTestCase {
             GradientBackgroundView()
             view
         }
+        let navStackView = NavigationStack {
+            wrappedView
+        }
         let baseName = testName
             .replacingOccurrences(of: "test_", with: "")
             .split(separator: "_")
@@ -30,7 +33,7 @@ extension XCTestCase {
         
         // Light
         assertSnapshot(
-            of: wrappedView.environment(\.colorScheme, .light),
+            of: navStackView.environment(\.colorScheme, .light),
             as: .image(layout: .device(config: .iPhone13)),
             named: "Light",
             record: record,
@@ -40,7 +43,7 @@ extension XCTestCase {
         
         // Dark
         assertSnapshot(
-            of: wrappedView.environment(\.colorScheme, .dark),
+            of: navStackView.environment(\.colorScheme, .dark),
             as: .image(layout: .device(config: .iPhone13)),
             named: "Dark",
             record: record,
