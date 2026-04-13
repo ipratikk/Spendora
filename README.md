@@ -73,43 +73,64 @@ The goal was simple:
 ### 📊 Dashboard (Transactions & Grouping)
 Grouped sections like Today, Yesterday, Last Week with realistic data.
 
-![Dashboard Light](./Screenshots/dashboard_light.png)
-![Dashboard Dark](./Screenshots/dashboard_dark.png)
+<table>
+<tr>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/DashboardSnapshotInitial.Light.png" width="300"/></td>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/DashboardSnapshotInitial.Dark.png" width="300"/></td>
+</tr>
+</table>
 
 ---
 
 ### ➕ Add Expense (Filled Form)
 Realistic filled state with selected category.
 
-![Add Expense Light](./Screenshots/add_expense_light.png)
-![Add Expense Dark](./Screenshots/add_expense_dark.png)
+<table>
+<tr>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/AddExpenseScreen.Light.png" width="300"/></td>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/AddExpenseScreen.Dark.png" width="300"/></td>
+</tr>
+</table>
 
 ---
 
 ### 🧾 Category Summary
 Clear breakdown of spending across categories.
 
-![Category Summary Light](./Screenshots/category_summary_light.png)
-![Category Summary Dark](./Screenshots/category_summary_dark.png)
+<table>
+<tr>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/CategorySummaryScreen.Light.png" width="300"/></td>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/CategorySummaryScreen.Dark.png" width="300"/></td>
+</tr>
+</table>
 
 ---
 
 ### 📈 Analytics (Charts)
 Understand your spending patterns visually.
 
-![Category Chart Light](./Screenshots/category_chart_light.png)
-![Category Chart Dark](./Screenshots/category_chart_dark.png)
-
-![Trend Chart Light](./Screenshots/trend_chart_light.png)
-![Trend Chart Dark](./Screenshots/trend_chart_dark.png)
+<table>
+<tr>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/CategoryChart.Light.png" width="300"/></td>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/CategoryChart.Dark.png" width="300"/></td>
+</tr>
+<tr>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/TrendChart.Light.png" width="300"/></td>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/TrendChart.Dark.png" width="300"/></td>
+</tr>
+</table>
 
 ---
 
 ### 🔐 Authentication
 Secure login with Apple Sign In & Face ID.
 
-![Login Light](./Screenshots/login_light.png)
-![Login Dark](./Screenshots/login_dark.png)
+<table>
+<tr>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/LoginScreen.Light.png" width="300"/></td>
+<td><img src="SpendoraTests/__Snapshots__/SpendDashboardSnapshotTests/LoginScreen.Dark.png" width="300"/></td>
+</tr>
+</table>
 
 ---
 
@@ -132,6 +153,35 @@ Spendora follows a clean, scalable architecture:
 - **Feature-based modular structure**
 - **Reusable UI components**
 - **Deterministic snapshot testing for UI stability**
+
+---
+
+## 📁 Project Structure
+
+```
+Spendora/
+├── Spendora/                 # Main app code
+│   ├── Core/Mock/           # Mock data & testing utilities
+│   ├── Finances/            # Core finance features (charts, services, views)
+│   └── Views/               # App-level UI (Account, MainApp, Splash)
+│
+├── SharedModels/            # Shared models, extensions, reusable UI
+│   ├── Models/              # Spend, Category, User
+│   ├── Views/               # Reusable UI components
+│   └── Helper/              # Utilities & helpers
+│
+├── LoginFeature/            # Modular login feature (MVVM)
+│   ├── API/                 # Authentication + Keychain
+│   ├── ViewModel/
+│   └── Views/
+│
+├── SpendoraTests/           # Unit + Snapshot tests
+│   └── __Snapshots__/       # Snapshot images
+│
+├── SpendoraUITests/         # UI tests
+├── Screenshots/             # README images (curated snapshots)
+└── README.md
+```
 
 ---
 
