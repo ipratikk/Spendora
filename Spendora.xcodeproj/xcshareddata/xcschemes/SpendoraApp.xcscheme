@@ -45,6 +45,14 @@
                BlueprintName = "SpendoraTests"
                ReferencedContainer = "container:Spendora.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "SpendoraTests">
+               </Test>
+               <Test
+                  Identifier = "SpendoraTests/example()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "YES"

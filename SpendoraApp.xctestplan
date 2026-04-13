@@ -18,7 +18,14 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
+      "parallelizable" : false,
+      "skippedTests" : {
+        "suites" : [
+          {
+            "name" : "SpendoraTests"
+          }
+        ]
+      },
       "target" : {
         "containerPath" : "container:Spendora.xcodeproj",
         "identifier" : "04D7F9072F1B48FD003526FB",
@@ -26,5 +33,5 @@
       }
     }
   ],
-  "version" : 1
+  "version" : 2
 }

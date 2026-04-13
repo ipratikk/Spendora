@@ -24,14 +24,19 @@ public struct SpendCategoryChart: View {
             let symbol = CurrencyCache.shared.symbol(for: currencySync.displayCurrency)
             Text("Category Breakdown (\(symbol))")
                 .font(.headline)
+                .foregroundStyle(.primary)
                 .padding(.bottom, 4)
             
             let data = service.categoryTotals(from: spends)
+                .sorted { lhs, rhs in
+                    // Sort by category name for stability
+                    (lhs.0?.name ?? "") < (rhs.0?.name ?? "")
+                }
             
             if data.isEmpty {
                 Text("No data available")
                     .font(.caption)
-                    .foregroundColor(.secondary)
+                    .foregroundStyle(.secondary)
             } else {
                 Chart {
                     ForEach(data, id: \.0?.id) { pair in
@@ -40,14 +45,23 @@ public struct SpendCategoryChart: View {
                             innerRadius: .ratio(0.5),
                             angularInset: 1.5
                         )
-                        .foregroundStyle(
-                            selectedCategory == nil || selectedCategory == pair.0
-                            ? .blue
-                            : .gray.opacity(0.3)
-                        )
+                        .foregroundStyle(pair.0?.color ?? .gray)
+                        .opacity(selectedCategory == nil || selectedCategory == pair.0 ? 1.0 : 0.3)
                     }
                 }
-                .chartLegend(.visible)
+                .chartLegend(position: .bottom) {
+                    ForEach(data, id: \.0?.id) { pair in
+                        HStack(spacing: 6) {
+                            Circle()
+                                .fill(pair.0?.color ?? .gray)
+                                .frame(width: 8, height: 8)
+                            
+                            Text(pair.0?.name ?? "Unknown")
+                                .foregroundStyle(.primary)
+                        }
+                    }
+                }
+                .appChartStyle()
                 .frame(height: 220)
             }
         }

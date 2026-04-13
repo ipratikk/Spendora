@@ -30,6 +30,7 @@ public struct SpendTrendChart: View {
             let symbol = CurrencyCache.shared.symbol(for: currencySync.displayCurrency)
             Text("Monthly Trend (\(symbol))")
                 .font(.headline)
+                .foregroundStyle(.primary)
                 .padding(.bottom, 4)
             
             let raw = service.monthlyTotals(from: spends)
@@ -38,7 +39,7 @@ public struct SpendTrendChart: View {
             if data.isEmpty {
                 Text("No data available")
                     .font(.caption)
-                    .foregroundColor(.secondary)
+                    .foregroundStyle(.secondary)
             } else {
                 Chart(data) { point in
                     BarMark(
@@ -46,14 +47,15 @@ public struct SpendTrendChart: View {
                         y: .value("Amount", point.amount)
                     )
                     .foregroundStyle(
-                        selectedMonthKey == point.month ? .orange : .blue
+                        selectedMonthKey == point.month ? Color.orange : Color.accentColor
                     )
                 }
                 .chartYAxisLabel(position: .trailing) {
                     Text(symbol)
                         .font(.caption)
-                        .foregroundColor(.secondary)
+                        .foregroundStyle(.secondary)
                 }
+                .appChartStyle()
                 .frame(height: 220)
             }
         }

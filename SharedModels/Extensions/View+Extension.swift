@@ -21,3 +21,9 @@ public extension View {
         self.modifier(GlobalDoneToolbar())
     }
 }
+
+public extension View {
+    public func appChartStyle() -> some View {
+        self.modifier(AppChartStyle())
+    }
+}

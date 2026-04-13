@@ -13,13 +13,13 @@ public struct LoginView: View {
     @ObservedObject var viewModel: LoginViewModel
     var namespace: Namespace.ID
     @Binding var showContent: Bool
-
+    
     public init(viewModel: LoginViewModel, namespace: Namespace.ID, showContent: Binding<Bool>) {
         self.viewModel = viewModel
         self.namespace = namespace
         self._showContent = showContent
     }
-
+    
     public var body: some View {
         VStack {
             Spacer()
@@ -36,7 +36,7 @@ public struct LoginView: View {
                 .foregroundColor(.primary)
             
             Spacer()
-
+            
             if showContent {
                 VStack(spacing: 16) {
                     Text("Manage your expenses and more!")
@@ -45,7 +45,7 @@ public struct LoginView: View {
                 .transition(.opacity)
                 .padding(.top, 24)
             }
-
+            
             if showContent {
                 SignInWithAppleButton(
                     .continue,

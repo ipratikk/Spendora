@@ -9,6 +9,7 @@ import Foundation
 import XCTest
 import SnapshotTesting
 import SwiftUI
+import SharedModels
 
 extension XCTestCase {
     func verifySnapshots<V: View>(
@@ -17,6 +18,10 @@ extension XCTestCase {
         file: StaticString = #file,
         testName: String = #function
     ) {
+        let wrappedView = ZStack {
+            GradientBackgroundView()
+            view
+        }
         let baseName = testName
             .replacingOccurrences(of: "test_", with: "")
             .split(separator: "_")
@@ -25,7 +30,7 @@ extension XCTestCase {
         
         // Light
         assertSnapshot(
-            of: view.environment(\.colorScheme, .light),
+            of: wrappedView.environment(\.colorScheme, .light),
             as: .image(layout: .device(config: .iPhone13)),
             named: "Light",
             record: record,
@@ -35,7 +40,7 @@ extension XCTestCase {
         
         // Dark
         assertSnapshot(
-            of: view.environment(\.colorScheme, .dark),
+            of: wrappedView.environment(\.colorScheme, .dark),
             as: .image(layout: .device(config: .iPhone13)),
             named: "Dark",
             record: record,

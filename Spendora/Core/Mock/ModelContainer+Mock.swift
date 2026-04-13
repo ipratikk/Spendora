@@ -80,7 +80,7 @@ extension ModelContainer {
                 context.insert(model)
             }
             
-            try context.save()
+            // No need to call save() for in-memory SwiftData during tests
             
         } catch {
             assertionFailure("Failed to decode mock JSON: \(error)")
